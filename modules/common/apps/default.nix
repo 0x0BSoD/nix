@@ -20,6 +20,7 @@
     fd
     fx
     gawk
+    gnupg
     jq
     k9s
     kubecolor
@@ -29,6 +30,7 @@
     neovim
     nil
     nixd
+    pinentry_mac
     procs
     ripgrep
     starship

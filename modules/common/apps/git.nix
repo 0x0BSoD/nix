@@ -11,8 +11,17 @@
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
-      pull.ff = "only";
       color.ui = true;
+      commit.gpgsign = true;
+      user = {
+        name = "aleksandr.simonov";
+        email = "aleksandr.simonov@exness.com";
+        signingkey = "82814D830070E87A";
+      };
+      pull = {
+        rebase = false;
+        ff = "only";
+      };
     };
 
     delta = {
@@ -28,5 +37,7 @@
 
   xdg.configFile."git/.gitignore".text = ''
     .vscode
+    ._DS_Store
+    .idea
   '';
 }
