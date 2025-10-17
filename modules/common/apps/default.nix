@@ -8,8 +8,6 @@
     ./fzf.nix
     ./git.nix
     ./alacritty.nix
-    # Currently not supported by Darwin
-    # ./ghostty.nix
   ];
 
   home.packages = with pkgs; [
@@ -29,6 +27,8 @@
     kubectx
     lsd
     neovim
+    nil
+    nixd
     procs
     ripgrep
     starship
