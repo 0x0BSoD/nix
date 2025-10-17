@@ -7,6 +7,8 @@
     ./btop.nix
     ./fzf.nix
     ./git.nix
+    ./alacritty.nix
+    # Currently not supported by Darwin
     # ./ghostty.nix
   ];
 
