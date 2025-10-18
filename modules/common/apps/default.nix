@@ -8,6 +8,7 @@
     ./fzf.nix
     ./git.nix
     ./alacritty.nix
+    ./zed.nix
   ];
 
   home.packages = with pkgs; [
