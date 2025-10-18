@@ -22,6 +22,7 @@
     fx
     gawk
     gnupg
+    go
     jq
     k9s
     kubecolor
