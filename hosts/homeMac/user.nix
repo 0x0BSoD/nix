@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  users.users."aleksandr.simonov" = {
-    name = "aleksandr.simonov";
-    home = "/Users/aleksandr.simonov";
+  users.users.alex = {
+    name = "alex";
+    home = "/Users/alex";
   };
 
   home-manager.users.alex = {
@@ -11,7 +11,6 @@
       alejandra
       bottom
       curlie
-      delta
       dog
       duf
       dust
@@ -45,7 +44,8 @@
       ../../modules/common/apps/bat.nix
       ../../modules/common/apps/btop.nix
       ../../modules/common/apps/fzf.nix
-      ../../modules/common/apps/git/git.work.nix
+      ../../modules/common/apps/delta.nix
+      ../../modules/common/apps/git/git.homeMac.nix
       ../../modules/common/apps/alacritty.nix
       ../../modules/common/apps/zed.nix
     ];

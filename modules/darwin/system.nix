@@ -1,8 +1,10 @@
-{ self, ... }:
-
 {
+  self,
+  primaryUser,
+  ...
+}: {
   system = {
-    primaryUser = "aleksandr.simonov";
+    primaryUser = primaryUser;
     configurationRevision = self.rev or self.dirtyRev or null;
     stateVersion = 6;
     defaults = {

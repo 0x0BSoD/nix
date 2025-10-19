@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.zed-editor = {
     enable = true;
 
@@ -98,12 +96,15 @@
         YAML = {
           formatter = "language_server";
         };
-        Python = {
-          format_on_save = {
-            language_server = {
-              name = "ruff";
+        Nix = {
+          formatter = {
+            external = {
+              command = "alejandra";
+              arguments = ["--quiet" "--"];
             };
           };
+        };
+        Python = {
           formatter = {
             language_server = {
               name = "ruff";
@@ -132,7 +133,7 @@
           gofumpt = true;
           symbolScope = "workspace";
           staticcheck = true;
-          templateExtensions = [ "tmpl" ];
+          templateExtensions = ["tmpl"];
           experimentalPostfixCompletions = true;
           analyses = {
             nilness = true;
@@ -159,8 +160,7 @@
           settings = {
             yaml = {
               schemas = {
-                "/Users/aleksandr.simonov/Documents/Code/Shemes/crd/bitnami_redis/values.schema.json" =
-                  "/Users/aleksandr.simonov/Projects/Exness/Platform/redis/services/**/*.yaml";
+                "/Users/aleksandr.simonov/Documents/Code/Shemes/crd/bitnami_redis/values.schema.json" = "/Users/aleksandr.simonov/Projects/Exness/Platform/redis/services/**/*.yaml";
               };
             };
           };
