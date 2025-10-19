@@ -43,7 +43,7 @@
       };
 
       commit = {
-        gpgsign = true;
+        gpgsign = false;
         verbose = true;
       };
       merge.conflictstyle = "diff3";
@@ -51,10 +51,3 @@
     };
   };
 }
-# trace: warning: alex profile: The option `programs.git.userEmail' defined in `/nix/store/5y6r12989wyyk4296qh10wcvlpxy6sh6-source/modules/common/apps/git/git.homeMac.nix' has been renamed to `programs.git.settings.user.email'.
-# trace: warning: alex profile: The option `programs.git.userName' defined in `/nix/store/5y6r12989wyyk4296qh10wcvlpxy6sh6-source/modules/common/apps/git/git.homeMac.nix' has been renamed to `programs.git.settings.user.name'.
-# trace: warning: alex profile: The option `programs.git.extraConfig' defined in `/nix/store/5y6r12989wyyk4296qh10wcvlpxy6sh6-source/modules/common/apps/git/git.homeMac.nix' has been renamed to `programs.git.settings'.
-# trace: warning: alex profile: The option `programs.git.delta.options' defined in `/nix/store/5y6r12989wyyk4296qh10wcvlpxy6sh6-source/modules/common/apps/git/git.homeMac.nix' has been renamed to `programs.delta.options'.
-# trace: warning: alex profile: The option `programs.git.delta.enable' defined in `/nix/store/5y6r12989wyyk4296qh10wcvlpxy6sh6-source/modules/common/apps/git/git.homeMac.nix' has been renamed to `programs.delta.enable'.
-# trace: warning: alex profile: `programs.delta.enableGitIntegration` automatic enablement is deprecated. Please explicitly set `programs.delta.enableGitIntegration = true`.
-
