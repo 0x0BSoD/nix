@@ -11,7 +11,6 @@
       "nord-theme"
       "basher"
       "jsonnet"
-      "ruff"
     ];
 
     userSettings = {

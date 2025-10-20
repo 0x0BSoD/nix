@@ -10,6 +10,7 @@
     _du = "which du";
     _df = "which df";
     _top = "which top";
+    _find = "which find";
     _ps = "/bin/ps";
     _dig = "which dig";
     _cd = "which cd";

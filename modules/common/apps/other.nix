@@ -12,10 +12,13 @@
     gnupg
     go
     jq
-    k9s
     kubecolor
     kubectl
     kubectx
+    python3
+    terraform
+    terragrunt
+    vault
     lsd
     neovim
     nil
@@ -23,6 +26,7 @@
     pinentry_mac
     procs
     ripgrep
+    ruff
     starship
     # spotify
     chatgpt

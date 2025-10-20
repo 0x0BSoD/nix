@@ -2,6 +2,21 @@
   programs.zsh = {
     enable = true;
 
+    oh-my-zsh = {
+      enable = true;
+      extraConfig = ''
+        # Use this setting if you want to disable marking untracked files under VCS as dirty.
+        # This makes repository status checks for large repositories much, much faster.
+        DISABLE_UNTRACKED_FILES_DIRTY="true"
+        COMPLETION_WAITING_DOTS=true
+
+        zstyle ':omz:update' mode disabled # Disable auto update
+      '';
+      plugins = [
+        "fzf"
+      ];
+    };
+
     # enableCompletion = true;
 
     autosuggestion.enable = true;
@@ -40,10 +55,6 @@
     '';
 
     initContent = ''
-      # Use this setting if you want to disable marking untracked files under VCS as dirty.
-      # This makes repository status checks for large repositories much, much faster.
-      DISABLE_UNTRACKED_FILES_DIRTY="true"
-      COMPLETION_WAITING_DOTS=true
 
       setopt NO_BEEP # Don't beep on errors.
 
