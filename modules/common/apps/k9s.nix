@@ -7,9 +7,9 @@
         refreshRate = 2;
         maxConnRetry = 5;
         readOnly = false;
-        noExitOnCtrlC = false;
+        noExitOnCtrlC = true;
         skipLatestRevCheck = false;
-        disablePodCounting = false;
+        disablePodCounting = true;
         ui = {
           skin = "nord";
           enableMouse = false;
