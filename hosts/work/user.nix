@@ -15,7 +15,6 @@
 
     imports = [
       ../../modules/common/apps/other.nix
-      ../../modules/common/apps/homebrew.nix
 
       ../../modules/common/shell
       # ../../modules/common/apps/k9s
