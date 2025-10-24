@@ -13,12 +13,35 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs = {
     self,
     nix-darwin,
     home-manager,
+    mac-app-util,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
     ...
   }: let
     mkDarwin = primaryUser: modules:
@@ -34,6 +57,22 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+            }
+            mac-app-util.darwinModules.default
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                user = primaryUser;
+                autoMigrate = true;
+                mutableTaps = false;
+
+                taps = {
+                  "homebrew/homebrew-core" = homebrew-core;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                };
+              };
             }
           ];
       };

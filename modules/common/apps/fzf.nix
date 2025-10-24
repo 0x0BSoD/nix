@@ -2,6 +2,6 @@
   programs.fzf = {
     enable = true;
 
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
   };
 }

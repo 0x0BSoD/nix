@@ -8,6 +8,8 @@
         email = "zlodey23@gmail.com";
       };
 
+      merge.conflictstyle = "diff3";
+      color.ui = true;
       column.ui = "auto";
       branch.sort = "-commiterdate";
       tag.sort = "version:refname";
@@ -36,6 +38,7 @@
         autoStash = true;
         updateRefs = true;
       };
+
       fetch = {
         prune = true;
         pruneTags = true;
@@ -46,8 +49,6 @@
         gpgsign = false;
         verbose = true;
       };
-      merge.conflictstyle = "diff3";
-      color.ui = true;
     };
   };
 }

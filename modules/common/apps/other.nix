@@ -2,6 +2,8 @@
   home.packages = with pkgs; [
     alejandra
     bottom
+    shellcheck
+    shfmt
     curlie
     dog
     duf
@@ -28,6 +30,7 @@
     ripgrep
     ruff
     starship
+    redis
     # spotify
     chatgpt
     chatgpt-cli

@@ -1,21 +1,5 @@
 {...}: {
   programs.zsh.shellAliases = {
-    # === Rename existing tools ===
-    _cat = "which cat";
-    _curl = "which curl";
-    _ls = "/bin/ls";
-    _watch = "which watch";
-    _grep = "/bin/grep";
-    _diff = "/usr/bin/diff";
-    _du = "which du";
-    _df = "which df";
-    _top = "which top";
-    _find = "which find";
-    _ps = "/bin/ps";
-    _dig = "which dig";
-    _cd = "which cd";
-    _rm = "which rm";
-
     # === Core Shortcuts ===
     mkdir = "mkdir -p";
     c = "clear";
