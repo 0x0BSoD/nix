@@ -2,8 +2,8 @@
   home.packages = with pkgs; [
     alejandra
     bottom
-    shellcheck
-    shfmt
+    chatgpt
+    chatgpt-cli
     curlie
     dog
     duf
@@ -17,24 +17,23 @@
     kubecolor
     kubectl
     kubectx
-    python3
-    terraform
-    terragrunt
-    vault
     lsd
     neovim
     nil
     nixd
     pinentry_mac
     procs
+    python3
+    redis
     ripgrep
     ruff
+    shellcheck
+    shfmt
     starship
-    redis
-    # spotify
-    chatgpt
-    chatgpt-cli
     stern
+    terraform
+    terragrunt
+    vault
     viddy
     yq
     zoxide

@@ -35,9 +35,10 @@
     tlp = "tsh login --proxy=teleport.prod.env:443 teleport.prod.env";
 
     # === Kubelet ===
-    ctx = "kubectx";
-    k = "kubecolor";
-    kk = ''k get ns -o custom-columns=":metadata.name" | fzf --bind "enter:become(k9s -n {1} --headless --splashless -c pod)"'';
+    # kubectl = "kubecolor";
+    # k = "kubecolor";
+    # ctx = "kubectx";
+    # kk = ''k get ns -o custom-columns=":metadata.name" | fzf --bind "enter:become(k9s -n {1} --headless --splashless -c pod)"'';
 
     # === Git ===
     ga = "git add -A";
