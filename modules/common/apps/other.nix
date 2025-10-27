@@ -2,8 +2,8 @@
   home.packages = with pkgs; [
     alejandra
     bottom
-    chatgpt
-    chatgpt-cli
+    # chatgpt
+    # chatgpt-cli
     curlie
     dog
     duf
@@ -19,9 +19,10 @@
     kubectx
     lsd
     neovim
+    nodejs
     nil
     nixd
-    pinentry_mac
+    # pinentry_mac
     procs
     python3
     redis

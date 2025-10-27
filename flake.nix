@@ -19,9 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-homebrew = {
-      url = "github:zhaofengli-wip/nix-homebrew";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
+
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -36,6 +36,7 @@
 
   outputs = {
     self,
+    nixpkgs,
     nix-darwin,
     home-manager,
     mac-app-util,
@@ -43,7 +44,7 @@
     homebrew-core,
     homebrew-cask,
     ...
-  }: let
+  } @ inputs: let
     mkDarwin = primaryUser: modules:
       nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -76,18 +77,26 @@
             }
           ];
       };
-    #mkNixos =
-    #  name: modules:
-    #  nixpkgs.lib.nixosSystem {
-    #    system = "x86_64-linux";
-    #    modules = modules ++ [
-    #      home-manager.nixosModules.home-manager
-    #      {
-    #        home-manager.useGlobalPkgs = true;
-    #        home-manager.useUserPackages = true;
-    #      }
-    #    ];
-    #  };
+    mkNixos = primaryUser: modules:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit self inputs primaryUser;
+        };
+        modules =
+          modules
+          ++ [
+            home-manager.nixosModules.home-manager
+            {
+              programs.dconf.enable = true;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                overwriteBackup = true;
+                backupFileExtension = "backup";
+              };
+            }
+          ];
+      };
   in {
     darwinConfigurations = {
       exness = mkDarwin "aleksandr.simonov" [
@@ -97,6 +106,12 @@
       homeMac = mkDarwin "alex" [
         ./hosts/homeMac/configuration.nix
         ./hosts/homeMac/user.nix
+      ];
+    };
+    nixosConfigurations = {
+      homePc = mkNixos "alex" [
+        ./hosts/homePc/configuration.nix
+        ./hosts/homePc/user.nix
       ];
     };
   };
