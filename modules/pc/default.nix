@@ -5,5 +5,6 @@
     ./core/services.nix
     ./core/fonts.nix
     ./core/video.nix
+    ./core/flatpak.nix
   ];
 }

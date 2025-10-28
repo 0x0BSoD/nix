@@ -2,36 +2,38 @@
   description = "0x0bsod";
 
   inputs = {
+    # Main
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # OSX
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
-
+    ## Homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
-
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    # Other
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
   };
 
   outputs = {
