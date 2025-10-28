@@ -33,6 +33,7 @@
     # Other
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
   };
 
@@ -45,6 +46,7 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    spicetify-nix,
     ...
   } @ inputs: let
     mkDarwin = primaryUser: modules:
@@ -82,7 +84,7 @@
     mkNixos = primaryUser: modules:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit self inputs primaryUser;
+          inherit self inputs spicetify-nix primaryUser;
         };
         modules =
           modules
@@ -91,6 +93,9 @@
             {
               programs.dconf.enable = true;
               home-manager = {
+                extraSpecialArgs = {
+                  inherit inputs;
+                };
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 overwriteBackup = true;

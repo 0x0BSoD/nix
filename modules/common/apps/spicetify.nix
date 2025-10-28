@@ -1,11 +1,10 @@
 {
-  spicetify-nix,
   pkgs,
+  inputs,
   ...
 }: let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
-  imports = [spicetify-nix.homeManagerModule];
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.catppuccin;

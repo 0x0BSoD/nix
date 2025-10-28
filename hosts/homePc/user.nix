@@ -30,7 +30,6 @@
     users.alex = {
       programs.home-manager.enable = true;
       xdg.enable = true;
-
       home = {
         stateVersion = "25.11";
 
@@ -56,9 +55,9 @@
            --preview 'tree -C {}'";
         };
       };
-
       imports = [
         inputs.zen-browser.homeModules.beta
+        inputs.spicetify-nix.homeManagerModules.spicetify
 
         ../../modules/common/apps/other.nix
         ../../modules/common/shell
@@ -69,6 +68,7 @@
         ../../modules/common/apps/fzf.nix
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
+        ../../modules/common/apps/spicetify.nix
         ## TODO: make config common for instances
         ../../modules/common/apps/git/git.homeMac.nix
       ];
