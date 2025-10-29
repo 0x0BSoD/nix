@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   system.stateVersion = "25.11";
 
   networking.hostName = "nixos";
@@ -30,6 +30,11 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    openssl
+  ];
 
   imports = [
     ./hardware-configuration.nix

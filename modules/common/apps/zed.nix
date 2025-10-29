@@ -154,16 +154,6 @@
             rangeVariableTypes = true;
           };
         };
-
-        yaml-language-server = {
-          settings = {
-            yaml = {
-              schemas = {
-                "/Users/aleksandr.simonov/Documents/Code/Shemes/crd/bitnami_redis/values.schema.json" = "/Users/aleksandr.simonov/Projects/Exness/Platform/redis/services/**/*.yaml";
-              };
-            };
-          };
-        };
       };
     };
   };
