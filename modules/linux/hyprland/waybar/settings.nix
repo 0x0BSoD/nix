@@ -1,48 +1,27 @@
-{...}: let
-  custom = {
-    font = "Maple Mono";
-    font_size = "18px";
-    font_weight = "bold";
-    text_color = "#FBF1C7";
-    background_0 = "#1D2021";
-    background_1 = "#282828";
-    border_color = "#928374";
-    red = "#CC241D";
-    green = "#98971A";
-    yellow = "#FABD2F";
-    blue = "#458588";
-    magenta = "#B16286";
-    cyan = "#689D6A";
-    orange = "#D65D0E";
-    opacity = "1";
-    indicator_height = "2px";
-  };
-in {
-  programs.waybar.settings.mainBar = with custom; {
-    position = "bottom";
+{...}: {
+  programs.waybar.settings.mainBar = {
+    position = "top";
     layer = "top";
-    height = 28;
+    # height = 28;
+
     margin-top = 0;
     margin-bottom = 0;
     margin-left = 0;
     margin-right = 0;
+
     modules-left = [
-      "custom/launcher"
       "hyprland/workspaces"
-      "tray"
     ];
-    modules-center = ["clock"];
+    modules-center = [
+      "custom/media"
+    ];
     modules-right = [
-      "cpu"
-      "memory"
-      "disk"
-      "pulseaudio"
-      "network"
-      "battery"
       "hyprland/language"
-      "custom/notification"
-      "custom/power-menu"
+      "custom/notifications"
+      "tray"
+      "clock"
     ];
+
     clock = {
       calendar = {
         format = {
@@ -54,6 +33,7 @@ in {
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "  {:%d/%m}";
     };
+
     "hyprland/workspaces" = {
       active-only = false;
       disable-scroll = true;
@@ -80,80 +60,21 @@ in {
         "5" = [];
       };
     };
-    cpu = {
-      format = "<span foreground='${green}'> </span> {usage}%";
-      format-alt = "<span foreground='${green}'> </span> {avg_frequency} GHz";
-      interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
-    };
-    memory = {
-      format = "<span foreground='${cyan}'>󰟜 </span>{}%";
-      format-alt = "<span foreground='${cyan}'>󰟜 </span>{used} GiB"; # 
-      interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
-    };
-    disk = {
-      # path = "/";
-      format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
-      interval = 60;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
-    };
-    network = {
-      format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";
-      format-ethernet = "<span foreground='${magenta}'>󰀂 </span>";
-      tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-      format-linked = "{ifname} (No IP)";
-      format-disconnected = "<span foreground='${magenta}'>󰖪 </span>";
-    };
+
     tray = {
       icon-size = 20;
       spacing = 8;
     };
-    pulseaudio = {
-      format = "{icon} {volume}%";
-      format-muted = "<span foreground='${blue}'> </span> {volume}%";
-      format-icons = {
-        default = ["<span foreground='${blue}'> </span>"];
-      };
-      scroll-step = 2;
-      on-click = "pamixer -t";
-      on-click-right = "pavucontrol";
-    };
-    battery = {
-      format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";
-      format-icons = [
-        " "
-        " "
-        " "
-        " "
-        " "
-      ];
-      format-charging = "<span foreground='${yellow}'> </span>{capacity}%";
-      format-full = "<span foreground='${yellow}'> </span>{capacity}%";
-      format-warning = "<span foreground='${yellow}'> </span>{capacity}%";
-      interval = 5;
-      states = {
-        warning = 20;
-      };
-      format-time = "{H}h{M}m";
-      tooltip = true;
-      tooltip-format = "{time}";
-    };
+
     "hyprland/language" = {
       tooltip = true;
       tooltip-format = "Keyboard layout";
       format = "<span foreground='#FABD2F'> </span> {}";
-      format-fr = "FR";
+      format-ru = "RU";
       format-en = "US";
       on-click = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
     };
-    "custom/launcher" = {
-      format = "";
-      on-click = "random-wallpaper";
-      on-click-right = "rofi -show drun";
-      tooltip = "true";
-      tooltip-format = "Random Wallpaper";
-    };
+
     "custom/notification" = {
       tooltip = true;
       tooltip-format = "Notifications";
@@ -175,11 +96,17 @@ in {
       on-click-right = "swaync-client -d -sw";
       escape = true;
     };
-    "custom/power-menu" = {
-      tooltip = true;
-      tooltip-format = "Power menu";
-      format = "<span foreground='${red}'> </span>";
-      on-click = "power-menu";
+
+    "custom/media" = {
+      format = "{icon} {}";
+      return-type = "json";
+      max-length = 40;
+      format-icons = {
+        spotify = "";
+        default = "🎜";
+      };
+      escape = true;
+      exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
     };
   };
 }

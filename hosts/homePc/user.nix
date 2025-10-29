@@ -57,6 +57,8 @@
         ../../modules/common/apps/zen-browser.nix
         ../../modules/common/apps/spicetify.nix
         ../../modules/linux/hyprland
+        ../../modules/pc/apps/other.nix
+        ../../modules/pc/apps/waypaper.nix
         ## TODO: make config common for instances
         ../../modules/common/apps/git/git.homeMac.nix
       ];
