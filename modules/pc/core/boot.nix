@@ -1,7 +1,23 @@
 {pkgs, ...}: {
   boot = {
-    plymouth.enable = true;
     tmp.cleanOnBoot = true;
+    loader.timeout = 2;
+    consoleLogLevel = 3;
+
+    initrd = {
+      enable = true;
+      verbose = false;
+      systemd.enable = true;
+      availableKernelModules = ["i915"];
+      kernelModules = ["i915"];
+    };
+
+    plymouth = {
+      enable = true;
+      font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
+      themePackages = [pkgs.catppuccin-plymouth];
+      theme = "catppuccin-macchiato";
+    };
 
     supportedFilesystems = [
       "ntfs"

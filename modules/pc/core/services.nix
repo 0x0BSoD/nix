@@ -1,4 +1,15 @@
 {pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    greetd.tuigreet
+  ];
+
+  users.users.greeter = {
+    isNormalUser = false;
+    description = "greetd greeter user";
+    extraGroups = ["video" "audio"];
+    linger = true;
+  };
+
   services = {
     # Other
     printing.enable = true;
@@ -10,6 +21,18 @@
     blueman.enable = true;
     tumbler.enable = true;
     hypridle.enable = true;
+
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet \
+              --time --time-format '%I:%M %p | %a • %h | %F' \
+              --cmd 'uwsm start hyprland'";
+          user = "greeter";
+        };
+      };
+    };
 
     # GUI
     gnome = {
