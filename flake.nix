@@ -33,6 +33,7 @@
     # Other
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    vicinae.url = "github:vicinaehq/vicinae";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
   };
@@ -93,9 +94,6 @@
             {
               programs.dconf.enable = true;
               home-manager = {
-                extraSpecialArgs = {
-                  inherit inputs;
-                };
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 overwriteBackup = true;

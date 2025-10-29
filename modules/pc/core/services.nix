@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services = {
     # Other
     printing.enable = true;
@@ -9,16 +9,34 @@
     udisks2.enable = true;
     blueman.enable = true;
     tumbler.enable = true;
-    gnome.gnome-keyring.enable = true;
+    hypridle.enable = true;
 
     # GUI
-    xserver.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
+    gnome = {
+      tinysparql.enable = true;
+      gnome-keyring.enable = true;
     };
+
+    dbus.enable = true;
+
+    # needed for GNOME services outside of GNOME Desktop
+    dbus.packages = with pkgs; [
+      gcr
+      gnome-settings-daemon
+    ];
+
+    logind.settings.Login = {
+      # don’t shutdown when power button is short-pressed
+      HandlePowerKey = "ignore";
+    };
+
+    # xserver.enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    # xserver.xkb = {
+    #   layout = "us";
+    #   variant = "";
+    # };
 
     # Sound
     pulseaudio.enable = false;

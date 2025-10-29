@@ -3,35 +3,18 @@
   inputs,
   ...
 }: {
-  users.users.alex = {
-    name = "alex";
-    home = "/Users/alex";
-
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "input"
-      "networkmanager"
-      "video"
-      "audio"
-      "libvirtd"
-      "kvm"
-      "docker"
-      "disk"
-      "adbusers"
-      "lp"
-      "scanner"
-    ];
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
-  };
-
   home-manager = {
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+
     users.alex = {
       programs.home-manager.enable = true;
-      xdg.enable = true;
       home = {
         stateVersion = "25.11";
+        username = "alex";
+
+        homeDirectory = "/home/alex";
 
         sessionVariables = {
           EDITOR = "vim";
@@ -39,6 +22,9 @@
 
           GOPATH = "$HOME/Projects/go";
           GO111MODULE = "on";
+
+          NIXOS_OZONE_WL = 1;
+          WLR_NO_HARDWARE_CURSORS = 1;
 
           FZF_CTRL_R_OPTS = "
        --preview 'echo {}' --preview-window up:3:hidden:wrap
@@ -55,6 +41,7 @@
            --preview 'tree -C {}'";
         };
       };
+
       imports = [
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
@@ -75,4 +62,28 @@
       ];
     };
   };
+
+  users.users.alex = {
+    isNormalUser = true;
+    name = "alex";
+    description = "Aleksandr Simonov";
+
+    extraGroups = [
+      "wheel"
+      "input"
+      "networkmanager"
+      "video"
+      "audio"
+      "libvirtd"
+      "kvm"
+      "docker"
+      "disk"
+      "adbusers"
+      "lp"
+      "scanner"
+    ];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
+  };
+  nix.settings.allowed-users = ["alex"];
 }

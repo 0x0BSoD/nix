@@ -6,5 +6,6 @@
     ./core/fonts.nix
     ./core/video.nix
     ./core/flatpak.nix
+    ./core/wayland.nix
   ];
 }

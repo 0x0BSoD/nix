@@ -1,4 +1,4 @@
-{host, ...}: {
+{...}: {
   programs.hyprlock = {
     enable = true;
 
@@ -11,7 +11,7 @@
 
       background = [
         {
-          path = "${../../../wallpapers/otherWallpaper/gruvbox/forest_road.jpg}";
+          path = "${../../../wallpapers/astronaut.jpg}";
 
           color = "rgba(29, 32, 33, 255)";
           blur_passes = 2;
@@ -29,11 +29,7 @@
           color = "rgba(102, 92, 84, 0.33)";
           border_color = "rgba(168, 153, 132, 0.95)";
 
-          position = "0, ${
-            if host == "laptop"
-            then "120"
-            else "270"
-          }";
+          position = "0, 270";
           halign = "center";
           valign = "bottom";
         }
@@ -50,11 +46,7 @@
           shadow_passes = 3;
           color = "rgba(235, 219, 178, 0.9)";
 
-          position = "0, ${
-            if host == "laptop"
-            then "-25"
-            else "-150"
-          }";
+          position = "0, -150";
           halign = "center";
           valign = "top";
         }
@@ -68,11 +60,7 @@
           shadow_passes = 3;
           color = "rgba(235, 219, 178, 0.9)";
 
-          position = "0, ${
-            if host == "laptop"
-            then "-225"
-            else "-350"
-          }";
+          position = "0,-350";
           halign = "center";
           valign = "top";
         }
@@ -85,11 +73,7 @@
 
           color = "rgba(235, 219, 178, 1)";
 
-          position = "0, ${
-            if host == "laptop"
-            then "134"
-            else "284"
-          }";
+          position = "0,284";
           halign = "center";
           valign = "bottom";
         }
@@ -117,11 +101,7 @@
           fade_on_empty = false;
           placeholder_text = ''<i><span foreground="##fbf1c7">Enter Password</span></i>'';
 
-          position = "0, ${
-            if host == "laptop"
-            then "50"
-            else "200"
-          }";
+          position = "0, 200";
           halign = "center";
           valign = "bottom";
         }
