@@ -3,10 +3,16 @@
   inputs,
   ...
 }: {
+  programs.dconf.enable = true;
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
     };
+
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    overwriteBackup = true;
+    backupFileExtension = "backup";
 
     users.alex = {
       programs.home-manager.enable = true;
@@ -46,21 +52,26 @@
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
 
-        ../../modules/common/apps/other.nix
-        ../../modules/common/shell
+        ## TODO: make config common for instances
+        ../../modules/common/apps/git/git.homeMac.nix
+
         ../../modules/common/apps/alacritty.nix
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
+        ../../modules/common/shell
+
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
         ../../modules/common/apps/spicetify.nix
-        ../../modules/linux/hyprland
-        ../../modules/pc/apps/other.nix
-        ../../modules/pc/apps/waypaper.nix
-        ## TODO: make config common for instances
-        ../../modules/common/apps/git/git.homeMac.nix
+        ../../modules/common/apps/other.nix
+
+        ../../modules/linux/apps/hyprland
+        ../../modules/linux/apps/waypaper.nix
+        ../../modules/linux/apps/other.nix
+
+        ../../modules/linux/scripts
       ];
     };
   };

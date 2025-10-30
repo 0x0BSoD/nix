@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   system.stateVersion = "25.11";
 
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Asia/Nicosia";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -38,6 +40,14 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../../modules/pc
+
+    ../../modules/linux/boot.nix
+    ../../modules/linux/security.nix
+    ../../modules/linux/services.nix
+    ../../modules/linux/video.nix
+
+    ../../modules/linux/fonts.nix
+    ../../modules/linux/flatpak.nix
+    ../../modules/linux/wayland.nix
   ];
 }

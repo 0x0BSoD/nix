@@ -11,5 +11,6 @@
     ./swaync
     ./vicinae
     ./waybar
+    ./rofi
   ];
 }

@@ -2,7 +2,7 @@
   description = "0x0bsod";
 
   inputs = {
-    # Main
+    # Main =======
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # OSX
+    # OSX =======
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,17 +41,11 @@
   outputs = {
     self,
     nixpkgs,
-    nix-darwin,
     home-manager,
-    mac-app-util,
-    nix-homebrew,
-    homebrew-core,
-    homebrew-cask,
-    spicetify-nix,
     ...
   } @ inputs: let
     mkDarwin = primaryUser: modules:
-      nix-darwin.lib.darwinSystem {
+      inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
           inherit self primaryUser;
@@ -64,8 +58,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
             }
-            mac-app-util.darwinModules.default
-            nix-homebrew.darwinModules.nix-homebrew
+            inputs.mac-app-util.darwinModules.default
+            inputs.nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
                 enable = true;
@@ -75,8 +69,8 @@
                 mutableTaps = false;
 
                 taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-core" = inputs.homebrew-core;
+                  "homebrew/homebrew-cask" = inputs.homebrew-cask;
                 };
               };
             }
@@ -85,21 +79,12 @@
     mkNixos = primaryUser: modules:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit self inputs spicetify-nix primaryUser;
+          inherit self inputs primaryUser;
         };
         modules =
           modules
           ++ [
             home-manager.nixosModules.home-manager
-            {
-              programs.dconf.enable = true;
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                overwriteBackup = true;
-                backupFileExtension = "backup";
-              };
-            }
           ];
       };
   in {
