@@ -48,34 +48,17 @@
       inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
-          inherit self primaryUser;
+          inherit self inputs primaryUser;
         };
         modules =
           modules
           ++ [
             home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-            }
             inputs.mac-app-util.darwinModules.default
             inputs.nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                enableRosetta = true;
-                user = primaryUser;
-                autoMigrate = true;
-                mutableTaps = false;
-
-                taps = {
-                  "homebrew/homebrew-core" = inputs.homebrew-core;
-                  "homebrew/homebrew-cask" = inputs.homebrew-cask;
-                };
-              };
-            }
           ];
       };
+
     mkNixos = primaryUser: modules:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -95,12 +78,14 @@
       ];
       homeMac = mkDarwin "alex" [
         ./hosts/homeMac/configuration.nix
+        ./hosts/homeMac/homebrew.nix
         ./hosts/homeMac/user.nix
       ];
     };
     nixosConfigurations = {
       homePc = mkNixos "alex" [
         ./hosts/homePc/configuration.nix
+        ./hosts/homeMac/homebrew.nix
         ./hosts/homePc/user.nix
       ];
     };
