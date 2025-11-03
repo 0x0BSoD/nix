@@ -20,6 +20,7 @@
     lsd
     neovim
     nodejs
+    helm-ls
     nil
     nixd
     # pinentry_mac
