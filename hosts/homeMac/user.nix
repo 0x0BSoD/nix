@@ -1,9 +1,4 @@
 {inputs, ...}: {
-  users.users.alex = {
-    name = "alex";
-    home = "/Users/alex";
-  };
-
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -61,5 +56,9 @@
         ../../modules/common/apps/other.nix
       ];
     };
+  };
+  users.users.alex = {
+    name = "alex";
+    home = "/Users/alex";
   };
 }
