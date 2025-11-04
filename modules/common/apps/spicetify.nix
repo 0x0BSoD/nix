@@ -7,13 +7,13 @@
 in {
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    theme = spicePkgs.themes.nord;
 
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       shuffle
       hidePodcasts
+      history
     ];
   };
 }

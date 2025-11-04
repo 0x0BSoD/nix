@@ -38,8 +38,8 @@
       };
 
       imports = [
-        # inputs.zen-browser.homeModules.beta
-        # inputs.spicetify-nix.homeManagerModules.spicetify
+        inputs.zen-browser.homeModules.beta
+        inputs.spicetify-nix.homeManagerModules.spicetify
 
         ../../modules/common/apps/git/git.homeMac.nix
 
@@ -51,8 +51,8 @@
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
-        # ../../modules/common/apps/zen-browser.nix
-        # ../../modules/common/apps/spicetify.nix
+        ../../modules/common/apps/zen-browser.nix
+        ../../modules/common/apps/spicetify.nix
         ../../modules/common/apps/other.nix
       ];
     };
