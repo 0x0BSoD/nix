@@ -74,6 +74,7 @@
     darwinConfigurations = {
       exness = mkDarwin "aleksandr.simonov" [
         ./hosts/work/configuration.nix
+        ./hosts/homeMac/homebrew.nix
         ./hosts/work/user.nix
       ];
       homeMac = mkDarwin "alex" [
@@ -85,7 +86,6 @@
     nixosConfigurations = {
       homePc = mkNixos "alex" [
         ./hosts/homePc/configuration.nix
-        ./hosts/homeMac/homebrew.nix
         ./hosts/homePc/user.nix
       ];
     };

@@ -3,7 +3,7 @@
     position = "top";
     layer = "top";
 
-    margin-bottom = -10;
+    margin-bottom = 10;
 
     modules-left = [
       "hyprland/workspaces"

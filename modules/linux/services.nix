@@ -28,6 +28,7 @@
         default_session = {
           command = "${pkgs.tuigreet}/bin/tuigreet \
               --time --time-format '%I:%M %p | %a • %h | %F' \
+              --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red \
               --cmd 'uwsm start hyprland'";
           user = "greeter";
         };

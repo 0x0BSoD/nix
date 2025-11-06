@@ -3,7 +3,7 @@
     "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
-    "hyprlock"
+    # "hyprlock"
 
     "nm-applet &"
     "poweralertd &"
@@ -13,7 +13,7 @@
     "swaync &"
     "vicinae server &"
     "udiskie --automount --notify --smart-tray &"
-    "hyprctl setcursor Bibata-Modern-Ice 24 &"
+    # "hyprctl setcursor Bibata-Modern-Ice 24 &"
     "init-wallpaper &"
   ];
 }

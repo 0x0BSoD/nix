@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   };
 
   boot.kernelParams = [
@@ -22,8 +22,8 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      (vaapiIntel.override {enableHybridCodec = true;})
-      vaapiVdpau
+      (intel-vaapi-driver.override {enableHybridCodec = true;})
+      libva-vdpau-driver
       libvdpau-va-gl
     ];
   };
