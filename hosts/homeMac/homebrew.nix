@@ -17,6 +17,8 @@
   };
   homebrew = {
     enable = true;
-    casks = [];
+    casks = [
+      "ghostty"
+    ];
   };
 }
