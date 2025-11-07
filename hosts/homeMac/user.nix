@@ -43,12 +43,11 @@
 
         ../../modules/common/apps/git/git.homeMac.nix
 
-        ../../modules/common/apps/alacritty.nix
-        ../../modules/common/apps/ghostty.nix
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
+        ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix

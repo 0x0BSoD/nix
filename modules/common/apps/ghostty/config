@@ -1,4 +1,3 @@
-command = tmux
 maximize = true
 initial-window = false
 custom-shader-animation = true
