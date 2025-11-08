@@ -29,6 +29,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    sergioBenitez-osxct = {
+      url = "github:SergioBenitez/homebrew-osxct";
+      flake = false;
+    };
 
     # Other
     ghostty = {
@@ -59,6 +63,9 @@
           ++ [
             home-manager.darwinModules.home-manager
             inputs.nix-homebrew.darwinModules.nix-homebrew
+            ({config, ...}: {
+              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+            })
             # inputs.mac-app-util.darwinModules.default
           ];
       };

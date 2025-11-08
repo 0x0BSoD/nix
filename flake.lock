@@ -470,9 +470,26 @@
         "nix-gaming": "nix-gaming",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_4",
+        "sergioBenitez-osxct": "sergioBenitez-osxct",
         "spicetify-nix": "spicetify-nix",
         "vicinae": "vicinae",
         "zen-browser": "zen-browser"
+      }
+    },
+    "sergioBenitez-osxct": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1522909049,
+        "narHash": "sha256-jRl18BWvwq8X00kLld4JTepGeZabAnU8hwM4GExZvG4=",
+        "owner": "SergioBenitez",
+        "repo": "homebrew-osxct",
+        "rev": "22ab1343a2ec890d2c1b641061da73ff6f719841",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SergioBenitez",
+        "repo": "homebrew-osxct",
+        "type": "github"
       }
     },
     "spicetify-nix": {
