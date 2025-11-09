@@ -1,43 +1,47 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    alejandra
-    bottom
-    # chatgpt
-    # chatgpt-cli
-    curlie
-    dog
-    duf
-    dust
-    fd
-    fx
-    gawk
-    gnupg
-    go
-    jq
-    kubecolor
-    kubectl
-    kubectx
-    lsd
-    neovim
-    nodejs
-    helm-ls
-    nil
-    nixd
-    # pinentry_mac
-    procs
-    python3
-    redis
-    ripgrep
-    ruff
-    shellcheck
-    shfmt
-    starship
-    stern
-    terraform
-    terragrunt
-    vault
-    viddy
-    yq
-    zoxide
-  ];
+  home.packages = with pkgs;
+    [
+      alejandra
+      bottom
+      curlie
+      dog
+      duf
+      dust
+      fd
+      fx
+      gawk
+      gnupg
+      go
+      jq
+      kubecolor
+      kubectl
+      kubectx
+      lsd
+      neovim
+      nodejs
+      helm-ls
+      nil
+      nixd
+      procs
+      python3
+      redis
+      ripgrep
+      ruff
+      shellcheck
+      shfmt
+      starship
+      stern
+      terraform
+      terragrunt
+      vault
+      viddy
+      yq
+      zoxide
+    ]
+    ++ lib.optionals pkgs.stdenv.isDarwin [
+      chatgpt
+      chatgpt-cli
+      pinentry_mac
+      raycast
+    ];
 }

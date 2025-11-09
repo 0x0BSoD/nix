@@ -1,7 +1,10 @@
 {...}: {
   security = {
     pam.services = {
-      sudo_local.touchIdAuth = true;
+      sudo_local = {
+        touchIdAuth = true;
+        reattach = true;
+      };
     };
   };
 }
