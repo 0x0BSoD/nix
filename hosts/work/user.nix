@@ -15,7 +15,7 @@
         stateVersion = "25.11";
 
         sessionPath = [
-          "$HOME.krew/bin"
+          "$HOME/.krew/bin"
         ];
 
         sessionVariables = {
@@ -42,21 +42,22 @@
       };
 
       imports = [
-        # inputs.zen-browser.homeModules.beta
-        # inputs.spicetify-nix.homeManagerModules.spicetify
+        inputs.zen-browser.homeModules.beta
+        inputs.spicetify-nix.homeManagerModules.spicetify
 
-        ../../modules/common/apps/git/git.homeMac.nix
+        ../../modules/common/apps/git/git.work.nix
 
         ../../modules/common/apps/alacritty.nix
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
+        ../../modules/common/apps/k9s
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
-        # ../../modules/common/apps/zen-browser.nix
-        # ../../modules/common/apps/spicetify.nix
+        ../../modules/common/apps/zen-browser.nix
+        ../../modules/common/apps/spicetify.nix
         ../../modules/common/apps/other.nix
       ];
     };
