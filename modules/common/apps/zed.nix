@@ -3,15 +3,15 @@
     enable = true;
 
     extensions = [
-      "nix"
-      "toml"
-      "terraform"
-      "dockerfile"
-      "zig"
-      "nord-theme"
       "basher"
-      "jsonnet"
+      "dockerfile"
       "helm"
+      "jsonnet"
+      "nix"
+      "nord-theme"
+      "terraform"
+      "toml"
+      "zig"
     ];
 
     userSettings = {
