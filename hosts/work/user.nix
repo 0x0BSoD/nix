@@ -53,6 +53,7 @@
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
         ../../modules/common/apps/k9s
+        ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
