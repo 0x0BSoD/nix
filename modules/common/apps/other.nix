@@ -16,6 +16,7 @@
       kubecolor
       kubectl
       kubectx
+      kubecm
       lsd
       neovim
       nodejs
