@@ -3,7 +3,7 @@
     enable = true;
     config = {
       pager = "never";
-      # theme = "gruvbox-dark";
+      theme = "Nord";
       style = "full";
       color = "always";
       italic-text = "always";

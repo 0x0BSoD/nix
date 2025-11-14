@@ -4,9 +4,9 @@
 
     settings = {
       color_theme = "TTY";
-      theme_background = false;
+      theme_background = true;
       update_ms = 500;
-      rounded_corners = false;
+      rounded_corners = true;
     };
   };
 }

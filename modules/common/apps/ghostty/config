@@ -3,6 +3,8 @@ font-size = 14
 
 theme = Nord
 
+command = ~/.config/ghostty/startup.sh
+
 cursor-style = block
 adjust-cell-height = 35%
 window-padding-balance = true
