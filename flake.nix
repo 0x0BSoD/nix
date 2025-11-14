@@ -33,6 +33,10 @@
       url = "github:SergioBenitez/homebrew-osxct";
       flake = false;
     };
+    darksworm-tap = {
+      url = "github:darksworm/homebrew-tap";
+      flake = false;
+    };
 
     # Other
     ghostty = {

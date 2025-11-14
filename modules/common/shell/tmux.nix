@@ -1,4 +1,31 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  tmux-colors-solarized =
+    pkgs.tmuxPlugins.mkTmuxPlugin
+    {
+      pluginName = "tmux-colors-solarized";
+      version = "4d07f3c";
+      rtpFilePath = "main.tmux";
+      src = pkgs.fetchFromGitHub {
+        owner = "seebi";
+        repo = "tmux-colors-solarized";
+        rev = "4d07f3cc1ce2bdc0c8391290c5b0cf098abddddc";
+        sha256 = "sha256-naOIotyAgUHZ2qSPmvLMkxGeU0/vfQYrFPjO7Coig0g=";
+      };
+    };
+  tmux-dark-notify =
+    pkgs.tmuxPlugins.mkTmuxPlugin
+    {
+      pluginName = "tmux-dark-notify";
+      version = "v0.1.1";
+      rtpFilePath = "main.tmux";
+      src = pkgs.fetchFromGitHub {
+        owner = "erikw";
+        repo = "tmux-dark-notify";
+        rev = "dfa2b45b3edab2fbd6961bdb40b2a7c50fc17060";
+        sha256 = "sha256-naOIotyAgUHZ2qSPmvLMkxGeU0/vfQYrFPjO7Coig0g=";
+      };
+    };
+in {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -6,8 +33,20 @@
     historyLimit = 20000;
     keyMode = "vi";
 
-    plugins = with pkgs; [
-      tmuxPlugins.nord
+    plugins = [
+      {
+        plugin = tmux-colors-solarized;
+        extraConfig = ''
+          set -g @colors-solarized 'light'
+        '';
+      }
+      {
+        plugin = tmux-dark-notify;
+        extraConfig = ''
+          set -g @dark-notify-theme-path-light '$HOME/.config/tmux/plugins/tmux-colors-solarized/tmuxcolors-light.conf'
+          set -g @dark-notify-theme-path-dark '$HOME/.config/tmux/plugins/tmux-colors-solarized/tmuxcolors-dark.conf'
+        '';
+      }
     ];
 
     extraConfig = ''

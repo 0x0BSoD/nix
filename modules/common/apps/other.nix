@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs;
     [
+      argocd
       alejandra
       bottom
       curlie
@@ -12,17 +13,17 @@
       gawk
       gnupg
       go
+      helm-ls
       jq
+      kubecm
       kubecolor
       kubectl
       kubectx
-      kubecm
       lsd
       neovim
-      nodejs
-      helm-ls
       nil
       nixd
+      nodejs
       procs
       python3
       redis

@@ -13,6 +13,7 @@
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "SergioBenitez/osxct" = inputs.sergioBenitez-osxct;
+      "darksworm/homebrew-tap" = inputs.darksworm-tap;
     };
   };
 
@@ -20,6 +21,7 @@
     enable = true;
     casks = [
       "ghostty"
+      "argonaut"
     ];
     brews = [
       "x86_64-unknown-linux-gnu"

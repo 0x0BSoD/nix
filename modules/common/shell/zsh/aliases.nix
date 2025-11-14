@@ -58,5 +58,11 @@
     gta = "git tag -a -m";
     gf = "git reflog";
     gri = "git rebase -i";
+
+    # === Nix ===
+    dfrebuild = "darwin-rebuild switch --verbose --flake ~/Projects/My/_Nix#";
+    nixgc = "nix-collect-garbage";
+    nixup = "nix flake update --flake ~/Projects/My/_Nix";
+    nixarch = "nix flake archive";
   };
 }
