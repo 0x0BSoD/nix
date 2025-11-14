@@ -1,0 +1,9 @@
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+
+theme = Nord
+
+cursor-style = block
+adjust-cell-height = 35%
+window-padding-balance = true
+copy-on-select = clipboard

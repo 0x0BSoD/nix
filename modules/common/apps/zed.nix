@@ -39,7 +39,7 @@
       };
       theme = {
         mode = "system";
-        light = "Nord Light";
+        light = "Nord Dark";
         dark = "Nord Dark";
       };
       minimap = {

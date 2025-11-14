@@ -6,7 +6,7 @@
     rd = "rmdir";
 
     # === Utils and Apps ===
-    cat = "bat -p --theme=Nord";
+    cat = "bat -p";
     cd = "z";
     curl = "curlie";
     grep = "rg";
@@ -60,9 +60,9 @@
     gri = "git rebase -i";
 
     # === Nix ===
-    dfrebuild = "darwin-rebuild switch --verbose --flake ~/Projects/My/_Nix#";
-    nixgc = "nix-collect-garbage";
-    nixup = "nix flake update --flake ~/Projects/My/_Nix";
+    dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
+    nixgc = "sudo nix-collect-garbage";
+    nixup = "sudo nix flake update --flake ~/Projects/My/_Nix";
     nixarch = "nix flake archive";
   };
 }
