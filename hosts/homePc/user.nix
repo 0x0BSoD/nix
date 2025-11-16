@@ -54,7 +54,7 @@
         ## TODO: make config common for instances
         ../../modules/common/apps/git/git.homeMac.nix
 
-        ../../modules/common/apps/alacritty.nix
+        ../../modules/common/apps/ghostty
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
