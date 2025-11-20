@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.bat = {
     enable = true;
     config = {
@@ -8,10 +8,10 @@
       color = "always";
       italic-text = "always";
     };
-    extraPackages = with pkgs.bat-extras; [
-      batman
-      batpipe
-      # batgrep
-    ];
+    # extraPackages = with pkgs.bat-extras; [
+    #   batman
+    #   batpipe
+    #   batgrep
+    # ];
   };
 }

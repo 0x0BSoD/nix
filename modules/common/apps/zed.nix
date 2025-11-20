@@ -12,6 +12,7 @@
       "terraform"
       "toml"
       "zig"
+      "codebook"
     ];
 
     userSettings = {
