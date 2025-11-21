@@ -20,6 +20,7 @@
     enable = true;
     casks = [
       "ghostty"
+      "docker-desktop"
     ];
     brews = [
       "x86_64-unknown-linux-gnu"

@@ -38,6 +38,7 @@
       vault
       viddy
       yq
+      yazi
       zoxide
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [

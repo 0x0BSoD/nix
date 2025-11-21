@@ -1,4 +1,12 @@
 {...}: {
+  launchd.daemons."org.nixos.nix-daemon".serviceConfig = {
+    SoftResourceLimits = {
+      NumberOfFiles = 1048576;
+    };
+    HardResourceLimits = {
+      NumberOfFiles = 1048576;
+    };
+  };
   nix = {
     enable = false;
     settings.experimental-features = "nix-command flakes";
