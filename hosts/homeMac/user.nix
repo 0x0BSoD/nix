@@ -10,12 +10,31 @@
     backupFileExtension = "backup";
 
     users.alex = {
+      pkgs,
+      inputs,
+      ...
+    }: let
+      neovimPkgs = inputs.neovim-flake.inputs.nixpkgs.legacyPackages.${pkgs.system};
+
+      customNeovim = inputs.neovim-flake.lib.neovimConfiguration {
+        pkgs = neovimPkgs;
+        modules = [
+          {
+            config.vim.theme.enable = true;
+          }
+        ];
+      };
+    in {
       programs.home-manager.enable = true;
       home = {
         stateVersion = "25.11";
 
+        packages = [
+          customNeovim
+        ];
+
         sessionVariables = {
-          EDITOR = "vim";
+          EDITOR = "nvim";
           PAGER = "";
 
           GOPATH = "$HOME/Projects/go";
@@ -36,7 +55,7 @@
            --preview 'tree -C {}'";
         };
       };
-
+      # Add Neovim as a user package
       imports = [
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
@@ -48,7 +67,6 @@
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
         ../../modules/common/apps/ghostty
-        ../../modules/common/apps/nvim
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
