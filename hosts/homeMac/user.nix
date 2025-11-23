@@ -48,6 +48,7 @@
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/fzf.nix
         ../../modules/common/apps/ghostty
+        ../../modules/common/apps/nvim
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix

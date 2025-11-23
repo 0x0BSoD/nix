@@ -20,7 +20,6 @@
       kubectl
       kubectx
       lsd
-      neovim
       nil
       nixd
       nodejs
