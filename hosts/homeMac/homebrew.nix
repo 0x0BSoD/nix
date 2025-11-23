@@ -21,6 +21,7 @@
     casks = [
       "ghostty"
       "docker-desktop"
+      "displaylink"
     ];
     brews = [
       "x86_64-unknown-linux-gnu"

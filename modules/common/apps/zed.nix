@@ -9,20 +9,24 @@
       "jsonnet"
       "nix"
       "nord-theme"
+      "catppuccin-icons"
       "terraform"
       "toml"
       "zig"
       "codebook"
+      "context7"
     ];
 
     userSettings = {
-      disable_ai = true;
+      # disable_ai = true;
       base_keymap = "JetBrains";
       vim_mode = true;
       telemetry = {
         diagnostics = false;
         metrics = false;
       };
+      current_line_highlight = "all";
+      soft_wrap = "editor_width";
 
       ## Fonts
       ui_font_size = 14.0;
@@ -34,10 +38,12 @@
       ui_font_family = "JetBrains Mono";
 
       ## Apperance
+      relative_line_numbers = "wrapped";
       indent_guides = {
         enabled = true;
         coloring = "indent_aware";
       };
+      icon_theme = "Catppuccin Frappé";
       theme = {
         mode = "system";
         light = "Nord Dark";
@@ -45,6 +51,17 @@
       };
       minimap = {
         show = "auto";
+      };
+      toolbar = {
+        breadcrumbs = true;
+        quick_actions = false;
+        selections_menu = false;
+      };
+      collaboration_panel = {
+        button = false;
+      };
+      notification_panel = {
+        button = false;
       };
 
       ## ==================
@@ -102,6 +119,13 @@
       ];
 
       languages = {
+        Go = {
+          format_on_save = "on";
+          formatter = "language_server";
+          code_actions_on_format = {
+            "source.organizeImports" = true;
+          };
+        };
         YAML = {
           formatter = "language_server";
         };
@@ -139,7 +163,7 @@
             "-**/node_modules"
             "-**/.git"
           ];
-          gofumpt = true;
+          formatting.gofumpt = true;
           symbolScope = "workspace";
           staticcheck = true;
           templateExtensions = ["tmpl"];
