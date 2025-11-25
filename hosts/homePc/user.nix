@@ -68,6 +68,7 @@
 
         ../../modules/linux/apps/hyprland
         ../../modules/linux/apps/waypaper.nix
+        ../../modules/linux/apps/steam.nix
         ../../modules/linux/apps/other.nix
 
         ../../modules/linux/scripts
