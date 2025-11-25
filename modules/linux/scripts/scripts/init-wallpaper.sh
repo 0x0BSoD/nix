@@ -11,4 +11,4 @@ if ! pgrep -x swww-daemon >/dev/null; then
 fi
 
 # Set wallpaper
-swww img -t none ~/Pictures/wallpapers/tiled.png &
+waypaper --restore &

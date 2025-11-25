@@ -21,5 +21,6 @@
     pipes
     sl
     tty-clock
+    wine
   ];
 }
