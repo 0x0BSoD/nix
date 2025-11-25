@@ -18,7 +18,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # see pc/core/services.nix
     package = null;
     portalPackage = null;
 

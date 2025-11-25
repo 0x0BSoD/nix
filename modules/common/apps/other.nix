@@ -5,7 +5,6 @@
       alejandra
       bottom
       curlie
-      dog
       duf
       dust
       fd

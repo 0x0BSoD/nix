@@ -1,12 +1,14 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     rofi
+    qogir-icon-theme
+    qogir-theme
     imv
     lowfi
     mpv
     wl-clipboard
     xdg-utils
-
+    banana-cursor
     asciiquarium-transparent
     cbonsai
     cmatrix
