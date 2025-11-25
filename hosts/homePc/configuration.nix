@@ -49,5 +49,6 @@
     ../../modules/linux/fonts.nix
     ../../modules/linux/flatpak.nix
     ../../modules/linux/wayland.nix
+    ../../modules/linux/steam.nix
   ];
 }
