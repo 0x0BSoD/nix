@@ -6,7 +6,6 @@
   home.file.".config/ghostty/startup.sh" = {
     text = ''
       #!/usr/bin/env bash
-      export PATH="/etc/profiles/per-user/$USER/bin:$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
       SESSION_NAME="ghostty"
       if tmux has-session -t $SESSION_NAME 2>/dev/null; then
         tmux attach-session -t $SESSION_NAME
