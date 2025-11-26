@@ -24,6 +24,7 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "Qogir-Dark";
+    XCURSOR_THEME = "Banana";
     GRIMBLAST_HIDE_CURSOR = 0;
   };
 }
