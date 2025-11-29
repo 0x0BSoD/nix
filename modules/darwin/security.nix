@@ -3,7 +3,7 @@
     pam.services = {
       sudo_local = {
         touchIdAuth = false;
-        reattach = true;
+        reattach = false;
       };
     };
   };

@@ -59,6 +59,6 @@
     dflrebuild = "sudo darwin-rebuild switch --local --verbose --flake";
     nixgc = "sudo nix-collect-garbage";
     nixup = "sudo nix flake update --flake";
-    nixarch = "nix flake archive";
+    nixarch = "sudo nix flake archive";
   };
 }

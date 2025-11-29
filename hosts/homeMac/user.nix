@@ -14,7 +14,7 @@
       inputs,
       ...
     }: let
-      neovimPkgs = inputs.neovim-flake.inputs.nixpkgs.legacyPackages.${pkgs.system};
+      neovimPkgs = inputs.neovim-flake.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
       customNeovim = inputs.neovim-flake.lib.neovimConfiguration {
         pkgs = neovimPkgs;
@@ -65,7 +65,7 @@
         ../../modules/common/apps/develop/nixdev.nix
         ../../modules/common/apps/develop/go.nix
         ../../modules/common/apps/develop/python.nix
-        # ../../modules/common/apps/develop/nodejs.nix
+        ../../modules/common/apps/develop/nodejs.nix
         ../../modules/common/apps/develop/tools.nix
 
         ../../modules/common/apps/bat.nix
@@ -76,6 +76,7 @@
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
+        # broken?
         # ../../modules/common/apps/spicetify.nix
       ];
     };

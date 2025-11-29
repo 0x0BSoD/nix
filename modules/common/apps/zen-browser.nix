@@ -3,7 +3,7 @@
 
   xdg.mimeApps = let
     value = let
-      zen-browser = zen-browser.packages.${pkgs.system}.beta;
+      zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;
     in
       zen-browser.meta.desktopFileName;
 
