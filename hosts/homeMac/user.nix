@@ -62,17 +62,21 @@
 
         ../../modules/common/apps/git/git.homeMac.nix
 
+        ../../modules/common/apps/develop/nixdev.nix
+        ../../modules/common/apps/develop/go.nix
+        ../../modules/common/apps/develop/python.nix
+        # ../../modules/common/apps/develop/nodejs.nix
+        ../../modules/common/apps/develop/tools.nix
+
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
-        ../../modules/common/apps/fzf.nix
         ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
-        ../../modules/common/apps/other.nix
+        # ../../modules/common/apps/spicetify.nix
       ];
     };
   };

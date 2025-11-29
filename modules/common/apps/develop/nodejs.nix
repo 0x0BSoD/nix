@@ -1,5 +1,3 @@
-{...}: {
-  programs.nodejs = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [nodejs-slim_24];
 }

@@ -1,5 +1,3 @@
-{...}: {
-  programs.go = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [fastfetch];
 }

@@ -2,7 +2,7 @@
   security = {
     pam.services = {
       sudo_local = {
-        touchIdAuth = true;
+        touchIdAuth = false;
         reattach = true;
       };
     };
