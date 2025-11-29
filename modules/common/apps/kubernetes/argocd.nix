@@ -1,0 +1,5 @@
+{...}: {
+  programs.argocd = {
+    enable = true;
+  };
+}

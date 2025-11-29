@@ -1,0 +1,5 @@
+{...}: {
+  programs.stern = {
+    enable = true;
+  };
+}

@@ -1,0 +1,5 @@
+{...}: {
+  programs.nodejs = {
+    enable = true;
+  };
+}

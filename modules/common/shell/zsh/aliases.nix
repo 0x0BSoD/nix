@@ -33,12 +33,7 @@
     # === Teleport ===
     tlt = "tsh login --proxy=teleport.test.env:443 teleport.test.env";
     tlp = "tsh login --proxy=teleport.prod.env:443 teleport.prod.env";
-
-    # === Kubelet ===
-    # kubectl = "kubecolor";
-    # k = "kubecolor";
-    # ctx = "kubectx";
-    # kk = ''k get ns -o custom-columns=":metadata.name" | fzf --bind "enter:become(k9s -n {1} --headless --splashless -c pod)"'';
+    tkl = "tsh kube login";
 
     # === Git ===
     ga = "git add -A";
@@ -61,8 +56,9 @@
 
     # === Nix ===
     dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
+    dflrebuild = "sudo darwin-rebuild switch --local --verbose --flake";
     nixgc = "sudo nix-collect-garbage";
-    nixup = "sudo nix flake update --flake ~/Projects/My/_Nix";
+    nixup = "sudo nix flake update --flake";
     nixarch = "nix flake archive";
   };
 }

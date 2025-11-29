@@ -1,0 +1,5 @@
+{...}: {
+  programs.kubectx = {
+    enable = true;
+  };
+}

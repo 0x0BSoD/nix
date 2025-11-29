@@ -1,7 +1,10 @@
 {...}: {
   imports = [
-    ./zsh/zsh.nix
-    ./zsh/aliases.nix
+    ./zsh
     ./tmux
+    ./fzf.nix
+    ./zoxide.nix
+    ./core-tools.nix
+    ./starship.nix
   ];
 }
