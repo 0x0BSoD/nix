@@ -73,10 +73,10 @@ in {
         # silent clicking = 0, default = 1
         ActuationStrength = 0;
         # enable tap to click
-        Clicking = true;
-        Dragging = true; # tap and a half to drag
+        Clicking = false;
+        Dragging = false; # tap and a half to drag
         # three finger click and drag
-        TrackpadThreeFingerDrag = true;
+        TrackpadThreeFingerDrag = false;
       };
 
       dock = {
@@ -100,7 +100,7 @@ in {
           WebKitDeveloperExtras = true;
           AppleMiniaturizeOnDoubleClick = false;
           NSAutomaticTextCompletionEnabled = true;
-          _HIHideMenuBar = 1;
+          _HIHideMenuBar = 0;
           "com.apple.sound.beep.flash" = false;
         };
         "com.apple.finder" = {

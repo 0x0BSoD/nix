@@ -1,5 +1,5 @@
 {...}: {
-  launchDaemons.ulimitMaxFiles = {
+  environment.launchDaemons.ulimitMaxFiles = {
     enable = true;
     target = "limit.maxfiles"; # suffix .plist
     text = ''
