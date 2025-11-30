@@ -152,6 +152,8 @@
 
       ## ==================
       lsp = {
+        yamlls = {
+        };
         jsonnet-language-server = {
           settings = {
             resolve_paths_with_tanka = true;
@@ -163,7 +165,7 @@
             "-**/node_modules"
             "-**/.git"
           ];
-          formatting.gofumpt = true;
+          gofumpt = true;
           symbolScope = "workspace";
           staticcheck = true;
           templateExtensions = ["tmpl"];

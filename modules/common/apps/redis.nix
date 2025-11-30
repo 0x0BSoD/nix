@@ -1,0 +1,5 @@
+{...}: {
+  programs.redis = {
+    enable = true;
+  };
+}

@@ -35,7 +35,6 @@
   };
 
   imports = [
-    ./zoxide.nix
-    ./starship.nix
+    ./aliases.nix
   ];
 }

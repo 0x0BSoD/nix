@@ -47,7 +47,6 @@
 
         ../../modules/common/apps/git/git.work.nix
 
-        ../../modules/common/apps/alacritty.nix
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix

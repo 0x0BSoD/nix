@@ -21,7 +21,6 @@
     enable = true;
     casks = [
       "ghostty"
-      "argonaut"
     ];
     brews = [
       "x86_64-unknown-linux-gnu"

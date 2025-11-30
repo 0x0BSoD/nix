@@ -9,29 +9,10 @@
     overwriteBackup = true;
     backupFileExtension = "backup";
 
-    users.alex = {
-      pkgs,
-      inputs,
-      ...
-    }: let
-      neovimPkgs = inputs.neovim-flake.inputs.nixpkgs.legacyPackages.${pkgs.system};
-
-      customNeovim = inputs.neovim-flake.lib.neovimConfiguration {
-        pkgs = neovimPkgs;
-        modules = [
-          {
-            config.vim.theme.enable = true;
-          }
-        ];
-      };
-    in {
+    users.alex = {inputs, ...}: {
       programs.home-manager.enable = true;
       home = {
         stateVersion = "25.11";
-
-        packages = [
-          customNeovim
-        ];
 
         sessionVariables = {
           EDITOR = "nvim";
@@ -62,17 +43,25 @@
 
         ../../modules/common/apps/git/git.homeMac.nix
 
+        ../../modules/common/apps/develop/nixdev.nix
+        ../../modules/common/apps/develop/go.nix
+        ../../modules/common/apps/develop/python.nix
+        ../../modules/common/apps/develop/nodejs.nix
+        ../../modules/common/apps/develop/tools.nix
+
+        ../../modules/common/apps/kubernetes/kubectl.nix
+
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
-        ../../modules/common/apps/fzf.nix
+        ../../modules/common/apps/neovim.nix
         ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
-        ../../modules/common/apps/other.nix
+        # broken?
+        # ../../modules/common/apps/spicetify.nix
       ];
     };
   };
