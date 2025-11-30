@@ -44,9 +44,17 @@
       "ghostty"
       "docker-desktop"
       "displaylink"
+      {
+        name = "chatgpt";
+        greedy = true;
+      }
+      "raycast"
     ];
     brews = [
       "x86_64-unknown-linux-gnu"
+      "coreutils"
+      "pam-reattach"
+      "pinentry-mac"
     ];
   };
 }

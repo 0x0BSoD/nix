@@ -9,29 +9,10 @@
     overwriteBackup = true;
     backupFileExtension = "backup";
 
-    users.alex = {
-      pkgs,
-      inputs,
-      ...
-    }: let
-      neovimPkgs = inputs.neovim-flake.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-
-      customNeovim = inputs.neovim-flake.lib.neovimConfiguration {
-        pkgs = neovimPkgs;
-        modules = [
-          {
-            config.vim.theme.enable = true;
-          }
-        ];
-      };
-    in {
+    users.alex = {inputs, ...}: {
       programs.home-manager.enable = true;
       home = {
         stateVersion = "25.11";
-
-        packages = [
-          customNeovim
-        ];
 
         sessionVariables = {
           EDITOR = "nvim";
@@ -73,6 +54,7 @@
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
+        ../../modules/common/apps/neovim.nix
         ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
