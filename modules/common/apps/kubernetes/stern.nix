@@ -1,5 +1,5 @@
-{...}: {
-  programs.stern = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    stern
+  ];
 }

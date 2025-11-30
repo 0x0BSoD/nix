@@ -1,10 +1,3 @@
 {...}: {
-  security = {
-    pam.services = {
-      sudo_local = {
-        touchIdAuth = false;
-        reattach = false;
-      };
-    };
-  };
+  security.pam.enableCustomSudoTouchIdAuth = true;
 }

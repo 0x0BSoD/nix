@@ -1,5 +1,5 @@
-{...}: {
-  programs.kubecm = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    kubecm
+  ];
 }

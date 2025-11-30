@@ -68,6 +68,8 @@
         ../../modules/common/apps/develop/nodejs.nix
         ../../modules/common/apps/develop/tools.nix
 
+        ../../modules/common/apps/kubernetes/kubectl.nix
+
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix

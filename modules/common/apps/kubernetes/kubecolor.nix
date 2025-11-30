@@ -1,5 +1,5 @@
-{...}: {
-  programs.kubecolor = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    kubecolor
+  ];
 }

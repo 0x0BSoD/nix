@@ -1,5 +1,5 @@
-{...}: {
-  programs.argocd = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    argocd
+  ];
 }

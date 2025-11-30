@@ -1,5 +1,5 @@
-{...}: {
-  programs.kubectx = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    kubectx
+  ];
 }
