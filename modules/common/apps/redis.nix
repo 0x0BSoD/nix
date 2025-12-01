@@ -1,5 +1,5 @@
-{...}: {
-  programs.redis = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    redis
+  ];
 }

@@ -1,5 +1,5 @@
-{...}: {
-  programs.vault = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    vault
+  ];
 }

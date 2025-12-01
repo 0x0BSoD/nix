@@ -18,7 +18,7 @@
     ];
 
     userSettings = {
-      # disable_ai = true;
+      disable_ai = true;
       base_keymap = "JetBrains";
       vim_mode = true;
       telemetry = {

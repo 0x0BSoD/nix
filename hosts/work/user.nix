@@ -47,18 +47,33 @@
 
         ../../modules/common/apps/git/git.work.nix
 
+        ../../modules/common/apps/develop/nixdev.nix
+        ../../modules/common/apps/develop/go.nix
+        ../../modules/common/apps/develop/python.nix
+        ../../modules/common/apps/develop/nodejs.nix
+        ../../modules/common/apps/develop/tools.nix
+
+        ../../modules/common/apps/kubernetes/k9s
+        ../../modules/common/apps/kubernetes/kubectl.nix
+        ../../modules/common/apps/kubernetes/kubecolor.nix
+        ../../modules/common/apps/kubernetes/kubecm.nix
+        ../../modules/common/apps/kubernetes/kubectx.nix
+        ../../modules/common/apps/kubernetes/stern.nix
+
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
-        ../../modules/common/apps/fzf.nix
-        ../../modules/common/apps/k9s
+        ../../modules/common/apps/neovim.nix
+        ../../modules/common/apps/terrafrom.nix
+        ../../modules/common/apps/vault.nix
+        ../../modules/common/apps/redis.nix
         ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
-        ../../modules/common/apps/other.nix
+        # broken?
+        # ../../modules/common/apps/spicetify.nix
       ];
     };
   };
