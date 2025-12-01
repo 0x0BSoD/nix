@@ -19,7 +19,7 @@
         ];
 
         sessionVariables = {
-          EDITOR = "vim";
+          EDITOR = "nvim";
           PAGER = "";
 
           GOPATH = "$HOME/Projects/go";
