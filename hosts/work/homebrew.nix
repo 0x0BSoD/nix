@@ -38,10 +38,12 @@
 
     casks = [
       "ghostty"
+      "cutter"
     ];
 
     brews = [
       "x86_64-unknown-linux-gnu"
+      "radare2"
     ];
   };
 }
