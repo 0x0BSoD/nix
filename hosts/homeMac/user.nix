@@ -41,7 +41,7 @@
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
 
-        ../../modules/common/apps/git/git.homeMac.nix
+        ../../modules/common/apps/git/git.home.nix
 
         ../../modules/common/apps/develop/nixdev.nix
         ../../modules/common/apps/develop/go.nix
