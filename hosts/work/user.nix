@@ -72,8 +72,7 @@
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
-        # broken?
-        # ../../modules/common/apps/spicetify.nix
+        ../../modules/common/apps/spicetify.nix
       ];
     };
   };
