@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    helm-ls
-    shellcheck
-    shfmt
+    zig
+    zig-zlint
+    zig-shell-completions
   ];
 }
