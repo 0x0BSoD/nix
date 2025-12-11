@@ -48,7 +48,7 @@
     vicinae.url = "github:vicinaehq/vicinae";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
-    neovim-flake.url = "path:./flakes/neovim";
+    neovim-flake.url = "github:0x0BSoD/nvim-flake";
   };
 
   outputs = {
