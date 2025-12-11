@@ -73,6 +73,7 @@
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
         ../../modules/common/apps/spicetify.nix
+        ../../modules/common/apps/spotify-player.nix
       ];
     };
   };
