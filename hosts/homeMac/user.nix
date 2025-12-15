@@ -45,7 +45,7 @@
 
         ../../modules/common/apps/develop/nixdev.nix
         ../../modules/common/apps/develop/go.nix
-        ../../modules/common/apps/develop/zig.nix
+        # ../../modules/common/apps/develop/zig.nix
         ../../modules/common/apps/develop/python.nix
         ../../modules/common/apps/develop/nodejs.nix
         ../../modules/common/apps/develop/tools.nix
@@ -61,8 +61,8 @@
 
         ../../modules/common/apps/zed.nix
         ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
-        ../../modules/common/apps/spotify-player.nix
+        # ../../modules/common/apps/spicetify.nix
+        # ../../modules/common/apps/spotify-player.nix
       ];
     };
   };

@@ -18,15 +18,19 @@
     ];
 
     userSettings = {
+      vim_mode = true;
+      vim = {
+        use_system_clipboard = "always";
+      };
+
       disable_ai = true;
       base_keymap = "JetBrains";
-      vim_mode = true;
+      current_line_highlight = "all";
+      soft_wrap = "editor_width";
       telemetry = {
         diagnostics = false;
         metrics = false;
       };
-      current_line_highlight = "all";
-      soft_wrap = "editor_width";
 
       ## Fonts
       ui_font_size = 14.0;
@@ -38,10 +42,18 @@
       ui_font_family = "JetBrains Mono";
 
       ## Apperance
+      title_bar = {
+        show_menus = false;
+        show_sign_in = false;
+        show_user_picture = true;
+        show_onboarding_banner = false;
+        show_branch_icon = true;
+        show_branch_name = true;
+      };
       relative_line_numbers = "wrapped";
       indent_guides = {
         enabled = true;
-        coloring = "indent_aware";
+        coloring = "fixed";
       };
       icon_theme = "Catppuccin Frappé";
       theme = {
@@ -63,8 +75,38 @@
       notification_panel = {
         button = false;
       };
+      search = {
+        button = false;
+      };
+      tab_bar = {
+        show_nav_history_buttons = false;
+        show_tab_bar_buttons = false;
+      };
+      git_panel = {
+        collapse_untracked_diff = true;
+        sort_by_path = true;
+        fallback_branch_name = "master";
+        button = true;
+      };
+      tabs = {
+        git_status = true;
+        file_icons = true;
+        show_diagnostics = "errors";
+      };
+      centered_layout = {
+        left_padding = 0.15;
+        right_padding = 0.15;
+      };
 
       ## ==================
+      git = {
+        inline_blame = {
+          enabled = true;
+          delay_ms = 500;
+          min_column = 80;
+        };
+      };
+
       inlay_hints = {
         enabled = true;
       };
