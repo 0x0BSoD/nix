@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     greetd.tuigreet
+    cifs-utils
   ];
 
   users.users.greeter = {
@@ -53,14 +54,6 @@
       # don’t shutdown when power button is short-pressed
       HandlePowerKey = "ignore";
     };
-
-    # xserver.enable = true;
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-    # xserver.xkb = {
-    #   layout = "us";
-    #   variant = "";
-    # };
 
     # Sound
     pulseaudio.enable = false;

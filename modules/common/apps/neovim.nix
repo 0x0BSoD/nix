@@ -1,11 +1,13 @@
 {
   pkgs,
-  inputs,
+  #inputs,
   ...
-}: let
-  nvimPkg = inputs.neovim-flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in {
-  home.packages = [
-    nvimPkg
+  #}: let
+  # nvimPkg = inputs.neovim-flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  #in {
+}: {
+  home.packages = with pkgs; [
+    neovim
+    neovide
   ];
 }
