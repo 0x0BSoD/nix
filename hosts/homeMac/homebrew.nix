@@ -55,6 +55,8 @@
       "coreutils"
       "pam-reattach"
       "pinentry-mac"
+      "docker-compose"
+      "goose"
     ];
   };
 }

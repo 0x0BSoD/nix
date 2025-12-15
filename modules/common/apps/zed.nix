@@ -15,6 +15,7 @@
       "zig"
       "codebook"
       "context7"
+      "sql"
     ];
 
     userSettings = {
