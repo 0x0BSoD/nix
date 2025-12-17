@@ -22,5 +22,7 @@
     sl
     tty-clock
     wine
+    libgcc
+    gcc
   ];
 }

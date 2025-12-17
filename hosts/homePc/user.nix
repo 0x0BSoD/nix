@@ -65,6 +65,7 @@
         ../../modules/common/apps/audacious.nix
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
+        ../../modules/common/apps/docker.nix
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/kew.nix
         ../../modules/common/apps/neovim.nix
