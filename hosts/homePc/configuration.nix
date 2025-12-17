@@ -9,6 +9,8 @@
   time.timeZone = "Asia/Nicosia";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  virtualisation.docker.enable = true;
+
   nix = {
     settings = {
       auto-optimise-store = true;

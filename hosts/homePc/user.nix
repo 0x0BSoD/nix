@@ -68,7 +68,7 @@
         ../../modules/common/apps/docker.nix
         ../../modules/common/apps/delta.nix
         ../../modules/common/apps/kew.nix
-        ../../modules/common/apps/neovim.nix
+        # ../../modules/common/apps/neovim.nix
         ../../modules/common/apps/ghostty
         ../../modules/common/shell
 
