@@ -38,12 +38,14 @@
 
     casks = [
       "ghostty"
-      "cutter"
+      "blackhole-16ch"
+      # "cutter" # Reverse
     ];
 
     brews = [
       "x86_64-unknown-linux-gnu"
-      "radare2"
+      # "radare2" # Reverse
+      "portaudio"
     ];
   };
 }

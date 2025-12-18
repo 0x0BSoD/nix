@@ -25,6 +25,8 @@
           GOPATH = "$HOME/Projects/go";
           GO111MODULE = "on";
 
+          _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+
           FZF_CTRL_R_OPTS = "
        --preview 'echo {}' --preview-window up:3:hidden:wrap
        --bind 'ctrl-/:toggle-preview'
@@ -49,6 +51,7 @@
 
         ../../modules/common/apps/develop/nixdev.nix
         ../../modules/common/apps/develop/go.nix
+        ../../modules/common/apps/develop/java.nix
         ../../modules/common/apps/develop/python.nix
         ../../modules/common/apps/develop/nodejs.nix
         ../../modules/common/apps/develop/tools.nix
@@ -63,7 +66,7 @@
         ../../modules/common/apps/bat.nix
         ../../modules/common/apps/btop.nix
         ../../modules/common/apps/delta.nix
-        ../../modules/common/apps/neovim.nix
+        # ../../modules/common/apps/neovim.nix
         ../../modules/common/apps/terrafrom.nix
         ../../modules/common/apps/vault.nix
         ../../modules/common/apps/redis.nix
