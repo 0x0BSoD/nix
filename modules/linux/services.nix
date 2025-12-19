@@ -1,15 +1,14 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    greetd.tuigreet
     cifs-utils
+    (pkgs.catppuccin-sddm.override
+      {
+        flavor = "macchiato";
+        accent = "mauve";
+        font = "JetBrainsMono";
+        fontSize = "9";
+      })
   ];
-
-  users.users.greeter = {
-    isNormalUser = false;
-    description = "greetd greeter user";
-    extraGroups = ["video" "audio"];
-    linger = true;
-  };
 
   services = {
     # Other
@@ -23,17 +22,11 @@
     tumbler.enable = true;
     hypridle.enable = true;
 
-    greetd = {
+    displayManager.sddm = {
       enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet \
-              --time --time-format '%I:%M %p | %a • %h | %F' \
-              --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red \
-              --cmd 'uwsm start hyprland'";
-          user = "greeter";
-        };
-      };
+      theme = "catppuccin-macchiato-mauve";
+      package = pkgs.kdePackages.sddm;
+      wayland.enable = true;
     };
 
     # GUI
