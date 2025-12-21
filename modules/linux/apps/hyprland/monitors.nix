@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland = {
-    settings.monitor = [",preferred,auto,1"];
+    settings.monitor = [",preferred,auto,1,bitdepth,8"];
 
     extraConfig = ''
       # hyprlang noerror true

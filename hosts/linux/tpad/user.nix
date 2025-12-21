@@ -30,6 +30,7 @@
 
           NIXOS_OZONE_WL = 1;
           WLR_NO_HARDWARE_CURSORS = 1;
+          MOZ_ENABLE_WAYLAND = 1;
 
           FZF_CTRL_R_OPTS = "
        --preview 'echo {}' --preview-window up:3:hidden:wrap
@@ -62,14 +63,13 @@
 
         ../../../modules/common/apps/kubernetes/kubectl.nix
 
-        # ../../modules/common/apps/audacious.nix
         ../../../modules/common/apps/bat.nix
         ../../../modules/common/apps/btop.nix
-        # ../../modules/common/apps/docker.nix
+        ../../../modules/common/apps/docker.nix
         ../../../modules/common/apps/delta.nix
-        # ../../modules/common/apps/kew.nix
         ../../../modules/common/apps/neovim.nix
         ../../../modules/common/apps/obsidian.nix
+        ../../../modules/common/apps/telegram.nix
         ../../../modules/common/apps/ghostty
         ../../../modules/common/shell
 

@@ -22,7 +22,6 @@
     tumbler.enable = true;
     hypridle.enable = true;
     tlp.enable = true;
-    xserver.libinput.enable = true;
 
     displayManager.sddm = {
       enable = true;
@@ -69,6 +68,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
+      wireplumber.enable = true;
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
