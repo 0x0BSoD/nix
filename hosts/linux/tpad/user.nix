@@ -52,41 +52,41 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
 
         ## TODO: make config common for instances
-        ../../modules/common/apps/git/git.home.nix
+        ../../../modules/common/apps/git/git.home.nix
 
-        ../../modules/common/apps/develop/nixdev.nix
-        ../../modules/common/apps/develop/go.nix
-        ../../modules/common/apps/develop/python.nix
-        ../../modules/common/apps/develop/nodejs.nix
-        ../../modules/common/apps/develop/tools.nix
+        ../../../modules/common/apps/develop/nixdev.nix
+        ../../../modules/common/apps/develop/go.nix
+        ../../../modules/common/apps/develop/python.nix
+        ../../../modules/common/apps/develop/nodejs.nix
+        ../../../modules/common/apps/develop/tools.nix
 
-        ../../modules/common/apps/kubernetes/kubectl.nix
+        ../../../modules/common/apps/kubernetes/kubectl.nix
 
         # ../../modules/common/apps/audacious.nix
-        ../../modules/common/apps/bat.nix
-        ../../modules/common/apps/btop.nix
+        ../../../modules/common/apps/bat.nix
+        ../../../modules/common/apps/btop.nix
         # ../../modules/common/apps/docker.nix
-        ../../modules/common/apps/delta.nix
+        ../../../modules/common/apps/delta.nix
         # ../../modules/common/apps/kew.nix
-        ../../modules/common/apps/neovim.nix
-        ../../modules/common/apps/obsidian.nix
-        ../../modules/common/apps/ghostty
-        ../../modules/common/shell
+        ../../../modules/common/apps/neovim.nix
+        ../../../modules/common/apps/obsidian.nix
+        ../../../modules/common/apps/ghostty
+        ../../../modules/common/shell
 
-        ../../modules/common/apps/zed.nix
-        ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
+        ../../../modules/common/apps/zed.nix
+        ../../../modules/common/apps/zen-browser.nix
+        ../../../modules/common/apps/spicetify.nix
 
-        ../../modules/linux/apps/hyprland
-        ../../modules/linux/apps/waypaper.nix
-        ../../modules/linux/apps/gtk.nix
-        ../../modules/linux/apps/gnome.nix
-        ../../modules/linux/apps/swaylock.nix
-        ../../modules/linux/apps/swayosd.nix
-        ../../modules/linux/apps/nemo.nix
-        ../../modules/linux/apps/other.nix
+        ../../../modules/linux/apps/hyprland
+        ../../../modules/linux/apps/waypaper.nix
+        ../../../modules/linux/apps/gtk.nix
+        ../../../modules/linux/apps/gnome.nix
+        ../../../modules/linux/apps/swaylock.nix
+        ../../../modules/linux/apps/swayosd.nix
+        ../../../modules/linux/apps/nemo.nix
+        ../../../modules/linux/apps/other.nix
 
-        ../../modules/linux/scripts
+        ../../../modules/linux/scripts
       ];
     };
   };

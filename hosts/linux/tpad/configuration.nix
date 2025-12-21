@@ -82,16 +82,16 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/linux/boot.nix
-    ../../modules/linux/bluetooth.nix
-    ../../modules/linux/security.nix
-    ../../modules/linux/services.nix
-    ../../modules/linux/video.nix
-    ../../modules/linux/fingerprint-scanner.nix
+    ../../../modules/linux/boot.nix
+    ../../../modules/linux/bluetooth.nix
+    ../../../modules/linux/security.nix
+    ../../../modules/linux/services.nix
+    ../../../modules/linux/video.nix
+    ../../../modules/linux/fingerprint-scanner.nix
 
-    ../../modules/linux/fonts.nix
-    ../../modules/linux/flatpak.nix
-    ../../modules/linux/wayland.nix
-    ../../modules/linux/steam.nix
+    ../../../modules/linux/fonts.nix
+    ../../../modules/linux/flatpak.nix
+    ../../../modules/linux/wayland.nix
+    ../../../modules/linux/steam.nix
   ];
 }

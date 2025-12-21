@@ -15,10 +15,6 @@
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # mac-app-util = {
-    #   url = "github:hraban/mac-app-util";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     ## Homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-core = {
@@ -71,7 +67,6 @@
             ({config, ...}: {
               homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
             })
-            # inputs.mac-app-util.darwinModules.default
           ];
       };
 
@@ -88,27 +83,27 @@
       };
   in {
     darwinConfigurations = {
-      exness = mkDarwin "aleksandr.simonov" [
-        ./hosts/work/configuration.nix
-        ./hosts/work/homebrew.nix
-        ./hosts/work/user.nix
+      work = mkDarwin "aleksandr.simonov" [
+        ./hosts/darwin/work/configuration.nix
+        ./hosts/darwin/work/homebrew.nix
+        ./hosts/darwin/work/user.nix
       ];
-      homeMac = mkDarwin "alex" [
-        ./hosts/homeMac/configuration.nix
-        ./hosts/homeMac/homebrew.nix
-        ./hosts/homeMac/user.nix
-      ];
-    };
-    nixosConfigurations = {
-      homePc = mkNixos "alex" [
-        ./hosts/homePc/configuration.nix
-        ./hosts/homePc/user.nix
+      macbook = mkDarwin "alex" [
+        ./hosts/darwin/home/configuration.nix
+        ./hosts/darwin/home/homebrew.nix
+        ./hosts/darwin/home/user.nix
       ];
     };
     nixosConfigurations = {
-      homeTpad = mkNixos "alex" [
-        ./hosts/homeTpad/configuration.nix
-        ./hosts/homeTpad/user.nix
+      blackrock = mkNixos "alex" [
+        ./hosts/linux/blackrock/configuration.nix
+        ./hosts/linux/blackrock/user.nix
+      ];
+    };
+    nixosConfigurations = {
+      tpad = mkNixos "alex" [
+        ./hosts/linux/tpad/configuration.nix
+        ./hosts/linux/tpad/user.nix
       ];
     };
   };
