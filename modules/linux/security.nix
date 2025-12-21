@@ -1,5 +1,17 @@
 {pkgs, ...}: {
   security = {
+    polkit = {
+      enable = true;
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          if (action.id == "net.reactivated.fprint.device.enroll" ||
+              action.id == "net.reactivated.fprint.device.verify") {
+            return polkit.Result.YES;
+          }
+        });
+      '';
+    };
+
     pam.services = {
       swaylock = {};
       sudo.fprintAuth = true;
@@ -11,10 +23,9 @@
     };
     sudo = {
       enable = true;
-      wheelNeedsPassword = false;
+      # wheelNeedsPassword = false;
     };
     rtkit.enable = true;
-    polkit.enable = true;
     apparmor = {
       enable = true;
       killUnconfinedConfinables = true;

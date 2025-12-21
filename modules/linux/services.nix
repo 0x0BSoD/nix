@@ -21,6 +21,8 @@
     blueman.enable = true;
     tumbler.enable = true;
     hypridle.enable = true;
+    tlp.enable = true;
+    xserver.libinput.enable = true;
 
     displayManager.sddm = {
       enable = true;
@@ -54,6 +56,9 @@
     logind.settings.Login = {
       # don’t shutdown when power button is short-pressed
       HandlePowerKey = "ignore";
+      lidSwitch = "suspend";
+      lidSwitchExternalPower = "ignore";
+      lidSwitchDocked = "ignore";
     };
 
     # Sound
