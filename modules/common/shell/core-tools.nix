@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     curlie
     duf
+    bottom
     dust
     fd
     fx

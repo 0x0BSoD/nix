@@ -23,7 +23,6 @@
 
     xwayland = {
       enable = true;
-      # hidpi = true;
     };
     systemd.enable = true;
   };

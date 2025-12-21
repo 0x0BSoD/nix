@@ -105,5 +105,11 @@
         ./hosts/homePc/user.nix
       ];
     };
+    nixosConfigurations = {
+      homeTpad = mkNixos "alex" [
+        ./hosts/homeTpad/configuration.nix
+        ./hosts/homeTpad/user.nix
+      ];
+    };
   };
 }

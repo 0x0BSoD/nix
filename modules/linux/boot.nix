@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   boot = {
     tmp.cleanOnBoot = true;
     loader.timeout = 2;
@@ -76,7 +80,14 @@
       "rd.udev.log_level=3"
       "plymouth.use-simpledrm"
     ];
-    kernelModules = ["tcp_bbr"];
+    kernelModules = ["tcp_bbr" "acpi_call"];
+
+    extraModulePackages = with config.boot.kernelPackages;
+      [
+        acpi_call
+        cpupower
+      ]
+      ++ [pkgs.cpupower-gui];
 
     loader = {
       efi.canTouchEfiVariables = true;

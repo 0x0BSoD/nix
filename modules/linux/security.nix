@@ -1,6 +1,14 @@
 {pkgs, ...}: {
   security = {
-    pam.services.hyprlock.text = "auth include login";
+    pam.services = {
+      swaylock = {};
+      sudo.fprintAuth = true;
+      hyprlock = {
+        fprintAuth = true;
+        text = "auth include login";
+      };
+      login.fprintAuth = true;
+    };
     sudo = {
       enable = true;
       wheelNeedsPassword = false;

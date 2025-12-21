@@ -8,7 +8,7 @@
       "helm"
       "jsonnet"
       "nix"
-      "nord-theme"
+      "nord"
       "catppuccin-icons"
       "terraform"
       "toml"

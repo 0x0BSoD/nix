@@ -24,6 +24,7 @@
       "tray"
       "memory"
       "cpu"
+      "battery"
       "network"
       "pulseaudio"
     ];
@@ -122,6 +123,23 @@
       tooltip-format-disconnected = "Disconnected";
       format-alt = "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
       interval = 2;
+    };
+
+    battery = {
+      bat = "BAT0";
+      interval = 60;
+      states = {
+        warning = 30;
+        critical = 15;
+      };
+      events = {
+        on-discharging-warning = "notify-send -u normal 'Low Battery'";
+        on-discharging-critical = "notify-send -u critical 'Very Low Battery'";
+        on-charging-100 = "notify-send -u normal 'Battery Full!'";
+      };
+      format = "{capacity}% {icon}";
+      format-icons = ["" "" "" "" ""];
+      max-length = 25;
     };
   };
 }
