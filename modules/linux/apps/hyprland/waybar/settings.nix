@@ -2,18 +2,20 @@
   programs.waybar.settings.mainBar = {
     position = "top";
     layer = "top";
-    mode = "dock";
-    exclusive = true;
-    passthrough = false;
-    gtk-layer-shell = true;
 
-    height = 0;
+    spacing = 4;
 
-    margin-bottom = 10;
+    # mode = "dock";
+    # exclusive = true;
+    # passthrough = false;
+    # gtk-layer-shell = true;
+    # height = 0;
+    # margin-bottom = 10;
 
     modules-left = [
-      "clock"
       "hyprland/workspaces"
+      "cpu"
+      "memory"
     ];
 
     modules-center = [
@@ -21,36 +23,68 @@
     ];
 
     modules-right = [
-      "tray"
-      "memory"
-      "cpu"
-      "battery"
-      "network"
+      "network#spd"
       "pulseaudio"
+      "network"
+      "tray"
+      "battery"
+      "clock"
     ];
 
     #================================
+    wireplumber = {
+      scroll-step = 10;
+      format = "{volume}% {icon}  ";
+      format-bluetooth = "{icon} {volume}%";
+      format-muted = "muted ";
+      on-click = "pavucontrol";
+      format-icons = {
+        headphones = "";
+        handsfree = "";
+        headset = "";
+        phone = "";
+        portable = "";
+        car = "";
+        default = [
+          ""
+          "󰓃"
+        ];
+      };
+    };
+
+    backlight = {
+      device = "intel_backlight";
+      format = "{percent}% {icon}";
+      format-icons = ["" ""];
+    };
 
     "hyprland/window" = {
-      format = "󰣇 {}";
+      icon = false;
+      separate-outputs = true;
+      format = "{}";
     };
 
     "hyprland/workspaces" = {
       disable-scroll = true;
       all-outputs = true;
       on-click = "activate";
+      format = "{name}";
+      persistent-workspaces = {
+        "1" = [];
+        "2" = [];
+        "3" = [];
+      };
     };
 
     tray = {
-      icon-size = 13;
-      spacing = 10;
+      icon-size = 15;
+      spacing = 7;
     };
 
     clock = {
-      format = "{:%A    %B-%d-%Y    %I:%M:%S %p}";
-      interval = 1;
-      rotate = 0;
-      tooltip-format = "<tt>{calendar}</tt>";
+      format = "{:%H:%M}";
+      format-alt = "{:%A, %B %d, %Y (%R)}";
+      tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
         mode = "month";
         mode-mon-col = 3;
@@ -107,15 +141,14 @@
     };
 
     cpu = {
-      interval = 10;
-      format = "󰍛 {usage}%";
-      format-alt = "{icon0}{icon1}{icon2}{icon3}";
+      interval = 1;
+      format = "CPU {usage:>2}% {icon0}{icon1}{icon2}{icon3}";
       format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
     };
 
     network = {
       tooltip = true;
-      format-wifi = "  {essid}";
+      format-wifi = "   {essid}";
       format-ethernet = "󰈀 ";
       tooltip-format = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
       format-linked = "󰈀 {ifname} (No IP)";
@@ -123,6 +156,13 @@
       tooltip-format-disconnected = "Disconnected";
       format-alt = "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
       interval = 2;
+    };
+
+    "network#spd" = {
+      interval = 1;
+      format = "{ifname}";
+      format-wifi = " {bandwidthDownBytes}  {bandwidthUpBytes}";
+      format-ethernet = " {bandwidthDownBytes}  {bandwidthUpBytes}";
     };
 
     battery = {
