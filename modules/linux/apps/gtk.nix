@@ -8,29 +8,25 @@
     twemoji-color-font
     noto-fonts-color-emoji
     fantasque-sans-mono
+    banana-cursor
+    catppuccin-kvantum
   ];
 
   gtk = {
     enable = true;
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     font = {
-      name = "Maple Mono";
+      name = "JetBrainsMono";
       size = 12;
     };
     theme = {
-      name = "Colloid-Green-Dark-Gruvbox";
-      package = pkgs.colloid-gtk-theme.override {
-        colorVariants = ["dark"];
-        themeVariants = ["green"];
-        tweaks = [
-          "gruvbox"
-          "rimless"
-          "float"
-        ];
-      };
+      name = "catppuccin-macchiato-blue-standard+default";
+      package = pkgs.catppuccin-kvantum;
     };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override {color = "green";};
+      package = pkgs.papirus-icon-theme.override {color = "blue";};
     };
     cursorTheme = {
       name = "Banana";
@@ -41,7 +37,7 @@
 
   home.pointerCursor = {
     name = "Banana";
-    package = pkgs.bibata-cursors;
+    package = pkgs.banana-cursor;
     size = 24;
   };
 }

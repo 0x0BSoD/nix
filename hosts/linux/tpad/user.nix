@@ -28,10 +28,6 @@
           GOPATH = "$HOME/Projects/go";
           GO111MODULE = "on";
 
-          NIXOS_OZONE_WL = 1;
-          WLR_NO_HARDWARE_CURSORS = 1;
-          MOZ_ENABLE_WAYLAND = 1;
-
           FZF_CTRL_R_OPTS = "
        --preview 'echo {}' --preview-window up:3:hidden:wrap
        --bind 'ctrl-/:toggle-preview'
@@ -46,6 +42,12 @@
            --walker-skip .git,node_modules,target
            --preview 'tree -C {}'";
         };
+      };
+
+      qt = {
+        enable = true;
+        platformTheme.name = "qtct";
+        style.name = "kvantum";
       };
 
       imports = [
@@ -80,6 +82,7 @@
         ../../../modules/linux/apps/hyprland
         ../../../modules/linux/apps/waypaper.nix
         ../../../modules/linux/apps/gtk.nix
+        ../../../modules/linux/apps/qt.nix
         ../../../modules/linux/apps/gnome.nix
         ../../../modules/linux/apps/swaylock.nix
         ../../../modules/linux/apps/swayosd.nix

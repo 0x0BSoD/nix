@@ -8,7 +8,6 @@
     mpv
     wl-clipboard
     xdg-utils
-    banana-cursor
     asciiquarium-transparent
     cbonsai
     cmatrix
