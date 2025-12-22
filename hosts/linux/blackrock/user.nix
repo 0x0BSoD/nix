@@ -24,31 +24,6 @@ in {
         stateVersion = "25.11";
         username = "alex";
         homeDirectory = "/home/alex";
-
-        sessionVariables = {
-          EDITOR = "vim";
-          PAGER = "";
-
-          GOPATH = "$HOME/Projects/go";
-          GO111MODULE = "on";
-
-          NIXOS_OZONE_WL = 1;
-          WLR_NO_HARDWARE_CURSORS = 1;
-
-          FZF_CTRL_R_OPTS = "
-       --preview 'echo {}' --preview-window up:3:hidden:wrap
-       --bind 'ctrl-/:toggle-preview'
-       --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-       --color header:italic
-       --header 'Press CTRL-Y to copy command into clipboard'";
-          FZF_CTRL_T_OPTS = "
-         --walker-skip .git,node_modules,target
-         --preview 'bat -n --color=always {}'
-         --bind 'ctrl-/:change-preview-window(down|hidden|)'";
-          FZF_ALT_C_OPTS = "
-           --walker-skip .git,node_modules,target
-           --preview 'tree -C {}'";
-        };
       };
 
       imports = [
@@ -81,6 +56,7 @@ in {
         ./${appsPath}/spicetify.nix
 
         ./${linuxPath}/hyprland
+        ./${linuxPath}/session-vars.nix
         ./${linuxPath}/waypaper.nix
         ./${linuxPath}/gtk.nix
         ./${linuxPath}/qt.nix
@@ -90,7 +66,7 @@ in {
         ./${linuxPath}/nemo.nix
         ./${linuxPath}/other.nix
 
-        ../../modules/linux/scripts
+        ../../../modules/linux/scripts
       ];
     };
   };
