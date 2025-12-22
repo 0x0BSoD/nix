@@ -56,7 +56,6 @@ in {
         ./${appsPath}/spicetify.nix
 
         ./${linuxPath}/hyprland
-        ./${linuxPath}/session-vars.nix
         ./${linuxPath}/waypaper.nix
         ./${linuxPath}/gtk.nix
         ./${linuxPath}/qt.nix
@@ -66,6 +65,7 @@ in {
         ./${linuxPath}/nemo.nix
         ./${linuxPath}/other.nix
 
+        ../../../modules/linux/session-vars.nix
         ../../../modules/linux/scripts
       ];
     };

@@ -96,12 +96,14 @@
     };
     nixosConfigurations = {
       blackrock = mkNixos "alex" [
+        ./hosts/linux/common.nix
         ./hosts/linux/blackrock/configuration.nix
         ./hosts/linux/blackrock/user.nix
       ];
     };
     nixosConfigurations = {
       tpad = mkNixos "alex" [
+        ./hosts/linux/common.nix
         ./hosts/linux/tpad/configuration.nix
         ./hosts/linux/tpad/user.nix
       ];
