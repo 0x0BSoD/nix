@@ -1,4 +1,11 @@
-{inputs, ...}: {
+{inputs, ...}: let
+  appsPath = "../../../modules/common/apps";
+in {
+  users.users."aleksandr.simonov" = {
+    name = "aleksandr.simonov";
+    home = "/Users/aleksandr.simonov";
+  };
+
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -28,18 +35,18 @@
           _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
 
           FZF_CTRL_R_OPTS = "
-       --preview 'echo {}' --preview-window up:3:hidden:wrap
-       --bind 'ctrl-/:toggle-preview'
-       --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-       --color header:italic
-       --header 'Press CTRL-Y to copy command into clipboard'";
+            --preview 'echo {}' --preview-window up:3:hidden:wrap
+            --bind 'ctrl-/:toggle-preview'
+            --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+            --color header:italic
+            --header 'Press CTRL-Y to copy command into clipboard'";
           FZF_CTRL_T_OPTS = "
-         --walker-skip .git,node_modules,target
-         --preview 'bat -n --color=always {}'
-         --bind 'ctrl-/:change-preview-window(down|hidden|)'";
+            --walker-skip .git,node_modules,target
+            --preview 'bat -n --color=always {}'
+            --bind 'ctrl-/:change-preview-window(down|hidden|)'";
           FZF_ALT_C_OPTS = "
-           --walker-skip .git,node_modules,target
-           --preview 'tree -C {}'";
+            --walker-skip .git,node_modules,target
+            --preview 'tree -C {}'";
         };
       };
 
@@ -47,41 +54,36 @@
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
 
-        ../../modules/common/apps/git/git.work.nix
+        ./${appsPath}/git/git.work.nix
 
-        ../../modules/common/apps/develop/nixdev.nix
-        ../../modules/common/apps/develop/go.nix
-        ../../modules/common/apps/develop/java.nix
-        ../../modules/common/apps/develop/python.nix
-        ../../modules/common/apps/develop/nodejs.nix
-        ../../modules/common/apps/develop/tools.nix
+        ./${appsPath}/develop/nixdev.nix
+        ./${appsPath}/develop/go.nix
+        ./${appsPath}/develop/java.nix
+        ./${appsPath}/develop/python.nix
+        ./${appsPath}/develop/nodejs.nix
+        ./${appsPath}/develop/tools.nix
 
-        ../../modules/common/apps/kubernetes/k9s
-        ../../modules/common/apps/kubernetes/kubectl.nix
-        ../../modules/common/apps/kubernetes/kubecolor.nix
-        ../../modules/common/apps/kubernetes/kubecm.nix
-        ../../modules/common/apps/kubernetes/kubectx.nix
-        ../../modules/common/apps/kubernetes/stern.nix
+        ./${appsPath}/kubernetes/k9s
+        ./${appsPath}/kubernetes/kubectl.nix
+        ./${appsPath}/kubernetes/kubecm.nix
+        ./${appsPath}/kubernetes/kubectx.nix
+        ./${appsPath}/kubernetes/stern.nix
 
-        ../../modules/common/apps/bat.nix
-        ../../modules/common/apps/btop.nix
-        ../../modules/common/apps/delta.nix
-        # ../../modules/common/apps/neovim.nix
-        ../../modules/common/apps/terrafrom.nix
-        ../../modules/common/apps/vault.nix
-        ../../modules/common/apps/redis.nix
-        ../../modules/common/apps/ghostty
-        ../../modules/common/shell
+        ./${appsPath}/bat.nix
+        ./${appsPath}/btop.nix
+        ./${appsPath}/delta.nix
+        ./${appsPath}/neovim.nix
+        ./${appsPath}/terrafrom.nix
+        ./${appsPath}/vault.nix
+        ./${appsPath}/redis.nix
+        ./${appsPath}/ghostty
+        ./${appsPath}/common/shell
 
-        ../../modules/common/apps/zed.nix
-        ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
-        ../../modules/common/apps/spotify-player.nix
+        ./${appsPath}/zed.nix
+        ./${appsPath}/zen-browser.nix
+        ./${appsPath}/spicetify.nix
+        ./${appsPath}/spotify-player.nix
       ];
     };
-  };
-  users.users."aleksandr.simonov" = {
-    name = "aleksandr.simonov";
-    home = "/Users/aleksandr.simonov";
   };
 }
