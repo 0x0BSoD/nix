@@ -23,7 +23,6 @@
     };
     sudo = {
       enable = true;
-      # wheelNeedsPassword = false;
     };
     rtkit.enable = true;
     apparmor = {

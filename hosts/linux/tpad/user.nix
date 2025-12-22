@@ -2,8 +2,12 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  appsPath = "../../../modules/common/apps";
+  linuxPath = "../../../modules/linux/apps";
+in {
   programs.dconf.enable = true;
+
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -52,28 +56,6 @@
         stateVersion = "25.11";
         username = "alex";
         homeDirectory = "/home/alex";
-
-        sessionVariables = {
-          EDITOR = "vim";
-          PAGER = "";
-
-          GOPATH = "$HOME/Projects/go";
-          GO111MODULE = "on";
-
-          FZF_CTRL_R_OPTS = "
-       --preview 'echo {}' --preview-window up:3:hidden:wrap
-       --bind 'ctrl-/:toggle-preview'
-       --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-       --color header:italic
-       --header 'Press CTRL-Y to copy command into clipboard'";
-          FZF_CTRL_T_OPTS = "
-         --walker-skip .git,node_modules,target
-         --preview 'bat -n --color=always {}'
-         --bind 'ctrl-/:change-preview-window(down|hidden|)'";
-          FZF_ALT_C_OPTS = "
-           --walker-skip .git,node_modules,target
-           --preview 'tree -C {}'";
-        };
       };
 
       qt = {
@@ -87,39 +69,40 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
 
         ## TODO: make config common for instances
-        ../../../modules/common/apps/git/git.home.nix
+        ./${appsPath}/git/git.home.nix
 
-        ../../../modules/common/apps/develop/nixdev.nix
-        ../../../modules/common/apps/develop/go.nix
-        ../../../modules/common/apps/develop/python.nix
-        ../../../modules/common/apps/develop/nodejs.nix
-        ../../../modules/common/apps/develop/tools.nix
+        ./${appsPath}/develop/nixdev.nix
+        ./${appsPath}/develop/go.nix
+        ./${appsPath}/develop/python.nix
+        ./${appsPath}/develop/nodejs.nix
+        ./${appsPath}/develop/tools.nix
 
-        ../../../modules/common/apps/kubernetes/kubectl.nix
+        ./${appsPath}/kubernetes/kubectl.nix
 
-        ../../../modules/common/apps/bat.nix
-        ../../../modules/common/apps/btop.nix
-        ../../../modules/common/apps/docker.nix
-        ../../../modules/common/apps/delta.nix
-        ../../../modules/common/apps/neovim.nix
-        ../../../modules/common/apps/obsidian.nix
-        ../../../modules/common/apps/telegram.nix
-        ../../../modules/common/apps/ghostty
-        ../../../modules/common/apps/shell
+        ./${appsPath}/bat.nix
+        ./${appsPath}/btop.nix
+        ./${appsPath}/docker.nix
+        ./${appsPath}/delta.nix
+        ./${appsPath}/neovim.nix
+        ./${appsPath}/obsidian.nix
+        ./${appsPath}/telegram.nix
+        ./${appsPath}/ghostty
+        ./${appsPath}/shell
 
-        ../../../modules/common/apps/zed.nix
-        ../../../modules/common/apps/zen-browser.nix
-        ../../../modules/common/apps/spicetify.nix
+        ./${appsPath}/zed.nix
+        ./${appsPath}/zen-browser.nix
+        ./${appsPath}/spicetify.nix
 
-        ../../../modules/linux/apps/hyprland
-        ../../../modules/linux/apps/waypaper.nix
-        ../../../modules/linux/apps/gtk.nix
-        ../../../modules/linux/apps/qt.nix
-        ../../../modules/linux/apps/gnome.nix
-        ../../../modules/linux/apps/swaylock.nix
-        ../../../modules/linux/apps/swayosd.nix
-        ../../../modules/linux/apps/nemo.nix
-        ../../../modules/linux/apps/other.nix
+        ./${linuxPath}/hyprland
+        ./${linuxPath}/session-vars.nix
+        ./${linuxPath}/waypaper.nix
+        ./${linuxPath}/gtk.nix
+        ./${linuxPath}/qt.nix
+        ./${linuxPath}/gnome.nix
+        ./${linuxPath}/swaylock.nix
+        ./${linuxPath}/swayosd.nix
+        ./${linuxPath}/nemo.nix
+        ./${linuxPath}/other.nix
 
         ../../../modules/linux/scripts
       ];

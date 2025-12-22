@@ -44,13 +44,14 @@
       gnome-keyring.enable = true;
     };
 
-    dbus.enable = true;
-
-    # needed for GNOME services outside of GNOME Desktop
-    dbus.packages = with pkgs; [
-      gcr
-      gnome-settings-daemon
-    ];
+    dbus = {
+      enable = true;
+      # needed for GNOME services outside of GNOME Desktop
+      packages = with pkgs; [
+        gcr
+        gnome-settings-daemon
+      ];
+    };
 
     logind = {
       settings.Login = {

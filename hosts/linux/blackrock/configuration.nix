@@ -1,56 +1,24 @@
-{pkgs, ...}: {
-  system.stateVersion = "25.11";
-
+{...}: let
+  linuxPath = "../../../modules/linux";
+in {
   networking = {
-    hostName = "nixos";
+    hostName = "blackrock";
     networkmanager.enable = true;
   };
-
-  time.timeZone = "Asia/Nicosia";
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  virtualisation.docker.enable = true;
-
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      substituters = [
-        "https://nix-community.cachix.org"
-        "https://nix-gaming.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://vicinae.cachix.org"
-      ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
-      ];
-    };
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    openssl
-  ];
 
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/linux/boot.nix
-    ../../modules/linux/security.nix
-    ../../modules/linux/services.nix
-    ../../modules/linux/video.nix
+    ./${linuxPath}/boot.nix
+    ./${linuxPath}/locale.nix
+    ./${linuxPath}/video.nix
 
-    ../../modules/linux/fonts.nix
-    ../../modules/linux/flatpak.nix
-    ../../modules/linux/wayland.nix
-    ../../modules/linux/steam.nix
+    ./${linuxPath}/flatpak.nix
+    ./${linuxPath}/fonts.nix
+    ./${linuxPath}/nix.nix
+    ./${linuxPath}/security.nix
+    ./${linuxPath}/services.nix
+    ./${linuxPath}/steam.nix
+    ./${linuxPath}/wayland.nix
   ];
 }

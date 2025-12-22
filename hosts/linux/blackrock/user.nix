@@ -2,8 +2,12 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  appsPath = "../../../modules/common/apps";
+  linuxPath = "../../../modules/linux/apps";
+in {
   programs.dconf.enable = true;
+
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -52,33 +56,39 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
 
         ## TODO: make config common for instances
-        ../../modules/common/apps/git/git.home.nix
+        ./${appsPath}/git/git.home.nix
 
-        ../../modules/common/apps/develop/nixdev.nix
-        ../../modules/common/apps/develop/go.nix
-        ../../modules/common/apps/develop/python.nix
-        ../../modules/common/apps/develop/nodejs.nix
-        ../../modules/common/apps/develop/tools.nix
+        ./${appsPath}/develop/nixdev.nix
+        ./${appsPath}/develop/go.nix
+        ./${appsPath}/develop/python.nix
+        ./${appsPath}/develop/nodejs.nix
+        ./${appsPath}/develop/tools.nix
 
-        ../../modules/common/apps/kubernetes/kubectl.nix
+        ./${appsPath}/kubernetes/kubectl.nix
 
-        ../../modules/common/apps/audacious.nix
-        ../../modules/common/apps/bat.nix
-        ../../modules/common/apps/btop.nix
-        ../../modules/common/apps/docker.nix
-        ../../modules/common/apps/delta.nix
-        ../../modules/common/apps/kew.nix
-        # ../../modules/common/apps/neovim.nix
-        ../../modules/common/apps/ghostty
-        ../../modules/common/shell
+        ./${appsPath}/bat.nix
+        ./${appsPath}/btop.nix
+        ./${appsPath}/docker.nix
+        ./${appsPath}/delta.nix
+        ./${appsPath}/neovim.nix
+        ./${appsPath}/obsidian.nix
+        ./${appsPath}/telegram.nix
+        ./${appsPath}/ghostty
+        ./${appsPath}/shell
 
-        ../../modules/common/apps/zed.nix
-        ../../modules/common/apps/zen-browser.nix
-        ../../modules/common/apps/spicetify.nix
+        ./${appsPath}/zed.nix
+        ./${appsPath}/zen-browser.nix
+        ./${appsPath}/spicetify.nix
 
-        ../../modules/linux/apps/hyprland
-        ../../modules/linux/apps/waypaper.nix
-        ../../modules/linux/apps/other.nix
+        ./${linuxPath}/hyprland
+        ./${linuxPath}/waypaper.nix
+        ./${linuxPath}/gtk.nix
+        ./${linuxPath}/qt.nix
+        ./${linuxPath}/gnome.nix
+        ./${linuxPath}/swaylock.nix
+        ./${linuxPath}/swayosd.nix
+        ./${linuxPath}/nemo.nix
+        ./${linuxPath}/other.nix
 
         ../../modules/linux/scripts
       ];
