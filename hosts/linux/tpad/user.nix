@@ -16,6 +16,38 @@
 
     users.alex = {
       programs.home-manager.enable = true;
+
+      services.kanshi = {
+        enable = true;
+        profiles = {
+          undocked = {
+            outputs = [
+              {
+                criteria = "eDP-1";
+                status = "enable";
+                mode = "1920x1080@60Hz";
+                scale = 1.0;
+                position = "0,0";
+              }
+            ];
+          };
+          docked = {
+            outputs = [
+              {
+                criteria = "eDP-1";
+                status = "disable";
+              }
+              {
+                criteria = "HDMI-A-1";
+                status = "enable";
+                mode = "2560x1080@75.00Hz";
+                position = "0,0";
+              }
+            ];
+          };
+        };
+      };
+
       home = {
         stateVersion = "25.11";
         username = "alex";
@@ -73,7 +105,7 @@
         ../../../modules/common/apps/obsidian.nix
         ../../../modules/common/apps/telegram.nix
         ../../../modules/common/apps/ghostty
-        ../../../modules/common/shell
+        ../../../modules/common/apps/shell
 
         ../../../modules/common/apps/zed.nix
         ../../../modules/common/apps/zen-browser.nix

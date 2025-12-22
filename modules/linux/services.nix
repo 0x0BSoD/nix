@@ -52,12 +52,16 @@
       gnome-settings-daemon
     ];
 
-    logind.settings.Login = {
-      # don’t shutdown when power button is short-pressed
-      HandlePowerKey = "ignore";
-      lidSwitch = "suspend";
-      lidSwitchExternalPower = "ignore";
-      lidSwitchDocked = "ignore";
+    logind = {
+      settings.Login = {
+        HandlePowerKey = "suspend";
+        HandleSuspendKey = "suspend";
+        HandleHibernateKey = "hibernate";
+
+        lidSwitch = "suspend";
+        lidSwitchExternalPower = "ignore";
+        lidSwitchDocked = "ignore";
+      };
     };
 
     # Sound

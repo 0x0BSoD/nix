@@ -12,5 +12,6 @@
     "udiskie --automount --notify --smart-tray &"
     "hyprctl setcursor Banana 24 &"
     "init-wallpaper &"
+    "hyperidle &"
   ];
 }
