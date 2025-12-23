@@ -103,7 +103,7 @@ in {
         ./${linuxPath}/nemo.nix
         ./${linuxPath}/other.nix
 
-        ../../../modules/linux/session-vars.nix
+        ../../../modules/common/session-vars.nix
         ../../../modules/linux/scripts
       ];
     };

@@ -1,7 +1,13 @@
-{...}: {
-  nixpkgs.config.allowUnfree = true;
+{...}: let
+  darwinPath = "../../../modules/darwin";
+in {
   imports = [
-    ../../../modules/darwin
+    ./${darwinPath}/nix.nix
+    ./${darwinPath}/pam.nix
+    ./${darwinPath}/system.nix
+    ./${darwinPath}/security.nix
+    ./${darwinPath}/fonts.nix
+
     ./homebrew.nix
   ];
 }
