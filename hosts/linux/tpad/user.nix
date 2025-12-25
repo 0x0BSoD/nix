@@ -83,7 +83,7 @@ in {
         ./${appsPath}/btop.nix
         ./${appsPath}/docker.nix
         ./${appsPath}/delta.nix
-        ./${appsPath}/neovim.nix
+        # ./${appsPath}/neovim.nix
         ./${appsPath}/obsidian.nix
         ./${appsPath}/telegram.nix
         ./${appsPath}/ghostty
