@@ -76,6 +76,9 @@
       notification_panel = {
         button = false;
       };
+      outline_panel = {
+        dock = "right";
+      };
       search = {
         button = false;
       };
@@ -172,6 +175,21 @@
         YAML = {
           formatter = "language_server";
         };
+        Lua = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "stylua";
+              arguments = [
+                "--syntax=Lua54"
+                "--respect-ignores"
+                "--stdin-filepath"
+                "{buffer_path}"
+                "-"
+              ];
+            };
+          };
+        };
         Nix = {
           formatter = {
             external = {
@@ -197,9 +215,24 @@
       lsp = {
         yamlls = {
         };
+
         jsonnet-language-server = {
           settings = {
             resolve_paths_with_tanka = true;
+          };
+        };
+
+        lua_ls = {
+          settings = {
+            runtime = {
+              version = "LuaJIT";
+            };
+            diagnostics = {
+              globals = ["vim"];
+            };
+            telemetry = {
+              enable = false;
+            };
           };
         };
 

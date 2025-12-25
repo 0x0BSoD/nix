@@ -37,14 +37,16 @@
     ];
 
     casks = [
+      # "cutter" # Reverse
+      "binary-ninja-free"
       "ghostty"
       "blackhole-16ch"
-      # "cutter" # Reverse
     ];
 
     brews = [
-      "x86_64-unknown-linux-gnu"
       # "radare2" # Reverse
+      "x86_64-unknown-linux-gnu"
+      "binwalk"
       "portaudio"
     ];
   };

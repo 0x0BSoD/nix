@@ -3,5 +3,6 @@
     helm-ls
     shellcheck
     shfmt
+    stylua
   ];
 }
