@@ -1,37 +1,79 @@
 {...}: {
   programs.waybar.settings.mainBar = {
-    position = "top";
     layer = "top";
+    position = "top";
+    exclusive = true;
+    passthrough = false;
+    spacing = 3;
+    fixed-center = true;
+    ipc = true;
 
-    spacing = 4;
-
-    # mode = "dock";
-    # exclusive = true;
-    # passthrough = false;
-    # gtk-layer-shell = true;
-    # height = 0;
-    # margin-bottom = 10;
+    margin-top = 0;
+    margin-left = 0;
+    margin-right = 0;
 
     modules-left = [
+      # "custom/playerctl"
+      # "custom/separator_2"
+      # "hyprland/window"
+
       "hyprland/workspaces"
+      "custom/separator"
       "cpu"
+      "custom/separator"
       "memory"
     ];
 
     modules-center = [
+      # "hyprland/workspaces"
+      # "clock"
+      # "custom/separator"
+
       "hyprland/window"
     ];
 
     modules-right = [
+      # "tray"
+
       "network#spd"
       "pulseaudio"
       "network"
+      "custom/separator"
       "tray"
+      "custom/separator"
       "battery"
+      "custom/separator"
       "clock"
     ];
 
     #================================
+    "custom/separator" = {
+      format = "";
+      interval = "once";
+      tooltip = false;
+    };
+
+    "custom/separator_2" = {
+      format = " ";
+      interval = "once";
+      tooltip = false;
+    };
+    #================================
+
+    "custom/playerctl" = {
+      format = "<span>{}</span>";
+      return-type = "json";
+      max-length = 25;
+      exec = "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+      on-click-middle = "playerctl play-pause";
+      on-click = "playerctl previous";
+      on-click-right = "playerctl next";
+      scroll-step = 5.0;
+      on-scroll-up = "$HOME/.config/hypr/scripts/Volume.sh --inc";
+      on-scroll-down = "$HOME/.config/hypr/scripts/Volume.sh --dec";
+      smooth-scrolling-threshold = 1;
+    };
+
     wireplumber = {
       scroll-step = 10;
       format = "{volume}% {icon}  ";
@@ -59,20 +101,34 @@
     };
 
     "hyprland/window" = {
-      icon = false;
-      separate-outputs = true;
       format = "{}";
+      max-length = 25;
+      separate-outputs = true;
+      offscreen-css = true;
+      offscreen-css-text = "(inactive)";
+      rewrite = {
+        "(.*) — Mozilla Firefox" = " $1";
+        "(.*) - ghostty" = "> [$1]";
+        "(.*) - zsh" = "> [$1]";
+        "(.*) - $term" = "> [$1]";
+      };
     };
 
     "hyprland/workspaces" = {
-      disable-scroll = true;
+      active-only = false;
       all-outputs = true;
       on-click = "activate";
-      format = "{name}";
+      on-scroll-up = "hyprctl dispatch workspace e+1";
+      on-scroll-down = "hyprctl dispatch workspace e-1";
+      show-special = false;
       persistent-workspaces = {
-        "1" = [];
-        "2" = [];
-        "3" = [];
+        "*" = 5;
+      };
+      format = "{icon}";
+      format-icons = {
+        active = "<span font='12'>󰮯</span>";
+        empty = "<span font='8'></span>";
+        default = "󰊠";
       };
     };
 
@@ -82,19 +138,21 @@
     };
 
     clock = {
-      format = "{:%H:%M}";
-      format-alt = "{:%A, %B %d, %Y (%R)}";
+      interval = 1;
+      format = " {:%H:%M:%S}";
+      format-alt = " {:%H:%M   %Y, %d %B, %A}";
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
-        mode = "month";
+        mode = "year";
         mode-mon-col = 3;
+        weeks-pos = "right";
         on-scroll = 1;
-        on-click-right = "mode";
         format = {
-          months = "<span color='#a6adc8'><b>{}</b></span>";
-          weekdays = "<span color='#a6adc8'><b>{}</b></span>";
-          today = "<span color='#a6adc8'><b>{}</b></span>";
-          days = "<span color='#555869'><b>{}</b></span>";
+          months = "<span color='#ffead3'><b>{}</b></span>";
+          days = "<span color='#ecc6d9'><b>{}</b></span>";
+          weeks = "<span color='#99ffdd'><b>W{:%V}</b></span>";
+          weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+          today = "<span color='#ff6699'><b><u>{}</u></b></span>";
         };
       };
     };
