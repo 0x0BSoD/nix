@@ -58,12 +58,6 @@ in {
         homeDirectory = "/home/alex";
       };
 
-      qt = {
-        enable = true;
-        platformTheme.name = "qtct";
-        style.name = "kvantum";
-      };
-
       imports = [
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
@@ -83,7 +77,6 @@ in {
         ./${appsPath}/btop.nix
         ./${appsPath}/docker.nix
         ./${appsPath}/delta.nix
-        # ./${appsPath}/neovim.nix
         ./${appsPath}/obsidian.nix
         ./${appsPath}/telegram.nix
         ./${appsPath}/ghostty
@@ -95,9 +88,7 @@ in {
 
         ./${linuxPath}/hyprland
         ./${linuxPath}/waypaper.nix
-        ./${linuxPath}/gtk.nix
-        ./${linuxPath}/qt.nix
-        ./${linuxPath}/gnome.nix
+        ./${linuxPath}/apperance.nix
         ./${linuxPath}/swaylock.nix
         ./${linuxPath}/swayosd.nix
         ./${linuxPath}/nemo.nix

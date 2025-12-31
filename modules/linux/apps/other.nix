@@ -6,6 +6,7 @@
     libgcc
     rofi
     swww
+    unzip
     wine
     xdg-utils
 

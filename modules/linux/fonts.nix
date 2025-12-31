@@ -4,6 +4,8 @@
     packages = with pkgs; [
       # icon fonts
       material-symbols
+      twemoji-color-font
+      noto-fonts-color-emoji
 
       # Sans(Serif) fonts
       libertinus
@@ -12,6 +14,7 @@
       noto-fonts-color-emoji
       roboto
       (google-fonts.override {fonts = ["Inter"];})
+      fantasque-sans-mono
 
       # monospace fonts
       jetbrains-mono
@@ -19,6 +22,8 @@
       # nerdfonts
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
+      nerd-fonts.fira-code
+      nerd-fonts.caskaydia-cove
     ];
 
     enableDefaultPackages = false;
