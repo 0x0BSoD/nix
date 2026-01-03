@@ -11,6 +11,7 @@
       "helm"
       "jsonnet"
       "latex"
+      "lua"
       "nix"
       "nord"
       "sql"
@@ -31,7 +32,6 @@
       current_line_highlight = "all";
       preferred_line_length = 160;
       soft_wrap = "editor_width";
-      tab_size = 4;
 
       telemetry = {
         diagnostics = false;
@@ -56,6 +56,7 @@
         show_branch_icon = true;
         show_branch_name = true;
       };
+      tab_size = 4;
       tab_bar = {
         show_nav_history_buttons = false;
         show_tab_bar_buttons = false;
@@ -65,7 +66,12 @@
         file_icons = true;
         show_diagnostics = "errors";
       };
+      active_pane_modifiers = {
+        border_size = 0.0;
+        inactive_opacity = 0.7;
+      };
       relative_line_numbers = "wrapped";
+      colorize_brackets = true;
       indent_guides = {
         enabled = true;
         coloring = "fixed";
@@ -96,6 +102,12 @@
       search = {
         button = false;
       };
+      diagnostics = {
+        button = true;
+        inline = {
+          enabled = true;
+        };
+      };
       git_panel = {
         collapse_untracked_diff = true;
         sort_by_path = true;
@@ -116,8 +128,13 @@
         };
       };
 
+      completions = {
+        lsp_fetch_timeout_ms = 15;
+      };
+
       inlay_hints = {
         enabled = true;
+        show_background = false;
       };
 
       terminal = {

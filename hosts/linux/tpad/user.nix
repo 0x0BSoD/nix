@@ -58,6 +58,19 @@ in {
         homeDirectory = "/home/alex";
       };
 
+      xdg = {
+        enable = true;
+        desktopEntries = {
+          nemo = {
+            name = "Nemo";
+            genericName = "File manager";
+            exec = "nemo %U";
+            terminal = false;
+            categories = ["System" "FileManager"];
+          };
+        };
+      };
+
       imports = [
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
