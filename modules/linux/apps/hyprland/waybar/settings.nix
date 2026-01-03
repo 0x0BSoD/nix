@@ -201,7 +201,7 @@
     cpu = {
       interval = 1;
       format = "CPU {usage:>2}% {icon0}{icon1}{icon2}{icon3}";
-      format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+      format-icons = ["⣀" "⣀" "⣄" "⣤" "⣦" "⣶" "⣷" "⣿"];
     };
 
     network = {
@@ -235,7 +235,7 @@
         on-discharging-critical = "notify-send -u critical 'Very Low Battery'";
         on-charging-100 = "notify-send -u normal 'Battery Full!'";
       };
-      format = "{capacity}% {icon}";
+      format = "{capacity}% {icon} ";
       format-icons = ["" "" "" "" ""];
       max-length = 25;
     };

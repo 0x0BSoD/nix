@@ -65,6 +65,7 @@ in {
             name = "Nemo";
             genericName = "File manager";
             exec = "nemo %U";
+            icon = "nemo";
             terminal = false;
             categories = ["System" "FileManager"];
           };
@@ -105,6 +106,7 @@ in {
         ./${linuxPath}/swaylock.nix
         ./${linuxPath}/swayosd.nix
         ./${linuxPath}/nemo.nix
+        ./${linuxPath}/gnome.nix
         ./${linuxPath}/other.nix
 
         ../../../modules/common/session-vars.nix
