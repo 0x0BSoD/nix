@@ -4,18 +4,19 @@
 
     extensions = [
       "basher"
+      "catppuccin-icons"
+      "codebook"
+      "context7"
       "dockerfile"
       "helm"
       "jsonnet"
+      "latex"
       "nix"
       "nord"
-      "catppuccin-icons"
+      "sql"
       "terraform"
       "toml"
       "zig"
-      "codebook"
-      "context7"
-      "sql"
     ];
 
     userSettings = {
@@ -23,11 +24,15 @@
       vim = {
         use_system_clipboard = "always";
       };
+      vertical_scroll_margin = 20;
 
       disable_ai = true;
       base_keymap = "JetBrains";
       current_line_highlight = "all";
+      preferred_line_length = 160;
       soft_wrap = "editor_width";
+      tab_size = 4;
+
       telemetry = {
         diagnostics = false;
         metrics = false;
@@ -50,6 +55,15 @@
         show_onboarding_banner = false;
         show_branch_icon = true;
         show_branch_name = true;
+      };
+      tab_bar = {
+        show_nav_history_buttons = false;
+        show_tab_bar_buttons = false;
+      };
+      tabs = {
+        git_status = true;
+        file_icons = true;
+        show_diagnostics = "errors";
       };
       relative_line_numbers = "wrapped";
       indent_guides = {
@@ -82,20 +96,11 @@
       search = {
         button = false;
       };
-      tab_bar = {
-        show_nav_history_buttons = false;
-        show_tab_bar_buttons = false;
-      };
       git_panel = {
         collapse_untracked_diff = true;
         sort_by_path = true;
         fallback_branch_name = "master";
         button = true;
-      };
-      tabs = {
-        git_status = true;
-        file_icons = true;
-        show_diagnostics = "errors";
       };
       centered_layout = {
         left_padding = 0.15;
@@ -208,6 +213,15 @@
             "pyright"
             "ruff"
           ];
+        };
+        Markdown = {
+          soft_wrap = "preferred_line_length";
+          remove_trailing_whitespace_on_save = false;
+        };
+        LaTeX = {
+          show_edit_predictions = false;
+          soft_wrap = "preferred_line_length";
+          preferred_line_length = 110;
         };
       };
 
