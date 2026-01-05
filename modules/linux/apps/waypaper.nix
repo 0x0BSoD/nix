@@ -6,7 +6,7 @@
     language = en
     folder = ~/Pictures/wallpapers
     monitors = All
-    wallpaper = ~/Pictures/wallpapers/astronaut.jpg
+    wallpaper = ~/Pictures/wallpapers/mountain.png
     backend = swww
     fill = fill
     sort = name

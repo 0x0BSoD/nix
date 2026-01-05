@@ -188,7 +188,7 @@
         m = 30;
       };
       interval = 10;
-      format = "󰾆 {used}GB";
+      format = " {used}GB";
       format-m = "󰾅 {used}GB";
       format-h = "󰓅 {used}GB";
       format-c = " {used}GB";
@@ -200,7 +200,7 @@
 
     cpu = {
       interval = 1;
-      format = "CPU {usage:>2}% {icon0}{icon1}{icon2}{icon3}";
+      format = " {usage:>2}% {icon0}{icon1}{icon2}{icon3}";
       format-icons = ["⣀" "⣀" "⣄" "⣤" "⣦" "⣶" "⣷" "⣿"];
     };
 
