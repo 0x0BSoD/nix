@@ -4,7 +4,9 @@
   virtualisation.docker.enable = true;
 
   programs = {
+    nh.enable = true;
     dconf.enable = true;
+    neovim.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -13,6 +15,7 @@
       enable = true;
       libraries = with pkgs; [
         openssl
+        alsa-lib
       ];
     };
   };

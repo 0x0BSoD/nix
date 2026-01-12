@@ -42,7 +42,7 @@ in {
     ./${linuxPath}/locale.nix
     ./${linuxPath}/video.nix
 
-    ./${linuxPath}/flatpak.nix
+    # ./${linuxPath}/flatpak.nix
     ./${linuxPath}/fonts.nix
     ./${linuxPath}/nix.nix
     ./${linuxPath}/security.nix

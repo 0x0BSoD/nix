@@ -2,19 +2,24 @@
   imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
 
   services.flatpak = {
-    enable = false;
+    enable = true;
     packages = [
       "com.github.tchx84.Flatseal"
+      "dev.zed.Zed"
     ];
     overrides = {
       global = {
-        # Force Wayland by default
         Context.sockets = [
           "wayland"
           "!x11"
           "!fallback-x11"
         ];
       };
+      "dev.zed.Zed" = {
+         Environment = {
+           ZED_FLATPAK_NO_ESCAPE = "1";
+         };
+       };
     };
   };
 }
