@@ -8,41 +8,61 @@
   modulesPath,
   ...
 }: {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/74e1cce8-d985-4efb-8f9f-f6200d903505";
-    fsType = "btrfs";
-    options = ["subvol=root"];
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
+      kernelModules = [];
+      luks.devices."cryptroot".device = "/dev/disk/by-uuid/3cfcffd3-523f-4be9-9a4e-4f4fce2af2f1";
+    };
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
+    # kernelParams = ["resume_offset=269568"];
+    # resumeDevice = "/dev/disk/by-uuid/5d1-9213-4b7f-a962-2e9fb414e846";
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/74e1cce8-d985-4efb-8f9f-f6200d903505";
+  fileSystems."/" = {
+    device = "/dev/mapper/cryptroot";
     fsType = "btrfs";
-    options = ["subvol=home"];
+    options = ["subvol=@"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/74e1cce8-d985-4efb-8f9f-f6200d903505";
+    device = "/dev/mapper/cryptroot";
     fsType = "btrfs";
-    options = ["subvol=nix"];
+    options = ["subvol=@nix"];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = ["subvol=@home"];
+  };
+
+  fileSystems."/persist" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = ["subvol=@persist"];
+  };
+
+  fileSystems."/swap" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = ["subvol=@swap"];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/2BB7-203E";
+    device = "/dev/disk/by-uuid/290C-DC06";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/2623c27d-d562-4037-be57-f1ccb2d54aa8";}
+    {
+      device = "/swap/swapfile";
+      size = 16 * 1024;
+    }
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
