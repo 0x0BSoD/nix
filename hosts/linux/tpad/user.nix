@@ -75,6 +75,7 @@ in {
       imports = [
         inputs.zen-browser.homeModules.beta
         inputs.spicetify-nix.homeManagerModules.spicetify
+        inputs.nixvim.homeModules.nixvim
 
         ## TODO: make config common for instances
         ./${appsPath}/git/git.home.nix
@@ -95,6 +96,7 @@ in {
         ./${appsPath}/btop.nix
         ./${appsPath}/docker.nix
         ./${appsPath}/delta.nix
+        ./${appsPath}/neovim.nix
         ./${appsPath}/obsidian.nix
         ./${appsPath}/telegram.nix
         ./${appsPath}/ghostty
@@ -124,7 +126,6 @@ in {
     isNormalUser = true;
     name = "alex";
     description = "Aleksandr Simonov";
-
     extraGroups = [
       "wheel"
       "input"

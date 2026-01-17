@@ -7,8 +7,8 @@
 in {
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.nord;
-
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "frappe";
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       shuffle

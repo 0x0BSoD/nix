@@ -29,7 +29,6 @@ in {
   environment.systemPackages = with pkgs; [
     acpi
     brightnessctl
-    cpupower-gui
     powertop
   ];
 
