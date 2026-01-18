@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    pamixer
     cifs-utils
+    coppwr
     (pkgs.catppuccin-sddm.override
       {
         flavor = "macchiato";

@@ -1,25 +1,26 @@
 font-family = JetBrainsMono Nerd Font
-font-size = 12
 font-feature = liga
+font-size = 12
 font-thicken = true
 
 theme = Nord
 
+custom-shader = "./cubes.glsl"
+custom-shader-animation = always
+
 shell-integration-features = no-cursor
 
+# adjust-cell-height = 35%
+alpha-blending = native
+copy-on-select = clipboard
 cursor-style = block
 cursor-style-blink = true
 mouse-hide-while-typing = true
-adjust-cell-height = 35%
-copy-on-select = clipboard
-alpha-blending = native
 
 window-colorspace = display-p3
-window-width = 101
-window-height = 28
 window-padding-balance = true
-window-padding-x = 11
-window-padding-y = 11
+window-padding-x = 0
+window-padding-y = 0
 window-save-state = always
 
 background-opacity = 0.80

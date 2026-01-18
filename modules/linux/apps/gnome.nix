@@ -4,6 +4,7 @@
       evince
       file-roller
       gnome-text-editor
+      mission-center
     ]
   );
 

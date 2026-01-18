@@ -4,11 +4,13 @@
     colorschemes.nord.enable = true;
 
     plugins = {
-      web-devicons.enable = true;
+      dressing.enable = true;
       lualine.enable = true;
       mini-animate.enable = true;
+      noice.enable = true;
       telescope.enable = true;
       treesitter.enable = true;
+      web-devicons.enable = true;
     };
 
     clipboard = {

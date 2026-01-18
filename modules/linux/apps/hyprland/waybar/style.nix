@@ -53,7 +53,7 @@
     window#waybar {
       transition-property: background-color;
       transition-duration: 0.5s;
-      background: #0a0e14;
+      background: #2E3440;
       /*border: 2px solid @overlay0;*/
       /*background: @theme_base_color;*/
       border-radius: 0px;
@@ -71,7 +71,7 @@
     .modules-left,
     .modules-center,
     .modules-right {
-      background: #0a0e14;
+      background: #2E3440;
       border: 0px solid @overlay0;
       padding-top: 0px;
       padding-bottom: 0px;

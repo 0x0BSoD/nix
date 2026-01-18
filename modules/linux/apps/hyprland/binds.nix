@@ -18,9 +18,6 @@
       "$mainMod SHIFT, F, fullscreen, 1"
       "$mainMod, Space, exec, toggle-float"
       "$mainMod, D, exec, vicinae vicinae://toggle"
-      "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-      "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-      "$mainMod, Escape, exec, swaylock"
       "ALT, Escape, exec, hyprlock"
       "$mainMod SHIFT, Escape, exec, power-menu"
       "$mainMod, P, pseudo,"
@@ -30,11 +27,9 @@
       "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
       "$mainMod SHIFT, B, exec, toggle-waybar"
       "$mainMod, C ,exec, hyprpicker -a"
-      "$mainMod, W,exec, wallpaper-picker"
       "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
       "$mainMod, N, exec, swaync-client -t -sw"
       "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
-      "$mainMod, equal, exec, woomer"
 
       # screenshot
       ",Print, exec, screenshot --copy"
@@ -117,7 +112,7 @@
       "$mainMod ALT, l, moveactive, 80 0"
 
       # media and volume controls
-      # ",XF86AudioMute,exec, pamixer -t"
+      ",XF86AudioMute,exec, pamixer -t"
       ",XF86AudioPlay,exec, playerctl play-pause"
       ",XF86AudioNext,exec, playerctl next"
       ",XF86AudioPrev,exec, playerctl previous"
