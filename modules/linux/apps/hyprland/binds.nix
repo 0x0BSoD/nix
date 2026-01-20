@@ -112,7 +112,6 @@
       "$mainMod ALT, l, moveactive, 80 0"
 
       # media and volume controls
-      ",XF86AudioMute,exec, pamixer -t"
       ",XF86AudioPlay,exec, playerctl play-pause"
       ",XF86AudioNext,exec, playerctl next"
       ",XF86AudioPrev,exec, playerctl previous"
