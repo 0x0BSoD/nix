@@ -28,10 +28,6 @@
       url = "github:SergioBenitez/homebrew-osxct";
       flake = false;
     };
-    darksworm-tap = {
-      url = "github:darksworm/homebrew-tap";
-      flake = false;
-    };
 
     # Other
     ghostty = {
@@ -42,7 +38,7 @@
       url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    # nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
@@ -54,6 +50,7 @@
     self,
     nixpkgs,
     home-manager,
+    nix-homebrew,
     ...
   } @ inputs: let
     mkDarwin = primaryUser: modules:
@@ -66,10 +63,7 @@
           modules
           ++ [
             home-manager.darwinModules.home-manager
-            inputs.nix-homebrew.darwinModules.nix-homebrew
-            ({config, ...}: {
-              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
-            })
+            nix-homebrew.darwinModules.nix-homebrew
           ];
       };
 

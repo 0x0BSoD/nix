@@ -1,15 +1,14 @@
 {
   primaryUser,
   inputs,
+  config,
   ...
 }: {
   nix-homebrew = {
     enable = true;
-
     enableRosetta = true;
-    user = primaryUser;
-    autoMigrate = false;
     mutableTaps = true;
+    user = primaryUser;
 
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
@@ -21,33 +20,35 @@
   homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;
+
     onActivation = {
       autoUpdate = false;
       upgrade = true;
       cleanup = "uninstall";
     };
+
     global = {
       brewfile = true;
       autoUpdate = false;
     };
-    taps = [
-      "homebrew/core"
-      "homebrew/cask"
-      "SergioBenitez/osxct"
-    ];
+
+    taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
-      # "cutter" # Reverse
-      "binary-ninja-free"
       "ghostty"
-      "blackhole-16ch"
+      "docker-desktop"
+      "displaylink"
+      {
+        name = "chatgpt";
+        greedy = true;
+      }
     ];
 
     brews = [
-      # "radare2" # Reverse
       "x86_64-unknown-linux-gnu"
-      "binwalk"
-      "portaudio"
+      "coreutils"
+      "pinentry-mac"
+      "docker-compose"
     ];
   };
 }

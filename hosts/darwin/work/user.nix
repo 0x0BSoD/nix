@@ -49,17 +49,15 @@ in {
         ./${appsPath}/bat.nix
         ./${appsPath}/btop.nix
         ./${appsPath}/delta.nix
-        # ./${appsPath}/neovim.nix
-        ./${appsPath}/terrafrom.nix
-        ./${appsPath}/vault.nix
-        ./${appsPath}/redis.nix
+        # ./${appsPath}/terraform.nix
+        # ./${appsPath}/vault.nix
+        # ./${appsPath}/redis.nix
         ./${appsPath}/ghostty
         ./${appsPath}/shell
 
         ./${appsPath}/zed.nix
         ./${appsPath}/zen-browser.nix
         ./${appsPath}/spicetify.nix
-        ./${appsPath}/spotify-player.nix
 
         ../../../modules/common/session-vars.nix
       ];
