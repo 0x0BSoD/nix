@@ -253,7 +253,7 @@
       lsp = {
         rust-analyzer = {
           initialization_options = {
-            checkOnSave = "clippy";
+            checkOnSave = true;
           };
         };
 
