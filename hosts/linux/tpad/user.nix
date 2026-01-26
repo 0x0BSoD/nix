@@ -82,6 +82,7 @@ in {
 
         ./${appsPath}/develop/nixdev.nix
         ./${appsPath}/develop/go.nix
+        ./${appsPath}/develop/rust.nix
         ./${appsPath}/develop/python.nix
         ./${appsPath}/develop/nodejs.nix
         ./${appsPath}/develop/tools.nix

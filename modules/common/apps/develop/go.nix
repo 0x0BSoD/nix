@@ -3,5 +3,6 @@
     go
     gopls
     gofumpt
+    kubebuilder
   ];
 }

@@ -188,6 +188,12 @@
       ];
 
       languages = {
+        Rust = {
+          format_on_save = "on";
+          inlay_hints = {
+            enabled = true;
+          };
+        };
         Go = {
           format_on_save = "on";
           formatter = "language_server";
@@ -245,8 +251,13 @@
 
       ## ==================
       lsp = {
-        yamlls = {
+        rust-analyzer = {
+          initialization_options = {
+            checkOnSave = "clippy";
+          };
         };
+
+        yamlls = {};
 
         jsonnet-language-server = {
           settings = {
