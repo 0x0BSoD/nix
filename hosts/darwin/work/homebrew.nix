@@ -45,10 +45,11 @@
     ];
 
     brews = [
-      "x86_64-unknown-linux-gnu"
       "coreutils"
-      "pinentry-mac"
       "docker-compose"
+      "helm"
+      "pinentry-mac"
+      "x86_64-unknown-linux-gnu"
     ];
   };
 }

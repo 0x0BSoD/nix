@@ -22,6 +22,7 @@ in {
       home = {
         stateVersion = "25.11";
         sessionPath = [
+          "$HOME/go/bin"
           "$HOME/.krew/bin"
         ];
         sessionVariables._JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
@@ -50,8 +51,8 @@ in {
         ./${appsPath}/btop.nix
         ./${appsPath}/delta.nix
         # ./${appsPath}/terraform.nix
-        # ./${appsPath}/vault.nix
-        # ./${appsPath}/redis.nix
+        ./${appsPath}/vault.nix
+        ./${appsPath}/redis.nix
         ./${appsPath}/ghostty
         ./${appsPath}/shell
 

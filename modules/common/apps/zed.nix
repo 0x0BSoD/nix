@@ -257,7 +257,22 @@
           };
         };
 
-        yamlls = {};
+        yamlls = {
+          validate = true;
+          hover = true;
+
+          format = {
+            enable = true;
+          };
+
+          schemaStore = {
+            enable = true;
+          };
+
+          kubernetesCRDStore = {
+            enable = true;
+          };
+        };
 
         jsonnet-language-server = {
           settings = {
@@ -283,7 +298,10 @@
           directoryFilters = [
             "-**/node_modules"
             "-**/.git"
+            "-**/.idea"
           ];
+          usePlaceholders = true;
+          completeUnimported = true;
           gofumpt = true;
           symbolScope = "workspace";
           staticcheck = true;
@@ -297,7 +315,14 @@
             useany = true;
           };
           codelenses = {
-            gc_details = true;
+            gc_details = false;
+            generate = true;
+            regenerate_cgo = true;
+            run_govulncheck = true;
+            test = true;
+            tidy = true;
+            upgrade_dependency = true;
+            vendor = true;
           };
           hints = {
             assignVariableTypes = true;
