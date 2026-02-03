@@ -203,7 +203,7 @@
         };
         YAML = {
           formatter = "language_server";
-          tab_size = 4;
+          tab_size = 2;
         };
         Lua = {
           format_on_save = "on";
