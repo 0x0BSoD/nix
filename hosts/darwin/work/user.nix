@@ -53,6 +53,7 @@ in {
         # ./${appsPath}/terraform.nix
         ./${appsPath}/vault.nix
         ./${appsPath}/redis.nix
+        ./${appsPath}/sysdig.nix
         ./${appsPath}/ghostty
         ./${appsPath}/shell
 

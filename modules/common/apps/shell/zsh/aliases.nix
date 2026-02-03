@@ -34,6 +34,7 @@
     tlt = "tsh login --proxy=teleport.test.env:443 teleport.test.env";
     tlp = "tsh login --proxy=teleport.prod.env:443 teleport.prod.env";
     tkl = "tsh kube login";
+    tkls = "tsh kube ls";
 
     # === Git ===
     ga = "git add -A";

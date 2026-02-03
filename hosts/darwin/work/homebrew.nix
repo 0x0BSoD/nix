@@ -35,9 +35,11 @@
     taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
-      "ghostty"
-      "docker-desktop"
       "displaylink"
+      "docker-desktop"
+      "ghostty"
+      "headlamp"
+      "qmk-toolbox"
       {
         name = "chatgpt";
         greedy = true;
@@ -47,6 +49,7 @@
     brews = [
       "coreutils"
       "docker-compose"
+      "gwctl"
       "helm"
       "pinentry-mac"
       "x86_64-unknown-linux-gnu"

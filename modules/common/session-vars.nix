@@ -1,6 +1,6 @@
 {...}: {
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     PAGER = "";
 
     FZF_CTRL_R_OPTS = "

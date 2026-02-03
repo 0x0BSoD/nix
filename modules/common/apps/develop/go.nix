@@ -4,5 +4,6 @@
     gopls
     gofumpt
     kubebuilder
+    delve
   ];
 }

@@ -203,6 +203,7 @@
         };
         YAML = {
           formatter = "language_server";
+          tab_size = 4;
         };
         Lua = {
           format_on_save = "on";
@@ -257,20 +258,24 @@
           };
         };
 
-        yamlls = {
-          validate = true;
-          hover = true;
+        yaml-language-server = {
+          settings = {
+            yaml = {
+              validate = true;
+              hover = true;
 
-          format = {
-            enable = true;
-          };
+              format = {
+                enable = true;
+              };
 
-          schemaStore = {
-            enable = true;
-          };
+              schemaStore = {
+                enable = true;
+              };
 
-          kubernetesCRDStore = {
-            enable = true;
+              kubernetesCRDStore = {
+                enable = true;
+              };
+            };
           };
         };
 
