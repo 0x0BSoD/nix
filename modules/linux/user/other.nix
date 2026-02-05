@@ -12,6 +12,14 @@
     wine
     xdg-utils
 
+    # Nord theme packages
+    nordic
+    nordzy-icon-theme
+    nordzy-cursor-theme
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
+    adwaita-qt
+
     # media
     mpv
     lowfi
