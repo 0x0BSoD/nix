@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  linuxPath = "../../../modules/linux";
+  linuxPath = "../../../modules/linux/system";
 in {
   networking = {
     hostName = "tpad";

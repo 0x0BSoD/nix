@@ -1,6 +1,6 @@
 {inputs, ...}: let
-  darwinPath = "../../../modules/darwin";
-  appsPath = "../../../modules/common/apps";
+  darwinPath = "../../../modules/darwin/system";
+  appsPath = "../../../modules/common/user";
 in {
   imports = [
     inputs.nixvim.nixDarwinModules.nixvim

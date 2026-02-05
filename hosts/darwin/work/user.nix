@@ -1,5 +1,5 @@
 {inputs, ...}: let
-  appsPath = "../../../modules/common/apps";
+  appsPath = "../../../modules/common/user";
 in {
   users.users."aleksandr.simonov" = {
     name = "aleksandr.simonov";
@@ -61,7 +61,7 @@ in {
         ./${appsPath}/zen-browser.nix
         ./${appsPath}/spicetify.nix
 
-        ../../../modules/common/session-vars.nix
+        ../../../modules/common/user/session-vars.nix
       ];
     };
   };

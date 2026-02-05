@@ -3,8 +3,8 @@
   inputs,
   ...
 }: let
-  appsPath = "../../../modules/common/apps";
-  linuxPath = "../../../modules/linux/apps";
+  appsPath = "../../../modules/common/user";
+  linuxPath = "../../../modules/linux/user";
 in {
   programs.dconf.enable = true;
 
@@ -121,8 +121,8 @@ in {
         ./${linuxPath}/gnome.nix
         ./${linuxPath}/other.nix
 
-        ../../../modules/common/session-vars.nix
-        ../../../modules/linux/scripts
+        ../../../modules/common/user/session-vars.nix
+        ../../../modules/linux/user/scripts
       ];
     };
   };
