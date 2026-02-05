@@ -22,7 +22,7 @@
       "$mainMod SHIFT, Escape, exec, power-menu"
       "$mainMod, P, pseudo,"
       "$mainMod, X, togglesplit,"
-      "$mainMod, T, exec, toggle-oppacity"
+      "$mainMod, T, exec, toggle-opacity"
       "$mainMod, E, exec, nemo"
       "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
       "$mainMod SHIFT, B, exec, toggle-waybar"

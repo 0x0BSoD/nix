@@ -28,7 +28,6 @@
       };
       vertical_scroll_margin = 20;
 
-      disable_ai = true;
       base_keymap = "JetBrains";
       current_line_highlight = "all";
       preferred_line_length = 160;
@@ -57,6 +56,7 @@
         show_branch_icon = true;
         show_branch_name = true;
       };
+
       tab_size = 4;
       tab_bar = {
         show_nav_history_buttons = false;
@@ -67,60 +67,72 @@
         file_icons = true;
         show_diagnostics = "errors";
       };
+
       active_pane_modifiers = {
         border_size = 0.0;
         inactive_opacity = 0.7;
       };
+
       relative_line_numbers = "wrapped";
       colorize_brackets = true;
+
       indent_guides = {
         enabled = true;
         coloring = "fixed";
       };
+
       icon_theme = "Catppuccin Frappé";
       theme = {
         mode = "system";
         light = "Nord Dark";
         dark = "Nord Dark";
       };
+
       minimap = {
         show = "auto";
       };
+
       toolbar = {
         breadcrumbs = true;
         quick_actions = false;
         selections_menu = false;
       };
+
       collaboration_panel = {
         button = false;
       };
+
       notification_panel = {
         button = false;
       };
+
       outline_panel = {
         dock = "right";
       };
+
       search = {
         button = false;
       };
+
       diagnostics = {
         button = true;
         inline = {
           enabled = true;
         };
       };
+
       git_panel = {
         collapse_untracked_diff = true;
         sort_by_path = true;
         fallback_branch_name = "master";
         button = true;
       };
+
       centered_layout = {
         left_padding = 0.15;
         right_padding = 0.15;
       };
 
-      ## ==================
       git = {
         inline_blame = {
           enabled = true;
@@ -129,6 +141,19 @@
         };
       };
 
+      ## AI
+      disable_ai = false;
+      agent = {
+        use_modifier_to_send = true;
+        model_parameters = [];
+        enable_feedback = false;
+        default_model = {
+          provider = "deepseek";
+          model = "deepseek-chat";
+        };
+      };
+
+      ## ================
       completions = {
         lsp_fetch_timeout_ms = 15;
       };

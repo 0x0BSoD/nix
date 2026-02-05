@@ -4,5 +4,6 @@
     shellcheck
     shfmt
     stylua
+    gnumake
   ];
 }

@@ -48,7 +48,7 @@ in {
               {
                 criteria = "HDMI-A-1";
                 status = "enable";
-                mode = "2560x1080@75.00Hz";
+                mode = "2560x1080@180.00Hz";
                 position = "0,0";
               }
             ];
@@ -114,7 +114,7 @@ in {
 
         ./${linuxPath}/hyprland
         ./${linuxPath}/waypaper.nix
-        ./${linuxPath}/apperance.nix
+        ./${linuxPath}/appearance.nix
         ./${linuxPath}/swaylock.nix
         ./${linuxPath}/swayosd.nix
         ./${linuxPath}/nemo.nix

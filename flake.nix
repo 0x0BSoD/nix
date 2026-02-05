@@ -85,18 +85,6 @@
         ./hosts/darwin/work/homebrew.nix
         ./hosts/darwin/work/user.nix
       ];
-      macbook = mkDarwin "alex" [
-        ./hosts/darwin/home/configuration.nix
-        ./hosts/darwin/home/homebrew.nix
-        ./hosts/darwin/home/user.nix
-      ];
-    };
-    nixosConfigurations = {
-      blackrock = mkNixos "alex" [
-        ./hosts/linux/common.nix
-        ./hosts/linux/blackrock/configuration.nix
-        ./hosts/linux/blackrock/user.nix
-      ];
     };
     nixosConfigurations = {
       tpad = mkNixos "alex" [
