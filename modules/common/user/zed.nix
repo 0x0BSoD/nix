@@ -143,6 +143,9 @@
 
       ## AI
       disable_ai = false;
+      features = {
+        edit_prediction_provider = "copilot";
+      };
       agent = {
         use_modifier_to_send = true;
         model_parameters = [];
