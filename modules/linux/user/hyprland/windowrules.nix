@@ -85,6 +85,12 @@
       "dimaround, vicinae"
       "dimaround, rofi"
       "dimaround, swaync-control-center"
+      "blur, swaync-control-center"
+      "blur, swaync-notification-window"
+      "ignorezero, swaync-control-center"
+      "ignorezero, swaync-notification-window"
+      "xray 0, swaync-control-center"
+      "xray 0, swaync-notification-window"
     ];
 
     # No gaps when only

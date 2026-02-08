@@ -13,10 +13,6 @@
     margin-right = 0;
 
     modules-left = [
-      # "custom/playerctl"
-      # "custom/separator_2"
-      # "hyprland/window"
-
       "hyprland/workspaces"
       "custom/separator"
       "cpu"
@@ -25,16 +21,10 @@
     ];
 
     modules-center = [
-      # "hyprland/workspaces"
-      # "clock"
-      # "custom/separator"
-
       "hyprland/window"
     ];
 
     modules-right = [
-      # "tray"
-
       "network#spd"
       "pulseaudio"
       "network"
@@ -246,7 +236,7 @@
     "custom/notification" = {
       tooltip = true;
       tooltip-format = "Notifications";
-      format = "{icon}";
+      format = "{icon} ";
       format-icons = {
         notification = "<span foreground='red'><sup></sup></span>";
         none = "";
