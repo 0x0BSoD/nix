@@ -45,6 +45,7 @@ in {
         ./${appsPath}/kubernetes/kubectl.nix
         ./${appsPath}/kubernetes/kubecm.nix
         ./${appsPath}/kubernetes/kubectx.nix
+        ./${appsPath}/kubernetes/minikube.nix
         ./${appsPath}/kubernetes/stern.nix
 
         ./${appsPath}/bat.nix
