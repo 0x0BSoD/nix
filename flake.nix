@@ -24,6 +24,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
     sergioBenitez-osxct = {
       url = "github:SergioBenitez/homebrew-osxct";
       flake = false;

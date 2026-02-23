@@ -7,13 +7,14 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    mutableTaps = true;
+    mutableTaps = false;
     user = primaryUser;
 
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      "SergioBenitez/osxct" = inputs.sergioBenitez-osxct;
+      "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+      "sergiobenitez/osxct" = inputs.sergioBenitez-osxct;
     };
   };
 
@@ -45,6 +46,7 @@
       "ghostty"
       "headlamp"
       "qmk-toolbox"
+      "virtualbox"
     ];
 
     brews = [
