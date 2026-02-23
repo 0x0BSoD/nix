@@ -33,6 +33,7 @@ in {
   ];
 
   imports = [
+    ./../common.nix
     ./hardware-configuration.nix
 
     ./${linuxPath}/bluetooth.nix

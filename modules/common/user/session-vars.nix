@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   home.sessionVariables = {
     EDITOR = "nvim";
     PAGER = "";
@@ -18,5 +18,7 @@
     FZF_ALT_C_OPTS = "
       --walker-skip .git,node_modules,target
       --preview 'tree -C {}'";
+
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 }
