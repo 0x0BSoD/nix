@@ -37,6 +37,7 @@ in {
         ./${appsPath}/develop/nixdev.nix
         ./${appsPath}/develop/go.nix
         ./${appsPath}/develop/java.nix
+        ./${appsPath}/develop/rust.nix
         ./${appsPath}/develop/python.nix
         ./${appsPath}/develop/nodejs.nix
         ./${appsPath}/develop/tools.nix
@@ -46,6 +47,7 @@ in {
         ./${appsPath}/kubernetes/kubecm.nix
         ./${appsPath}/kubernetes/kubectx.nix
         ./${appsPath}/kubernetes/minikube.nix
+        ./${appsPath}/kubernetes/k3s.nix
         ./${appsPath}/kubernetes/stern.nix
 
         ./${appsPath}/bat.nix
