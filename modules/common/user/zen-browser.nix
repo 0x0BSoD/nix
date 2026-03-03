@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  programs.zen-browser.enable = true;
-
+  programs.zen-browser = {
+    enable = true;
+    suppressXdgMigrationWarning = true;
+  };
   xdg.mimeApps = let
     value = let
       zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;

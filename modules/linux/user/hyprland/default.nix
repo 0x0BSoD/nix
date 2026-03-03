@@ -9,7 +9,7 @@
     ./windowrules.nix
     ./variables.nix
     ./swaync
-    ./vicinae
+    # ./vicinae
     ./waybar
     ./rofi
   ];

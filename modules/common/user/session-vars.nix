@@ -2,6 +2,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     PAGER = "";
+    ANTHROPIC_BASE_URL = "http://10.1.1.16:8080";
 
     FZF_CTRL_R_OPTS = "
       --preview 'echo {}' --preview-window up:3:hidden:wrap

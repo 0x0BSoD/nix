@@ -60,6 +60,10 @@ in {
         stateVersion = "25.11";
         username = "alex";
         homeDirectory = "/home/alex";
+        sessionPath = [
+          "$HOME/go/bin"
+          "$HOME/.local/bin"
+        ];
       };
 
       xdg = {
@@ -112,14 +116,14 @@ in {
         ./${appsPath}/zen-browser.nix
         ./${appsPath}/spicetify.nix
 
-        ./${linuxPath}/hyprland
-        ./${linuxPath}/waypaper.nix
         ./${linuxPath}/appearance.nix
+        ./${linuxPath}/gnome.nix
+        ./${linuxPath}/hyprland
+        ./${linuxPath}/nemo.nix
+        ./${linuxPath}/other.nix
         ./${linuxPath}/swaylock.nix
         ./${linuxPath}/swayosd.nix
-        ./${linuxPath}/nemo.nix
-        ./${linuxPath}/gnome.nix
-        ./${linuxPath}/other.nix
+        ./${linuxPath}/waypaper.nix
 
         ../../../modules/common/user/session-vars.nix
         ../../../modules/linux/user/scripts

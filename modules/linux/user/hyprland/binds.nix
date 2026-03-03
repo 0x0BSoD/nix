@@ -17,7 +17,7 @@
       "$mainMod, F, fullscreen, 0"
       "$mainMod SHIFT, F, fullscreen, 1"
       "$mainMod, Space, exec, toggle-float"
-      "$mainMod, D, exec, vicinae vicinae://toggle"
+      "$mainMod, D, exec, rofi -show drun"
       "ALT, Escape, exec, hyprlock"
       "$mainMod SHIFT, Escape, exec, power-menu"
       "$mainMod, P, pseudo,"

@@ -6,7 +6,6 @@
     glib
     libgcc
     pigz
-    rofi
     swww
     unzip
     wine
