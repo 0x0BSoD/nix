@@ -24,6 +24,7 @@ in {
         sessionPath = [
           "$HOME/go/bin"
           "$HOME/.krew/bin"
+          "$HOME/.local/bin"
         ];
         sessionVariables._JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
       };

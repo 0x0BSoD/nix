@@ -7,7 +7,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    mutableTaps = false;
+    mutableTaps = true;
     user = primaryUser;
 
     taps = {
