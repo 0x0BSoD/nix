@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs.zen-browser = {
     enable = true;
-    suppressXdgMigrationWarning = true;
   };
   xdg.mimeApps = let
     value = let

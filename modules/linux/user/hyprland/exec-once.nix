@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland.settings.exec-once = [
     "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     "hyperidle &"
-    "init-wallpaper &"
+    "waypaper --restore"
     "nm-applet &"
     "poweralertd &"
     "swaync &"
