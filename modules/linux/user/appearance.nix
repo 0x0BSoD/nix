@@ -28,7 +28,7 @@
   # QT configuration for Nord theme
   qt = {
     enable = true;
-    platformTheme = "qtct";
+    platformTheme.name = "qtct";
     style = {
       name = "kvantum-dark";
       package = pkgs.libsForQt5.qt5ct;

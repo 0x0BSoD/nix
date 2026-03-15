@@ -27,6 +27,7 @@
     modules-right = [
       "network#spd"
       "pulseaudio"
+      "custom/audio-sink"
       "network"
       "custom/separator"
       "tray"
@@ -253,6 +254,15 @@
       on-click = "swaync-client -t -sw";
       on-click-right = "swaync-client -d -sw";
       escape = true;
+    };
+
+    "custom/audio-sink" = {
+      exec = "audio-switch status";
+      return-type = "json";
+      interval = 3;
+      on-click = "audio-switch cycle && pkill -SIGRTMIN+8 waybar";
+      tooltip = true;
+      signal = 8;  # SIGRTMIN+8 — waybar uses 34+N, so signal 8 = SIGRTMIN+8
     };
   };
 }

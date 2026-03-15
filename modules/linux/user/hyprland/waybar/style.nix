@@ -353,5 +353,19 @@
       min-width: 10px;
       border-radius: 5px;
     }
+
+    #custom-audio-sink {
+     color: @text;
+     background: @surface0;
+     padding: 0 10px;
+     border-radius: 6px;
+     margin: 4px 2px;
+     font-size: 13px;
+   }
+
+   #custom-audio-sink:hover {
+     background: @surface1;
+     color: @blue;
+   }
   '';
 }

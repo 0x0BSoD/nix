@@ -29,6 +29,8 @@
     lowfi
     imv
     playerctl
+    # for pactl
+    pulseaudio
 
     # wayland
     cliphist
