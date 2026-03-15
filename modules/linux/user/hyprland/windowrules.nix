@@ -16,6 +16,10 @@
       "size 700 450,title:^(Volume Control)$"
       "move 40 55%,title:^(Volume Control)$"
 
+      "float, class:wiremix"
+      "size 600 400, class:wiremix"
+      "center, class:wiremix"
+
       "float, title:^(Picture-in-Picture)$"
       "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
       "pin, title:^(Picture-in-Picture)$"

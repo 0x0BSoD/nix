@@ -31,6 +31,7 @@
     playerctl
     # for pactl
     pulseaudio
+    wiremix
 
     # wayland
     cliphist

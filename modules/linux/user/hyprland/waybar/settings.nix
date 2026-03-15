@@ -14,10 +14,6 @@
 
     modules-left = [
       "hyprland/workspaces"
-      "custom/separator"
-      "cpu"
-      "custom/separator"
-      "memory"
     ];
 
     modules-center = [
@@ -25,9 +21,11 @@
     ];
 
     modules-right = [
-      "network#spd"
+      # "network#spd"
+      "cpu"
+      "memory"
+      # custom/audio-sink"
       "pulseaudio"
-      "custom/audio-sink"
       "network"
       "custom/separator"
       "tray"
@@ -133,7 +131,7 @@
 
     clock = {
       interval = 1;
-      format = " {:%H:%M:%S}";
+      format = "{:%H:%M}";
       format-alt = " {:%H:%M   %Y, %d %B, %A}";
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
@@ -153,9 +151,10 @@
 
     pulseaudio = {
       format = "{icon}  {volume}%";
-      tooltip = false;
+      tooltip-format = "Playing at {volume}%";
       format-muted = "  Muted";
-      on-click = "pamixer -t";
+      on-click = "ghostty --class=wiremix -e wiremix";
+      on-click-right = "pamixer -t";
       on-scroll-up = "pamixer -i 1";
       on-scroll-down = "pamixer -d 1";
       scroll-step = 5;
@@ -200,7 +199,7 @@
 
     network = {
       tooltip = true;
-      format-wifi = "   {essid}";
+      format-wifi = "  ";
       format-ethernet = "󰈀 ";
       tooltip-format = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
       format-linked = "󰈀 {ifname} (No IP)";
@@ -262,7 +261,7 @@
       interval = 3;
       on-click = "audio-switch cycle && pkill -SIGRTMIN+8 waybar";
       tooltip = true;
-      signal = 8;  # SIGRTMIN+8 — waybar uses 34+N, so signal 8 = SIGRTMIN+8
+      signal = 8; # SIGRTMIN+8 — waybar uses 34+N, so signal 8 = SIGRTMIN+8
     };
   };
 }
