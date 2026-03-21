@@ -5,5 +5,7 @@
     gofumpt
     kubebuilder
     delve
+    protoc-gen-go-grpc
+    protobuf
   ];
 }

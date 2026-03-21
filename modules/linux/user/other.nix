@@ -1,20 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    aider-chat-full
+    claude-code
+    cmake
     conda
     direnv
     gcc
     glib
     libgcc
+    opencode
+    openssl
     pigz
+    rpi-imager
     swww
     unzip
     wine
     xdg-utils
-    claude-code
-    aider-chat-full
-    opencode
-    cmake
-    openssl
 
     # Nord theme packages
     nordic
