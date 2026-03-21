@@ -1,11 +1,12 @@
 {
+  self,
   pkgs,
   inputs,
   primaryUser,
   ...
 }: let
-  appsPath = "../../../modules/common/user";
-  linuxPath = "../../../modules/linux/user";
+  appsPath = "${self}/modules/common/user";
+  linuxPath = "${self}/modules/linux/user";
 in {
   programs.dconf.enable = true;
 
@@ -116,8 +117,8 @@ in {
         ./${linuxPath}/swayosd.nix
         ./${linuxPath}/waypaper.nix
 
-        ../../../modules/common/user/session-vars.nix
-        ../../../modules/linux/user/scripts
+        "${appsPath}/session-vars.nix"
+        "${linuxPath}/scripts"
       ];
   };
 

@@ -1,5 +1,5 @@
-{pkgs, ...}: let
-  linuxPath = "../../../modules/linux/system";
+{self, pkgs, ...}: let
+  linuxPath = "${self}/modules/linux/system";
 in {
   networking = {
     hostName = "tpad";
@@ -36,20 +36,20 @@ in {
     ./../common.nix
     ./hardware-configuration.nix
 
-    ../../../modules/common/home-manager-defaults.nix
+    "${self}/modules/common/home-manager-defaults.nix"
 
-    ./${linuxPath}/bluetooth.nix
-    ./${linuxPath}/boot.nix
-    ./${linuxPath}/fingerprint-scanner.nix
-    ./${linuxPath}/locale.nix
-    ./${linuxPath}/video.nix
+    "${linuxPath}/bluetooth.nix"
+    "${linuxPath}/boot.nix"
+    "${linuxPath}/fingerprint-scanner.nix"
+    "${linuxPath}/locale.nix"
+    "${linuxPath}/video.nix"
 
-    # ./${linuxPath}/flatpak.nix
-    ./${linuxPath}/fonts.nix
-    ./${linuxPath}/nix.nix
-    ./${linuxPath}/security.nix
-    ./${linuxPath}/services.nix
-    ./${linuxPath}/steam.nix
-    ./${linuxPath}/wayland.nix
+    # "${linuxPath}/flatpak.nix"
+    "${linuxPath}/fonts.nix"
+    "${linuxPath}/nix.nix"
+    "${linuxPath}/security.nix"
+    "${linuxPath}/services.nix"
+    "${linuxPath}/steam.nix"
+    "${linuxPath}/wayland.nix"
   ];
 }

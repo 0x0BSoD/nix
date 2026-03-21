@@ -1,5 +1,5 @@
-{inputs, primaryUser, ...}: let
-  appsPath = "../../../modules/common/user";
+{self, inputs, primaryUser, ...}: let
+  appsPath = "${self}/modules/common/user";
 in {
   users.users."${primaryUser}" = {
     name = primaryUser;
@@ -55,7 +55,7 @@ in {
       ./${appsPath}/zen-browser.nix
       ./${appsPath}/spicetify.nix
 
-      ../../../modules/common/user/session-vars.nix
+      "${appsPath}/session-vars.nix"
     ];
   };
 }
