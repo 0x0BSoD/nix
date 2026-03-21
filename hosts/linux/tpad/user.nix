@@ -13,6 +13,10 @@ in {
   home-manager.users."${primaryUser}" = {
     programs.home-manager.enable = true;
 
+    tools.develop.java.enable = false;
+    tools.kubernetes.minikube.enable = false;
+    tools.kubernetes.k3s.enable = false;
+
     services.kanshi = {
       enable = true;
 
@@ -79,18 +83,8 @@ in {
 
       "${appsPath}/git/git.home.nix"
 
-      "${appsPath}/develop/nixdev.nix"
-      "${appsPath}/develop/go.nix"
-      "${appsPath}/develop/rust.nix"
-      "${appsPath}/develop/python.nix"
-      "${appsPath}/develop/nodejs.nix"
-      "${appsPath}/develop/tools.nix"
-
-      "${appsPath}/kubernetes/k9s"
-      "${appsPath}/kubernetes/kubectl.nix"
-      "${appsPath}/kubernetes/kubecm.nix"
-      "${appsPath}/kubernetes/kubectx.nix"
-      "${appsPath}/kubernetes/stern.nix"
+      "${appsPath}/develop"
+      "${appsPath}/kubernetes"
 
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
