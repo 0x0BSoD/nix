@@ -60,6 +60,9 @@ in {
         "$HOME/go/bin"
         "$HOME/.local/bin"
       ];
+      sessionVariables = {
+        ANTHROPIC_BASE_URL = "http://10.1.1.16:8080";
+      };
     };
 
     xdg = {

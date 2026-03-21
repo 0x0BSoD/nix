@@ -16,7 +16,9 @@ in {
         "$HOME/.krew/bin"
         "$HOME/.local/bin"
       ];
-      sessionVariables._JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+      sessionVariables = {
+        _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+      };
     };
 
     imports = [
