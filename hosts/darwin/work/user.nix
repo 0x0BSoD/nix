@@ -1,9 +1,9 @@
-{inputs, ...}: let
+{inputs, primaryUser, ...}: let
   appsPath = "../../../modules/common/user";
 in {
-  users.users."aleksandr.simonov" = {
-    name = "aleksandr.simonov";
-    home = "/Users/aleksandr.simonov";
+  users.users."${primaryUser}" = {
+    name = primaryUser;
+    home = "/Users/${primaryUser}";
   };
 
   home-manager = {
@@ -16,7 +16,7 @@ in {
     overwriteBackup = true;
     backupFileExtension = "backup";
 
-    users."aleksandr.simonov" = {
+    users."${primaryUser}" = {
       programs.home-manager.enable = true;
 
       home = {

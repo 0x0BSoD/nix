@@ -7,7 +7,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    mutableTaps = true;
+    mutableTaps = false;
     user = primaryUser;
 
     taps = {
@@ -17,6 +17,10 @@
       "sergiobenitez/osxct" = inputs.sergioBenitez-osxct;
     };
   };
+
+  system.activationScripts.createHomebrewTapDirs.text = ''
+    mkdir -p /opt/homebrew/Library/Taps/sergiobenitez/homebrew-osxct
+  '';
 
   homebrew = {
     enable = true;

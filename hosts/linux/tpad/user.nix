@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  primaryUser,
   ...
 }: let
   appsPath = "../../../modules/common/user";
@@ -18,7 +19,7 @@ in {
     overwriteBackup = true;
     backupFileExtension = "backup";
 
-    users.alex = {
+    users."${primaryUser}" = {
       programs.home-manager.enable = true;
 
       services.kanshi = {
@@ -58,8 +59,8 @@ in {
 
       home = {
         stateVersion = "25.11";
-        username = "alex";
-        homeDirectory = "/home/alex";
+        username = primaryUser;
+        homeDirectory = "/home/${primaryUser}";
         sessionPath = [
           "$HOME/go/bin"
           "$HOME/.local/bin"
@@ -131,9 +132,9 @@ in {
     };
   };
 
-  users.users.alex = {
+  users.users."${primaryUser}" = {
     isNormalUser = true;
-    name = "alex";
+    name = primaryUser;
     description = "Aleksandr Simonov";
     extraGroups = [
       "wheel"
@@ -152,5 +153,5 @@ in {
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
-  nix.settings.allowed-users = ["alex"];
+  nix.settings.allowed-users = [primaryUser];
 }
