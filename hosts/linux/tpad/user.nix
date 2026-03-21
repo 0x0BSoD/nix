@@ -9,17 +9,7 @@
 in {
   programs.dconf.enable = true;
 
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    overwriteBackup = true;
-    backupFileExtension = "backup";
-
-    users."${primaryUser}" = {
+  home-manager.users."${primaryUser}" = {
       programs.home-manager.enable = true;
 
       services.kanshi = {
@@ -129,7 +119,6 @@ in {
         ../../../modules/common/user/session-vars.nix
         ../../../modules/linux/user/scripts
       ];
-    };
   };
 
   users.users."${primaryUser}" = {

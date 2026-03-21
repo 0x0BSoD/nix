@@ -36,6 +36,8 @@ in {
     ./../common.nix
     ./hardware-configuration.nix
 
+    ../../../modules/common/home-manager-defaults.nix
+
     ./${linuxPath}/bluetooth.nix
     ./${linuxPath}/boot.nix
     ./${linuxPath}/fingerprint-scanner.nix

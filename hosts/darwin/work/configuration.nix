@@ -5,6 +5,8 @@ in {
   imports = [
     inputs.nixvim.nixDarwinModules.nixvim
 
+    ../../../modules/common/home-manager-defaults.nix
+
     ./${darwinPath}/nix.nix
     ./${darwinPath}/pam.nix
     ./${darwinPath}/system.nix
