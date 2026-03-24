@@ -109,6 +109,7 @@ in {
       "${linuxPath}/hyprland"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
+      "${linuxPath}/hunspell.nix"
       "${linuxPath}/swaylock.nix"
       "${linuxPath}/swayosd.nix"
       "${linuxPath}/waypaper.nix"

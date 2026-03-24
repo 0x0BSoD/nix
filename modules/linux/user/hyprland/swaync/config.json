@@ -24,26 +24,21 @@
     "timeout-critical": 0,
     "notification-window-width": 500,
     "keyboard-shortcuts": true,
-    "image-visibility": "always",
+    "image-visibility": "when-available",
     "transition-time": 200,
     "hide-on-clear": true,
     "hide-on-action": true,
     "script-fail-notify": true,
 
-    "widgets": ["inhibitors", "dnd", "mpris", "notifications"],
+    "widgets": ["title", "dnd", "notifications"],
     "widget-config": {
         "notifications": {
             "vexpand": false
         },
-        "inhibitors": {
-            "text": "Inhibitors",
-            "button-text": "Clear All",
-            "clear-all-button": true
-        },
         "title": {
             "text": "Notifications",
-            "clear-all-button": false,
-            "button-text": "Clear All"
+            "clear-all-button": true,
+            "button-text": "Clear "
         },
         "dnd": {
             "text": "Do Not Disturb"
@@ -53,7 +48,8 @@
             "text": "Label Text"
         },
         "mpris": {
-            "autohide": true
+            "image-size": 96,
+            "image-radius": 12
         }
     }
 }

@@ -19,6 +19,7 @@
       "terraform"
       "toml"
       "zig"
+      "qml"
     ];
 
     userSettings = {
@@ -39,8 +40,8 @@
       };
 
       ## Fonts
-      ui_font_size = 14.0;
-      buffer_font_size = 14.0;
+      ui_font_size = 16.0;
+      buffer_font_size = 16.0;
       buffer_font_family = "JetBrains Mono";
       buffer_font_features = {
         calt = 1;

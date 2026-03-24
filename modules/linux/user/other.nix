@@ -12,6 +12,7 @@
     openssl
     pigz
     rpi-imager
+    socat
     swww
     unzip
     wine
@@ -54,6 +55,7 @@
     xorg.libXxf86vm
     libxkbcommon
     libGL
+    kdePackages.qtdeclarative
 
     # fun stuff
     # asciiquarium-transparent

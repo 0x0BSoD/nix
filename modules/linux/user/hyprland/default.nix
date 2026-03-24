@@ -10,7 +10,8 @@
     ./variables.nix
     ./swaync
     # ./vicinae
-    ./waybar
+    # ./waybar
+    ./quickshell
     ./rofi
   ];
 }

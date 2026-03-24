@@ -8,8 +8,8 @@
     "swaync &"
     "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     "udiskie --automount --notify --smart-tray &"
-    "vicinae server &"
-    "waybar &"
+    # "vicinae server &"
+    # "waybar &"
     "wl-clip-persist --clipboard both &"
     "wl-paste --watch cliphist store &"
   ];

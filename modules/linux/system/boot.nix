@@ -6,7 +6,7 @@
   boot = {
     tmp.cleanOnBoot = true;
     loader.timeout = 2;
-    consoleLogLevel = 3;
+    consoleLogLevel = 0;
 
     initrd = {
       enable = true;
