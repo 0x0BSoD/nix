@@ -3,12 +3,14 @@
     general = {
       "$mainMod" = "SUPER";
       layout = "dwindle";
-      gaps_in = 5;
-      gaps_out = 5;
-      border_size = 2;
       "col.active_border" = "rgb(8aadf4) rgb(24273A) rgb(24273A) rgb(8aadf4) 45deg";
       "col.inactive_border" = "rgb(24273A) rgb(24273A) rgb(24273A) rgb(27273A) 45deg";
+      border_size = 0;
+      gaps_in = 4;
+      gaps_out = 4;
+      float_gaps = 6;
       resize_on_border = true;
+      extend_border_grab_area = 30;
     };
 
     misc = {
@@ -47,51 +49,38 @@
     };
 
     decoration = {
-      rounding = 10;
-
+      rounding = 4;
       active_opacity = 1.0;
       inactive_opacity = 1.0;
-
       blur = {
-        enabled = true;
-        size = 3;
-        passes = 3;
-        ignore_opacity = true;
-        vibrancy = 0.1696;
-        new_optimizations = true;
+        enabled = false;
       };
-
       shadow = {
-        enabled = true;
-
-        ignore_window = true;
-        offset = "0 2";
-        range = 20;
-        render_power = 3;
-        color = "rgba(00000055)";
+        enabled = false;
       };
     };
 
     animations = {
-      enabled = true;
-
-      bezier = [
-        "wind, 0.05, 0.9, 0.1, 1.05"
-        "winIn, 0.1, 1.1, 0.1, 1.1"
-        "winOut, 0.3, -0.3, 0, 1"
-        "liner, 1, 1, 1, 1"
-      ];
-
+      enabled = "yes";
+      bezier = ["myBezier, 0.05, 0.9, 0.1, 1.05"];
       animation = [
-        # name, enable, speed, curve, style
-        "windows,     1, 6,  wind, slide"
-        "windowsIn,   1, 6,  winIn, slide"
-        "windowsOut,  1, 5,  winOut, slide"
-        "windowsMove, 1, 5,  wind, slide"
-        "border,      1, 1,  liner"
-        "borderangle, 1, 30, liner, loop"
-        "fade,        1, 10, default"
-        "workspaces,  1, 5,  wind"
+        # Windows pop in instead of sliding
+        "windows, 1, 5, myBezier, popin 80%"
+        "windowsOut, 1, 5, myBezier, popin 80%"
+
+        # Layers (rofi, waybar) set to fade to remove the up/down slide
+        "layers, 1, 5, myBezier, fade"
+        "layersIn, 1, 5, myBezier, fade"
+        "layersOut, 1, 5, myBezier, fade"
+
+        "fade, 1, 5, myBezier"
+
+        # Workspaces slide horizontally (standard)
+        "workspaces, 1, 5, myBezier, slide"
+
+        # Special workspaces fade to avoid the vertical slide
+        "specialWorkspaceIn, 1, 5, myBezier, fade"
+        "specialWorkspaceOut, 1, 5, myBezier, fade"
       ];
     };
 
