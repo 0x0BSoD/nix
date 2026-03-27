@@ -29,16 +29,14 @@ Row {
             height: wsRow.height
             width: 30
 
-            MaterialIcon {
+            Text {
                 anchors.fill: parent
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                color: wsContainer.isActive ? WsConfig.config.active
-                     : wsContainer.isOccupied ? WsConfig.config.occupied
-                     : WsConfig.config.empty
+                text: wsContainer.isActive ? WsConfig.config.active : wsContainer.isOccupied ? WsConfig.config.occupied : WsConfig.config.empty
+                font.family: "JetBrainsMono Nerd Font"
                 font.pixelSize: wsContainer.fontSize
-                fill: wsContainer.isActive ? 1 : 0
-                text: WsConfig.config.label
+                color: wsContainer.isActive ? ColorsConfig.palette.current.active_ws: wsContainer.isOccupied ? ColorsConfig.palette.current.occupied_ws : ColorsConfig.palette.current.empty_ws
             }
 
             MouseArea {
