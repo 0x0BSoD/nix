@@ -10,5 +10,6 @@
     "udiskie --automount --notify --smart-tray &"
     "wl-clip-persist --clipboard both &"
     "wl-paste --watch cliphist store &"
+    "quickshell &"
   ];
 }

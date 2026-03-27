@@ -1,7 +1,8 @@
 {pkgs, ...}: {
-  home.packages = (
-    with pkgs; [
-      quickshell
-    ]
-  );
+  home.packages = [pkgs.quickshell];
+
+  xdg.configFile."quickshell" = {
+    source = ./qml;
+    recursive = true;
+  };
 }
