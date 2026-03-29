@@ -106,6 +106,21 @@ Variants {
                     }
                 }
 
+                // Tray
+                Rectangle {
+                    color: ColorsConfig.palette.current.primary_container
+                    height: parent.height
+                    implicitWidth: trayWidget.implicitWidth + 24
+                    SystemTray {
+                        id: trayWidget
+                        anchors {
+                            fill: parent
+                            leftMargin: 12
+                            rightMargin: 12
+                        }
+                    }
+                }
+
                 // Battery
                 Rectangle {
                     color: ColorsConfig.palette.current.primary_container

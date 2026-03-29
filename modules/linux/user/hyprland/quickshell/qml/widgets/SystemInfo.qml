@@ -11,6 +11,7 @@ Row {
         height: parent.height
         fill: 0
     }
+
     StyledText {
         width: 44
         height: parent.height

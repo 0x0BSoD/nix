@@ -8,25 +8,6 @@ import qs.services
 Row {
     spacing: 10
 
-    // Bluetooth icon
-    Row {
-        id: btRow
-        spacing: 6
-        height: parent.height
-
-        property var btDevices: Bluetooth.defaultAdapter?.devices?.values
-        property var firstDevice: btDevices?.[0]
-
-        MaterialIcon {
-            text: btRow.firstDevice?.connected ? "Bluetooth" : "Bluetooth_Disabled"
-            height: parent.height
-            fill: btRow.firstDevice?.connected ? 1 : 0
-            color: btRow.firstDevice?.connected
-                ? ColorsConfig.palette.current.accent
-                : ColorsConfig.palette.current.text_muted
-        }
-    }
-
     // WiFi
     Row {
         id: wifiRow
