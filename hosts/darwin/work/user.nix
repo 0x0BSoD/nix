@@ -1,4 +1,9 @@
-{self, inputs, primaryUser, ...}: let
+{
+  self,
+  inputs,
+  primaryUser,
+  ...
+}: let
   appsPath = "${self}/modules/common/user";
 in {
   users.users."${primaryUser}" = {
@@ -36,7 +41,8 @@ in {
       # "${appsPath}/terraform.nix"
       "${appsPath}/vault.nix"
       "${appsPath}/redis.nix"
-      "${appsPath}/sysdig.nix"
+      "${appsPath}/goland.nix"
+      # "${appsPath}/sysdig.nix"
       "${appsPath}/ghostty"
       "${appsPath}/shell"
 

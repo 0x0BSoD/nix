@@ -6,6 +6,8 @@ font-thicken = true
 theme = Nord
 
 custom-shader = "./cubes.glsl"
+custom-shader = "./cursor_warp.glsl"
+custom-shader = "./ripple_cursor.glsl"
 custom-shader-animation = always
 
 shell-integration-features = no-cursor

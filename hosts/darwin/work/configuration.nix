@@ -1,4 +1,8 @@
-{self, inputs, ...}: let
+{
+  self,
+  inputs,
+  ...
+}: let
   darwinPath = "${self}/modules/darwin/system";
   appsPath = "${self}/modules/common/user";
 in {
@@ -8,7 +12,6 @@ in {
     "${self}/modules/common/home-manager-defaults.nix"
 
     "${darwinPath}/nix.nix"
-    "${darwinPath}/pam.nix"
     "${darwinPath}/system.nix"
     "${darwinPath}/security.nix"
     "${darwinPath}/fonts.nix"

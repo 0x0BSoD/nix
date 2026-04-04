@@ -41,25 +41,16 @@
 
     casks = [
       "claude-code"
-      {
-        name = "chatgpt";
-        greedy = true;
-      }
-      "displaylink"
+      "chatgpt"
       "docker-desktop"
       "ghostty"
-      "headlamp"
-      "qmk-toolbox"
-      "virtualbox"
     ];
 
     brews = [
       "coreutils"
       "docker-compose"
-      "gwctl"
       "helm"
       "pinentry-mac"
-      "snitch"
       "x86_64-unknown-linux-gnu"
     ];
   };
