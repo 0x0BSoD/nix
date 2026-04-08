@@ -1,11 +1,15 @@
 {...}: {
-  launchd.daemons.limit.maxfiles = {
-    soft = 10240;
-    hard = 10240;
-  };
-
-  launchd.user.agents.limit.maxfiles = {
-    soft = 10240;
-    hard = 10240;
+  launchd.user.agents.set-maxfiles = {
+    serviceConfig = {
+      ProgramArguments = [
+        "/bin/sh"
+        "-c"
+        "launchctl limit maxfiles 10240 10240"
+      ];
+      RunAtLoad = true;
+      KeepAlive = false;
+      StandardOutPath = "/tmp/set-maxfiles.out";
+      StandardErrorPath = "/tmp/set-maxfiles.err";
+    };
   };
 }
