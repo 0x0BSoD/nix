@@ -13,6 +13,7 @@ in {
 
     "${darwinPath}/nix.nix"
     "${darwinPath}/system.nix"
+    "${darwinPath}/launchd.nix"
     "${darwinPath}/security.nix"
     "${darwinPath}/fonts.nix"
     "${appsPath}/neovim.nix"
