@@ -1,8 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    curlie
-    duf
     bottom
+    curlie
+    dig
+    duf
     dust
     fd
     fx
@@ -13,7 +14,7 @@
     procs
     ripgrep
     viddy
-    yq
     yazi
+    yq
   ];
 }

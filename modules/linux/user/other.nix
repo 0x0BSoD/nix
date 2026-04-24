@@ -15,7 +15,6 @@
     socat
     swww
     unzip
-    wine
     xdg-utils
 
     # Nord theme packages

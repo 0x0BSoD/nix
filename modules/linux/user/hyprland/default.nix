@@ -1,17 +1,15 @@
 {...}: {
   imports = [
+    ./binds.nix
+    ./exec-once.nix
     ./hyprland.nix
     ./hyprlock.nix
-    ./exec-once.nix
     ./monitors.nix
-    ./settings.nix
-    ./binds.nix
-    ./windowrules.nix
-    ./variables.nix
-    ./swaync
-    # ./vicinae
-    # ./waybar
-    ./quickshell
     ./rofi
+    ./settings.nix
+    ./swaync
+    ./variables.nix
+    ./waybar
+    ./windowrules.nix
   ];
 }

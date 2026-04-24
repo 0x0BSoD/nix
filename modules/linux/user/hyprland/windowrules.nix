@@ -94,6 +94,11 @@
       "noborder, title:^(qs-master)$"
       "noinitialfocus, title:^(qs-master)$"
       "move -5000 -5000, title:^(qs-master)$"
+
+      "noborder, class:^(.*wine.*)$"
+      "noborder, title:^(Guitar Pro 8.*)$"
+      "rounding 0, class:^(.*wine.*)$"
+      "noanim, class:^(.*wine.*)$"
     ];
 
     layerrule = [

@@ -16,7 +16,6 @@
     find = "fd";
     top = "btm";
     ps = "procs";
-    # ig = "dog";
     watch = "viddy";
     tmp = "cd $(mktemp -d)";
 

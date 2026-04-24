@@ -106,13 +106,15 @@ in {
 
       "${linuxPath}/appearance.nix"
       "${linuxPath}/gnome.nix"
+      "${linuxPath}/hunspell.nix"
       "${linuxPath}/hyprland"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
-      "${linuxPath}/hunspell.nix"
+      "${linuxPath}/printing.nix"
       "${linuxPath}/swaylock.nix"
       "${linuxPath}/swayosd.nix"
       "${linuxPath}/waypaper.nix"
+      "${linuxPath}/wine.nix"
 
       "${appsPath}/session-vars.nix"
       "${linuxPath}/scripts"
