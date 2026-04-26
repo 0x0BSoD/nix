@@ -88,6 +88,11 @@
         ./hosts/darwin/work/homebrew.nix
         ./hosts/darwin/work/user.nix
       ];
+      home = mkDarwin "alex" [
+        ./hosts/darwin/home/configuration.nix
+        ./hosts/darwin/home/homebrew.nix
+        ./hosts/darwin/home/user.nix
+      ];
     };
     nixosConfigurations = {
       tpad = mkNixos "alex" [
