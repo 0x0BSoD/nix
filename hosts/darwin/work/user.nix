@@ -12,7 +12,7 @@ in {
   };
 
   home-manager.users."${primaryUser}" = {
-    programs.home-manager.enable = true;
+    programs.home-manager.enable = false;
 
     home = {
       stateVersion = "25.11";
@@ -38,11 +38,9 @@ in {
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
       "${appsPath}/delta.nix"
-      # "${appsPath}/terraform.nix"
       "${appsPath}/vault.nix"
       "${appsPath}/redis.nix"
       "${appsPath}/goland.nix"
-      # "${appsPath}/sysdig.nix"
       "${appsPath}/ghostty"
       "${appsPath}/shell"
 

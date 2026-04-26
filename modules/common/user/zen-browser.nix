@@ -2,6 +2,7 @@
   programs.zen-browser = {
     enable = true;
   };
+
   xdg.mimeApps = let
     value = let
       zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;

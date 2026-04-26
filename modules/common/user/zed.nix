@@ -143,19 +143,19 @@
       };
 
       ## AI
-      disable_ai = false;
-      features = {
-        edit_prediction_provider = "copilot";
-      };
-      agent = {
-        use_modifier_to_send = true;
-        model_parameters = [];
-        enable_feedback = false;
-        default_model = {
-          provider = "deepseek";
-          model = "deepseek-chat";
-        };
-      };
+      disable_ai = true;
+      # features = {
+      #   edit_prediction_provider = "copilot";
+      # };
+      # agent = {
+      #   use_modifier_to_send = true;
+      #   model_parameters = [];
+      #   enable_feedback = false;
+      #   default_model = {
+      #     provider = "deepseek";
+      #     model = "deepseek-chat";
+      #   };
+      # };
 
       ## ================
       completions = {
@@ -223,6 +223,7 @@
             enabled = true;
           };
         };
+
         Go = {
           format_on_save = "on";
           formatter = "language_server";
@@ -230,10 +231,12 @@
             "source.organizeImports" = true;
           };
         };
+
         YAML = {
           formatter = "language_server";
           tab_size = 2;
         };
+
         Lua = {
           format_on_save = "on";
           formatter = {
@@ -249,7 +252,9 @@
             };
           };
         };
+
         Nix = {
+          language_servers = ["nixd" "!nil"];
           formatter = {
             external = {
               command = "alejandra";
@@ -257,6 +262,7 @@
             };
           };
         };
+
         Python = {
           formatter = {
             language_server = {
@@ -268,14 +274,28 @@
             "ruff"
           ];
         };
+
         Markdown = {
           soft_wrap = "preferred_line_length";
           remove_trailing_whitespace_on_save = false;
         };
+
         LaTeX = {
           show_edit_predictions = false;
           soft_wrap = "preferred_line_length";
           preferred_line_length = 110;
+        };
+
+        QML = {
+          formatter = {
+            external = {
+              command = "sh";
+              arguments = [
+                "-c"
+                "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"
+              ];
+            };
+          };
         };
       };
 
@@ -366,6 +386,18 @@
             functionTypeParameters = true;
             parameterNames = true;
             rangeVariableTypes = true;
+          };
+        };
+        nixd = {
+          settings = {
+            nixpkgs = {
+              expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
+            };
+          };
+        };
+        qml = {
+          binary = {
+            arguments = ["-E"];
           };
         };
       };

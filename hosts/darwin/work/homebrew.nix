@@ -14,17 +14,12 @@
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
-      "sergiobenitez/osxct" = inputs.sergioBenitez-osxct;
+      # "sergiobenitez/osxct" = inputs.sergioBenitez-osxct;
     };
   };
 
-  system.activationScripts.createHomebrewTapDirs.text = ''
-    mkdir -p /opt/homebrew/Library/Taps/sergiobenitez/homebrew-osxct
-  '';
-
   homebrew = {
     enable = true;
-    caskArgs.no_quarantine = true;
 
     onActivation = {
       autoUpdate = false;
@@ -51,7 +46,6 @@
       "docker-compose"
       "helm"
       "pinentry-mac"
-      "x86_64-unknown-linux-gnu"
     ];
   };
 }
