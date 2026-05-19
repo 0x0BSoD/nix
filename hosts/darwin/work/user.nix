@@ -45,7 +45,7 @@ in {
       "${appsPath}/terraform.nix"
       "${appsPath}/vault.nix"
 
-      "${appsPath}/zed.nix"
+      # "${appsPath}/zed.nix"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"
 

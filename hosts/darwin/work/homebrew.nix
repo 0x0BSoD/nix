@@ -35,6 +35,7 @@
     taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
+      "codex"
       "claude-code"
       "chatgpt"
       "docker-desktop"
@@ -42,6 +43,7 @@
     ];
 
     brews = [
+      "asciiquarium"
       "coreutils"
       "docker-compose"
       "helm"
