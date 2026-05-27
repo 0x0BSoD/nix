@@ -72,7 +72,7 @@
       "net.core.default_qdisc" = "cake";
     };
 
-    kernelPackages = pkgs.linuxPackages_6_19;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       "preempt=full"
       "quiet"

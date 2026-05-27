@@ -9,6 +9,7 @@
   linuxPath = "${self}/modules/linux/user";
 in {
   programs.dconf.enable = true;
+  programs.wireshark.enable = true;
 
   home-manager.users."${primaryUser}" = {
     programs.home-manager.enable = true;
@@ -60,9 +61,6 @@ in {
         "$HOME/go/bin"
         "$HOME/.local/bin"
       ];
-      sessionVariables = {
-        ANTHROPIC_BASE_URL = "http://10.1.1.16:8080";
-      };
     };
 
     xdg = {
@@ -86,8 +84,10 @@ in {
 
       "${appsPath}/git/git.home.nix"
 
+      "${appsPath}/ansible.nix"
       "${appsPath}/develop"
       "${appsPath}/kubernetes"
+      "${appsPath}/terraform.nix"
 
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
@@ -103,6 +103,7 @@ in {
       "${appsPath}/goland.nix"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"
+      "${appsPath}/wireshark.nix"
 
       "${linuxPath}/appearance.nix"
       "${linuxPath}/gnome.nix"
@@ -126,18 +127,19 @@ in {
     name = primaryUser;
     description = "Aleksandr Simonov";
     extraGroups = [
-      "wheel"
-      "input"
-      "networkmanager"
-      "video"
-      "audio"
-      "libvirtd"
-      "kvm"
-      "docker"
-      "disk"
       "adbusers"
+      "audio"
+      "disk"
+      "docker"
+      "input"
+      "kvm"
+      "libvirtd"
       "lp"
+      "networkmanager"
       "scanner"
+      "video"
+      "wheel"
+      "wireshark"
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
