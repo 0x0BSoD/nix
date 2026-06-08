@@ -7,7 +7,7 @@
     folder = ~/Pictures/wallpapers
     monitors = All
     wallpaper = ~/Pictures/wallpapers/mountain.png
-    backend = swww
+    backend = awww
     fill = fill
     sort = name
     color = #ffffff

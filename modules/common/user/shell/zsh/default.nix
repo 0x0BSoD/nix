@@ -1,6 +1,9 @@
-{...}: {
+{config, ...}: {
   programs.zsh = {
     enable = true;
+
+    # Keep legacy default (home dir); new default (XDG) arrives with stateVersion >= 26.05
+    dotDir = config.home.homeDirectory;
 
     enableCompletion = false;
 

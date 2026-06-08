@@ -1,7 +1,10 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
+    # Hyprlang variables must be declared at global scope, not inside a
+    # category — newer Hyprland no longer exports category-scoped vars.
+    "$mainMod" = "SUPER";
+
     general = {
-      "$mainMod" = "SUPER";
       layout = "dwindle";
       "col.active_border" = "rgb(8aadf4) rgb(24273A) rgb(24273A) rgb(8aadf4) 45deg";
       "col.inactive_border" = "rgb(24273A) rgb(24273A) rgb(24273A) rgb(27273A) 45deg";
@@ -20,7 +23,7 @@
       animate_manual_resizes = false;
       enable_swallow = true;
       focus_on_activate = true;
-      new_window_takes_over_fullscreen = 2;
+      # new_window_takes_over_fullscreen removed in Hyprland 0.55 (no replacement).
       middle_click_paste = false;
     };
 
@@ -39,7 +42,8 @@
     };
 
     dwindle = {
-      pseudotile = "yes";
+      # pseudotile option removed in Hyprland 0.55; pseudotiling is now
+      # toggled only via the `pseudo` dispatcher (see $mainMod, P bind).
       preserve_split = "yes";
     };
 

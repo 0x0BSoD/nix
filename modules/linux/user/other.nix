@@ -13,7 +13,7 @@
     pigz
     rpi-imager
     socat
-    swww
+    awww
     unzip
     xdg-utils
 
@@ -46,12 +46,12 @@
     wl-clipboard
 
     # GUI devel
-    xorg.libX11.dev
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXinerama
-    xorg.libXrandr
-    xorg.libXxf86vm
+    libx11.dev
+    libxcursor
+    libxi
+    libxinerama
+    libxrandr
+    libxxf86vm
     libxkbcommon
     libGL
     kdePackages.qtdeclarative

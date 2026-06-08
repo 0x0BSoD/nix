@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -214,6 +215,8 @@
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
+    # Keep legacy default; new default (null) arrives with stateVersion >= 26.05
+    gtk4.theme = config.gtk.theme;
 
     # Font configuration
     font = {

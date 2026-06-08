@@ -5,6 +5,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
+    # Keep legacy default; new default ("lua") arrives with stateVersion >= 26.05
+    configType = "hyprlang";
+
     package = null;
     portalPackage = null;
 
