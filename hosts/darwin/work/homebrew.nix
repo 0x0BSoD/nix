@@ -47,6 +47,7 @@
       "coreutils"
       "docker-compose"
       "helm"
+      "openstackclient"
       "pinentry-mac"
     ];
   };
