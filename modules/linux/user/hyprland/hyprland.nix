@@ -11,9 +11,7 @@
     package = null;
     portalPackage = null;
 
-    xwayland = {
-      enable = true;
-    };
+    xwayland.enable = true;
     systemd.enable = true;
   };
 }

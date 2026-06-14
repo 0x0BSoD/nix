@@ -109,6 +109,7 @@ in {
       "${linuxPath}/gnome.nix"
       "${linuxPath}/hunspell.nix"
       "${linuxPath}/hyprland"
+      "${linuxPath}/niri"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
       "${linuxPath}/printing.nix"
