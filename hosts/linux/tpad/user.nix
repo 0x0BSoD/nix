@@ -18,6 +18,7 @@ in {
     tools.kubernetes.minikube.enable = false;
     tools.kubernetes.k3s.enable = false;
 
+    services.hyprpolkitagent.enable = true;
     services.kanshi = {
       enable = true;
 
@@ -109,7 +110,7 @@ in {
       "${linuxPath}/gnome.nix"
       "${linuxPath}/hunspell.nix"
       "${linuxPath}/hyprland"
-      "${linuxPath}/niri"
+      # "${linuxPath}/niri"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
       "${linuxPath}/printing.nix"

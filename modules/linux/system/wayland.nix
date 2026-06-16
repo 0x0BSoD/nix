@@ -3,7 +3,7 @@
   imports = [inputs.niri-flake.nixosModules.niri];
 
   programs.hyprland.enable = true;
-  programs.niri.enable = true;
+  programs.niri.enable = false;
 
   xdg.portal = {
     enable = true;
