@@ -111,6 +111,7 @@ in {
       "${linuxPath}/hunspell.nix"
       "${linuxPath}/hyprland"
       # "${linuxPath}/niri"
+      "${linuxPath}/noctalia"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
       "${linuxPath}/printing.nix"

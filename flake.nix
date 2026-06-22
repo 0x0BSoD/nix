@@ -45,6 +45,10 @@
     # nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     niri-flake.url = "github:sodiboo/niri-flake";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vicinae-extensions.url = "github:vicinaehq/extensions";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
