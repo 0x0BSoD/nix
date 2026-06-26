@@ -18,7 +18,6 @@ in {
     tools.kubernetes.minikube.enable = false;
     tools.kubernetes.k3s.enable = false;
 
-    services.hyprpolkitagent.enable = true;
     services.kanshi = {
       enable = true;
 
@@ -82,6 +81,7 @@ in {
       inputs.zen-browser.homeModules.beta
       inputs.spicetify-nix.homeManagerModules.spicetify
       inputs.nixvim.homeModules.nixvim
+      inputs.noctalia.homeModules.default
 
       "${appsPath}/git/git.home.nix"
 

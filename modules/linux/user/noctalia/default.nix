@@ -1,6 +1,4 @@
-{inputs, ...}: {
-  imports = [inputs.noctalia.homeModules.default];
-
+{...}: {
   programs.noctalia = {
     enable = true;
     # Run as a user service so it autostarts independently of the compositor

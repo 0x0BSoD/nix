@@ -1,4 +1,4 @@
-{...}: {
+{ lib, osConfig, ... }: lib.mkIf osConfig.programs.niri.enable {
   xdg.configFile."waybar-niri/config".text = builtins.toJSON {
     layer = "top";
     position = "top";

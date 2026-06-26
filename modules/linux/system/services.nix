@@ -3,13 +3,6 @@
     pamixer
     cifs-utils
     coppwr
-    (pkgs.catppuccin-sddm.override
-      {
-        flavor = "macchiato";
-        accent = "mauve";
-        font = "JetBrainsMono";
-        fontSize = "9";
-      })
   ];
 
   services = {
@@ -25,12 +18,7 @@
     hypridle.enable = true;
     tlp.enable = true;
 
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-macchiato-mauve";
-      package = pkgs.kdePackages.sddm;
-      wayland.enable = true;
-    };
+    displayManager.ly.enable = true;
 
     upower = {
       enable = true;

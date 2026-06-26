@@ -44,7 +44,9 @@
     };
     # nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    # niri-flake has no release branches; tracks upstream HEAD intentionally.
     niri-flake.url = "github:sodiboo/niri-flake";
+    # noctalia has no release branches; tracks upstream HEAD intentionally.
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";

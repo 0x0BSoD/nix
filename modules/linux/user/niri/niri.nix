@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, lib, osConfig, ... }: lib.mkIf osConfig.programs.niri.enable {
   xdg.configFile."niri/config.kdl".text = ''
     input {
         keyboard {
@@ -47,11 +47,10 @@
         slowdown 0.8
     }
 
-    spawn-at-startup "dbus-update-activation-environment" "--all" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
     spawn-at-startup "nm-applet"
     spawn-at-startup "poweralertd"
     spawn-at-startup "swaync"
-    spawn-at-startup "waybar" "--config" "${config.xdg.configHome}/waybar-niri/config"
+    spawn-at-startup "waybar" "--config" "${config.xdg.configHome}/waybar-niri/config" "--style" "${config.xdg.configHome}/waybar-niri/style.css"
     spawn-at-startup "udiskie" "--automount" "--notify" "--smart-tray"
     spawn-at-startup "waypaper" "--restore"
     spawn-at-startup "wl-clip-persist" "--clipboard" "both"
@@ -134,7 +133,7 @@
         Mod+Shift+Print { spawn "screenshot" "--swappy"; }
 
         // Lock / Power
-        Alt+Escape       { spawn "hyprlock"; }
+        Alt+Escape       { spawn "swaylock"; }
         Mod+Shift+Escape { spawn "power-menu"; }
 
         // Media
