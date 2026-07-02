@@ -1,11 +1,13 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  clipboardCmd = if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy";
+in {
   home.sessionVariables = {
     EDITOR = "nvim";
     PAGER = "";
     FZF_CTRL_R_OPTS = "
       --preview 'echo {}' --preview-window up:3:hidden:wrap
       --bind 'ctrl-/:toggle-preview'
-      --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+      --bind 'ctrl-y:execute-silent(echo -n {2..} | ${clipboardCmd})+abort'
       --color header:italic
       --header 'Press CTRL-Y to copy command into clipboard'";
 

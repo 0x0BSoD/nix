@@ -12,11 +12,11 @@
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
 
-      branch.sort = "-commiterdate";
+      branch.sort = "-committerdate";
       tag.sort = "version:refname";
 
       diff = {
-        algoritm = "histogram";
+        algorithm = "histogram";
         colorMoved = "plain";
         mnemonicPrefix = true;
         renames = true;

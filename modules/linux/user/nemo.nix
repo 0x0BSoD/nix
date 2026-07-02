@@ -1,6 +1,20 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [nemo];
 
+  xdg = {
+    enable = true;
+    desktopEntries = {
+      nemo = {
+        name = "Nemo";
+        genericName = "File manager";
+        exec = "nemo %U";
+        icon = "nemo";
+        terminal = false;
+        categories = ["System" "FileManager"];
+      };
+    };
+  };
+
   dconf.settings = {
     "org/nemo/preferences" = {
       always-use-browser = true;

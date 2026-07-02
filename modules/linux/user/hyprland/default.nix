@@ -6,6 +6,7 @@
     ./hyprlock.nix
     ./monitors.nix
     ./rofi
+    ./scripts.nix
     ./settings.nix
     ./swaync
     ./variables.nix

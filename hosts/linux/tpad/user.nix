@@ -7,8 +7,8 @@
 }: let
   appsPath = "${self}/modules/common/user";
   linuxPath = "${self}/modules/linux/user";
+  hostPath = "${self}/hosts/linux/tpad";
 in {
-  programs.dconf.enable = true;
   programs.wireshark.enable = true;
 
   home-manager.users."${primaryUser}" = {
@@ -17,41 +17,6 @@ in {
     tools.develop.java.enable = false;
     tools.kubernetes.minikube.enable = false;
     tools.kubernetes.k3s.enable = false;
-
-    services.kanshi = {
-      enable = true;
-
-      settings = [
-        {
-          profile.name = "undocked";
-          profile.outputs = [
-            {
-              criteria = "eDP-1";
-              status = "enable";
-              mode = "1920x1080@60Hz";
-              scale = 1.0;
-              position = "0,0";
-            }
-          ];
-        }
-
-        {
-          profile.name = "docked";
-          profile.outputs = [
-            {
-              criteria = "eDP-1";
-              status = "disable";
-            }
-            {
-              criteria = "HDMI-A-1";
-              status = "enable";
-              mode = "2560x1080@180.00Hz";
-              position = "0,0";
-            }
-          ];
-        }
-      ];
-    };
 
     home = {
       stateVersion = "25.11";
@@ -63,25 +28,13 @@ in {
       ];
     };
 
-    xdg = {
-      enable = true;
-      desktopEntries = {
-        nemo = {
-          name = "Nemo";
-          genericName = "File manager";
-          exec = "nemo %U";
-          icon = "nemo";
-          terminal = false;
-          categories = ["System" "FileManager"];
-        };
-      };
-    };
-
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.spicetify-nix.homeManagerModules.spicetify
       inputs.nixvim.homeModules.nixvim
       inputs.noctalia.homeModules.default
+
+      "${hostPath}/kanshi.nix"
 
       "${appsPath}/git/git.home.nix"
 
