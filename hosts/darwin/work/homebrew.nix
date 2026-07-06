@@ -38,6 +38,7 @@
       "codex"
       "claude-code"
       "chatgpt"
+      "obsidian"
       "docker-desktop"
       "ghostty"
     ];
