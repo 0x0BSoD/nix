@@ -11,9 +11,6 @@ in {
   };
 
   fileSystems = {
-    "/".options = ["compress=zstd"];
-    "/home".options = ["compress=zstd"];
-    "/nix".options = ["compress=zstd" "noatime"];
     "/mnt/nas/downloads" = {
       device = "//172.16.1.3/Downloads";
       fsType = "cifs";
