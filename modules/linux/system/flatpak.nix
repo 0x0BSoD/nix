@@ -16,10 +16,10 @@
         ];
       };
       "dev.zed.Zed" = {
-         Environment = {
-           ZED_FLATPAK_NO_ESCAPE = "1";
-         };
-       };
+        Environment = {
+          ZED_FLATPAK_NO_ESCAPE = "1";
+        };
+      };
     };
   };
 }

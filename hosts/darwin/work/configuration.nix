@@ -1,3 +1,3 @@
-{ self, ... }: {
-  imports = [ "${self}/hosts/darwin/common.nix" ];
+{self, ...}: {
+  imports = ["${self}/hosts/darwin/common.nix"];
 }

@@ -1,11 +1,22 @@
-{ name, email, signingKey ? null, ... }: {
+{
+  name,
+  email,
+  signingKey ? null,
+  ...
+}: {
   programs.git = {
     enable = true;
 
     settings = {
-      user = {
-        inherit name email;
-      } // (if signingKey != null then { signingkey = signingKey; } else {});
+      user =
+        {
+          inherit name email;
+        }
+        // (
+          if signingKey != null
+          then {signingkey = signingKey;}
+          else {}
+        );
 
       color.ui = true;
       column.ui = "auto";
