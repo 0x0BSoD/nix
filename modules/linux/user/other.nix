@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     aider-chat-full
-    claude-code
     cmake
     conda
     direnv
@@ -16,6 +15,9 @@
     awww
     unzip
     xdg-utils
+
+    claude-code
+    codex
 
     # Nord theme packages
     nordic

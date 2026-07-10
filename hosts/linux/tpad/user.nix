@@ -53,7 +53,6 @@ in {
       "${appsPath}/ghostty"
       "${appsPath}/shell"
 
-      "${appsPath}/zed.nix"
       "${appsPath}/goland.nix"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"

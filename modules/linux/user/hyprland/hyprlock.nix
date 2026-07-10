@@ -9,16 +9,16 @@
         disable_loading_bar = false;
       };
 
-      background = [
-        {
-          path = "${../../../../wallpapers/astronaut.jpg}";
-          blur_passes = 3;
-          contrast = 0.8916;
-          brightness = 0.8172;
-          vibrancy = 0.1696;
-          vibrancy_darkness = 0.0;
-        }
-      ];
+      # background = [
+      #   {
+      #     path = "${../../../../wallpapers/astronaut.jpg}";
+      #     blur_passes = 3;
+      #     contrast = 0.8916;
+      #     brightness = 0.8172;
+      #     vibrancy = 0.1696;
+      #     vibrancy_darkness = 0.0;
+      #   }
+      # ];
 
       shape = [
         {
