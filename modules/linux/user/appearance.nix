@@ -6,16 +6,9 @@
 }: {
   # Force dark appearance globally
   home.sessionVariables = {
-    # Force dark mode for various toolkits
     GTK_THEME = "Nordic";
     QT_STYLE_OVERRIDE = "kvantum-dark";
     QT_QPA_PLATFORMTHEME = lib.mkForce "qtct";
-
-    # Force dark mode for GNOME applications
-    GNOME_THEME = "Nordic";
-
-    # Force dark mode for KDE applications
-    KDE_THEME = "Nordic";
   };
 
   # Cursor theme - Nordzy cursor for complete Nord theme
@@ -211,6 +204,10 @@
     colorScheme = "dark";
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintfull";
+      gtk-xft-rgba = "rgb";
     };
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
@@ -256,39 +253,6 @@
     "chromium-flags.conf".text = ''
       --force-dark-mode
       --enable-features=WebUIDarkMode
-    '';
-
-    # GTK settings for consistent dark theme
-    "gtk-3.0/settings.ini".text = ''
-      [Settings]
-      gtk-application-prefer-dark-theme=1
-      gtk-theme-name=Nordic
-      gtk-icon-theme-name=Nordzy
-      gtk-font-name=JetBrainsMono 12
-      gtk-cursor-theme-name=Nordzy-cursors
-      gtk-cursor-theme-size=24
-      gtk-toolbar-style=GTK_TOOLBAR_BOTH
-      gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-      gtk-button-images=1
-      gtk-menu-images=1
-      gtk-enable-event-sounds=1
-      gtk-enable-input-feedback-sounds=1
-      gtk-xft-antialias=1
-      gtk-xft-hinting=1
-      gtk-xft-hintstyle=hintfull
-      gtk-xft-rgba=rgb
-    '';
-
-    # GTK4 settings
-    "gtk-4.0/settings.ini".text = ''
-      [Settings]
-      gtk-application-prefer-dark-theme=1
-      gtk-theme-name=Nordic
-      gtk-icon-theme-name=Nordzy
-      gtk-font-name=JetBrainsMono 12
-      gtk-cursor-theme-name=Nordzy-cursors
-      gtk-cursor-theme-size=24
-      gtk-enable-primary-paste=1
     '';
   };
 }

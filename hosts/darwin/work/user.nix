@@ -29,6 +29,9 @@ in {
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.spicetify-nix.homeManagerModules.spicetify
+      inputs.nixvim.homeModules.nixvim
+
+      ./teleport.nix
 
       "${appsPath}/git/git.work.nix"
 
@@ -40,6 +43,7 @@ in {
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
       "${appsPath}/goland.nix"
+      "${appsPath}/neovim.nix"
       "${appsPath}/redis.nix"
       "${appsPath}/shell"
       "${appsPath}/terraform.nix"

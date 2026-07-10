@@ -91,5 +91,12 @@
     xwayland = {
       force_zero_scaling = true;
     };
+
+    # No gaps when only one window on the workspace
+    workspace = [
+      "w[t1], gapsout:0, gapsin:0"
+      "w[tg1], gapsout:0, gapsin:0"
+      "f[1], gapsout:0, gapsin:0"
+    ];
   };
 }

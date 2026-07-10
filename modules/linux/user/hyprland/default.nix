@@ -9,8 +9,8 @@
     ./scripts.nix
     ./settings.nix
     ./swaync
+    ./swayosd.nix
     ./variables.nix
     ./waybar
-    ./windowrules.nix
   ];
 }

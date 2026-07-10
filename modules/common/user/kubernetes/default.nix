@@ -1,11 +1,16 @@
-{ ... }: {
+{pkgs, ...}: {
   imports = [
     ./k9s
-    ./kubectl.nix
-    ./kubecm.nix
-    ./kubectx.nix
     ./minikube.nix
     ./k3s.nix
-    ./stern.nix
+  ];
+
+  home.packages = with pkgs; [
+    kubectl
+    kubecolor
+    kubectl-tree
+    kubecm
+    kubectx
+    stern
   ];
 }

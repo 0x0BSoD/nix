@@ -64,9 +64,7 @@ in {
       "${linuxPath}/hyprland"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
-      "${linuxPath}/printing.nix"
       "${linuxPath}/swaylock.nix"
-      "${linuxPath}/swayosd.nix"
       "${linuxPath}/waypaper.nix"
       "${linuxPath}/wine.nix"
 

@@ -29,23 +29,6 @@
         symbol = "⛵ ";
         format = "| [$symbol$context]($style) ";
         disabled = false;
-        contexts = [
-          {
-            context_pattern = "^(.*)-prod(?:-env)?$";
-            style = "green";
-            symbol = "❗ ";
-          }
-          {
-            context_pattern = "^(.*)-prod-trust(?:-env)?$";
-            style = "green";
-            symbol = "‼️ ";
-          }
-          {
-            context_pattern = "^(.*)-test-trust(?:-env)?$";
-            style = "green";
-            symbol = "❕ ";
-          }
-        ];
       };
 
       package = {

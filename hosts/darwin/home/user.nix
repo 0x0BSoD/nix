@@ -25,6 +25,7 @@ in {
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.spicetify-nix.homeManagerModules.spicetify
+      inputs.nixvim.homeModules.nixvim
 
       "${appsPath}/git/git.home.nix"
       "${appsPath}/develop"
@@ -33,6 +34,7 @@ in {
       "${appsPath}/btop.nix"
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
+      "${appsPath}/neovim.nix"
       "${appsPath}/shell"
       "${appsPath}/zed.nix"
       "${appsPath}/zen-browser.nix"

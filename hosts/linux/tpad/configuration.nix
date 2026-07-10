@@ -10,6 +10,10 @@ in {
     networkmanager.enable = true;
   };
 
+  # NAS mounts need /etc/nixos/smb-secrets to exist (not managed by Nix).
+  # Create it manually on a fresh install:
+  #   username=<smb user>
+  #   password=<smb password>
   fileSystems = {
     "/mnt/nas/downloads" = {
       device = "//172.16.1.3/Downloads";
@@ -33,8 +37,8 @@ in {
     powertop
   ];
 
+  # hosts/linux/common.nix is imported by the flake (host registry), not here.
   imports = [
-    ./../common.nix
     ./hardware-configuration.nix
 
     "${self}/modules/common/home-manager-defaults.nix"

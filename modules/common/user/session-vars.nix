@@ -1,5 +1,8 @@
 {pkgs, ...}: let
-  clipboardCmd = if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy";
+  clipboardCmd =
+    if pkgs.stdenv.isDarwin
+    then "pbcopy"
+    else "wl-copy";
 in {
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -19,7 +22,5 @@ in {
     FZF_ALT_C_OPTS = "
       --walker-skip .git,node_modules,target
       --preview 'tree -C {}'";
-
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 }

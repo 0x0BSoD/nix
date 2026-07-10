@@ -120,8 +120,8 @@
       "$mainMod, mouse_down, workspace, e-1"
       "$mainMod, mouse_up, workspace, e+1"
 
-      # clipboard manager
-      "$mainMod, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
+      # clipboard manager (history collected by cliphist, see exec-once.nix)
+      "$mainMod, V, exec, cliphist list | rofi -dmenu -p clipboard | cliphist decode | wl-copy"
     ];
 
     # mouse binding

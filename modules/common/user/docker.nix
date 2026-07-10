@@ -3,6 +3,5 @@
     docker
     docker-buildx
     docker-compose
-    minikube
   ];
 }

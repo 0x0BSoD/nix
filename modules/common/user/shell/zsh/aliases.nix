@@ -29,12 +29,6 @@
     li = "lsd -Fhial --color=auto --group-directories-first";
     lsa = "lsd -Fhld --color=auto .* --group-directories-first";
 
-    # === Teleport ===
-    tlt = "tsh login --proxy=teleport.test.env:443 teleport.test.env";
-    tlp = "tsh login --proxy=teleport.prod.env:443 teleport.prod.env";
-    tkl = "tsh kube login";
-    tkls = "tsh kube ls";
-
     # === Git ===
     ga = "git add -A";
     gp = "git push";
@@ -57,6 +51,7 @@
     # === Nix ===
     dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
     dflrebuild = "sudo darwin-rebuild switch --local --verbose --flake";
+    osrebuild = "nh os switch";
     nixgc = "sudo nix-collect-garbage";
     nixup = "sudo nix flake update --flake";
     nixarch = "sudo nix flake archive";
