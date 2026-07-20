@@ -1,3 +1,14 @@
+# TODO: here is a temporary place for this part
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  eval "$(ssh-agent -s)" > /dev/null
+fi
+
+SSH_KEY="$HOME/.ssh/id_ed25519"
+
+if ! ssh-add -L 2>/dev/null | grep -q "$(ssh-keygen -lf "$SSH_KEY" | awk '{print $2}')"; then
+  /usr/bin/ssh-add --apple-load-keychain "$SSH_KEY" > /dev/null 2>&1
+fi
+
 function tkube() {
   local sf script sel
   sf=$(mktemp /tmp/tkube.XXXX)
