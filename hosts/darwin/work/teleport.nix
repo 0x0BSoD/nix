@@ -7,6 +7,8 @@
     tlp = "tsh login --proxy=teleport.prod.env:443 teleport.prod.env";
     tkl = "tsh kube login";
     tkls = "tsh kube ls";
+    ktt = "tmux display-popup -EE -T kTool ktool -env test";
+    ktp = "tmux display-popup -EE -T kTool ktool -env prod";
   };
 
   programs.zsh.initContent = builtins.readFile ./tkube.sh;
