@@ -34,12 +34,12 @@
     taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
-      "codex"
-      "claude-code"
       "chatgpt"
-      "obsidian"
+      "claude-code"
+      "codex"
       "docker-desktop"
       "ghostty"
+      "obsidian"
     ];
 
     brews = [
@@ -47,7 +47,6 @@
       "coreutils"
       "docker-compose"
       "helm"
-      "openstackclient"
       "pinentry-mac"
     ];
   };
