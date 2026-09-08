@@ -37,6 +37,8 @@ in {
     powertop
   ];
 
+  services.desktopManager.plasma6.enable = true;
+
   # hosts/linux/common.nix is imported by the flake (host registry), not here.
   imports = [
     ./hardware-configuration.nix

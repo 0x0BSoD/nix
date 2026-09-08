@@ -15,10 +15,10 @@
     udisks2.enable = true;
     blueman.enable = true;
     tumbler.enable = true;
-    hypridle.enable = true;
-    tlp.enable = true;
+    # hypridle.enable = true;
+    # tlp.enable = true;
 
-    displayManager.ly.enable = true;
+    displayManager.sddm.enable = true;
 
     upower = {
       enable = true;
@@ -29,19 +29,19 @@
     };
 
     # GUI
-    gnome = {
-      tinysparql.enable = true;
-      gnome-keyring.enable = true;
-    };
+    # gnome = {
+    #   tinysparql.enable = true;
+    #   gnome-keyring.enable = true;
+    # };
 
-    dbus = {
-      enable = true;
-      # needed for GNOME services outside of GNOME Desktop
-      packages = with pkgs; [
-        gcr
-        gnome-settings-daemon
-      ];
-    };
+    # dbus = {
+    #   enable = true;
+    #   # needed for GNOME services outside of GNOME Desktop
+    #   packages = with pkgs; [
+    #     gcr
+    #     gnome-settings-daemon
+    #   ];
+    # };
 
     logind = {
       settings.Login = {

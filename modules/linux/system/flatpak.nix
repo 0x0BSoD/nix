@@ -5,7 +5,7 @@
     enable = true;
     packages = [
       "com.github.tchx84.Flatseal"
-      "dev.zed.Zed"
+      # "dev.zed.Zed"
     ];
     overrides = {
       global = {
@@ -15,11 +15,11 @@
           "!fallback-x11"
         ];
       };
-      "dev.zed.Zed" = {
-        Environment = {
-          ZED_FLATPAK_NO_ESCAPE = "1";
-        };
-      };
+      # "dev.zed.Zed" = {
+      #   Environment = {
+      #     ZED_FLATPAK_NO_ESCAPE = "1";
+      #   };
+      # };
     };
   };
 }

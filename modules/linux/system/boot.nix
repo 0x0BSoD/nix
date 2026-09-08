@@ -17,7 +17,7 @@
     };
 
     plymouth = {
-      enable = true;
+      enable = false;
       font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
       themePackages = [pkgs.catppuccin-plymouth];
       theme = "catppuccin-macchiato";
@@ -72,13 +72,13 @@
       "net.core.default_qdisc" = "cake";
     };
 
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "preempt=full"
       "quiet"
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
-      "plymouth.use-simpledrm"
+      # "plymouth.use-simpledrm"
     ];
     kernelModules = ["tcp_bbr" "acpi_call"];
 
