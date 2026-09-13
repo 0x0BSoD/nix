@@ -32,6 +32,10 @@
       url = "github:SergioBenitez/homebrew-osxct";
       flake = false;
     };
+    janosmiko-tap = {
+      url = "github:janosmiko/homebrew-tap";
+      flake = false;
+    };
 
     # Other
     ghostty = {
