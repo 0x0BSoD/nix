@@ -6,7 +6,7 @@
   home.file.".config/ghostty/singularity.glsl" = {
     text = ''
     // "Singularity" by XorDev: https://www.shadertoy.com/view/3csSWB
-    const float EFFECT_BRIGHTNESS = 0.5; // 0.0 = off, 1.0 = full brightness
+    const float EFFECT_BRIGHTNESS = 0.2; // 0.0 = off, 1.0 = full brightness
 
     void mainImage(out vec4 O, vec2 F)
     {
