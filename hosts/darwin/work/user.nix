@@ -49,11 +49,11 @@ in {
       "${appsPath}/terraform.nix"
       "${appsPath}/vault.nix"
 
-      # "${appsPath}/zed.nix"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"
 
       "${appsPath}/session-vars.nix"
+      "${self}/modules/darwin/user/window-management.nix"
     ];
   };
 }

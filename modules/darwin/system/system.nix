@@ -90,7 +90,7 @@ in {
         showhidden = true;
         show-recents = false;
         show-process-indicators = true;
-        orientation = "bottom";
+        orientation = "left";
         mru-spaces = false;
         expose-group-apps = true;
       };
