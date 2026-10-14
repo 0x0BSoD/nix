@@ -47,7 +47,10 @@ in {
 
       "${linuxPath}/appearance.nix"
       "${linuxPath}/codex.nix"
+      "${linuxPath}/hyprland"
+      "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"
+      "${linuxPath}/waypaper.nix"
 
       "${appsPath}/session-vars.nix"
       "${linuxPath}/scripts"

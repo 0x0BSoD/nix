@@ -1,8 +1,20 @@
-{...}: {
+{lib, pkgs, ...}: {
   services.hyprpolkitagent.enable = true;
 
-  systemd.user.targets.hyprland-session.Unit.Wants = [
-    "xdg-desktop-autostart.target"
+  # The default graphical-session target also runs in Plasma.
+  systemd.user.services.hyprpolkitagent = {
+    Unit.PartOf = lib.mkForce ["hyprland-session.target"];
+    Unit.After = lib.mkForce ["hyprland-session.target"];
+    Install.WantedBy = lib.mkForce ["hyprland-session.target"];
+  };
+
+  home.packages = with pkgs; [
+    hypridle
+    networkmanagerapplet
+    poweralertd
+    udiskie
+    swappy
+    mission-center
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -15,5 +27,6 @@
 
     xwayland.enable = true;
     systemd.enable = true;
+    systemd.enableXdgAutostart = true;
   };
 }

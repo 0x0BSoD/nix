@@ -38,6 +38,7 @@ in {
   ];
 
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
 
   # hosts/linux/common.nix is imported by the flake (host registry), not here.
   imports = [

@@ -7,11 +7,13 @@
 
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
     ];
 
     config = {
       common.default = ["gtk"];
+
+      # Select each desktop's own backend instead of the common GTK fallback.
+      kde.default = ["kde" "gtk"];
 
       hyprland = {
         default = ["hyprland" "gtk"];
