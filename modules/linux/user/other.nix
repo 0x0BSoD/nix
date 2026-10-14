@@ -17,7 +17,7 @@
     xdg-utils
 
     # claude-code
-    codex
+    # codex
 
     # Nord theme packages
     nordic

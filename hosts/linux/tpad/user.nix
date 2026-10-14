@@ -46,6 +46,7 @@ in {
       "${appsPath}/spicetify.nix"
 
       "${linuxPath}/appearance.nix"
+      "${linuxPath}/codex.nix"
       "${linuxPath}/other.nix"
 
       "${appsPath}/session-vars.nix"
