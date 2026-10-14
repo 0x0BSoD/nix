@@ -16,7 +16,7 @@
     unzip
     xdg-utils
 
-    claude-code
+    # claude-code
     codex
 
     # Nord theme packages

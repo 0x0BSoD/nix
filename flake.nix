@@ -46,7 +46,6 @@
       url = "github:nix-community/nixvim/nixos-26.05";
       # Do not override nixvim's pinned nixpkgs; it warns when forced via `follows`.
     };
-    # nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";

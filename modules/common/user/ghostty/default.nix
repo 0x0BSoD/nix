@@ -5,51 +5,51 @@
 
   home.file.".config/ghostty/singularity.glsl" = {
     text = ''
-    // "Singularity" by XorDev: https://www.shadertoy.com/view/3csSWB
-    const float EFFECT_BRIGHTNESS = 0.2; // 0.0 = off, 1.0 = full brightness
+      // "Singularity" by XorDev: https://www.shadertoy.com/view/3csSWB
+      const float EFFECT_BRIGHTNESS = 0.2; // 0.0 = off, 1.0 = full brightness
 
-    void mainImage(out vec4 O, vec2 F)
-    {
-    //Iterator and attenuation (distance-squared)
-    float i = .2, a;
-    //Resolution for scaling and centering
-    vec2 r = iResolution.xy,
-         //Centered ratio-corrected coordinates
-         p = ( F+F - r ) / r.y / .7,
-         //Diagonal vector for skewing
-         d = vec2(-1,1),
-         //Blackhole center
-         b = p - i*d,
-         //Rotate and apply perspective
-         c = p * mat2(1, 1, d/(.1 + i/dot(b,b))),
-         //Rotate into spiraling coordinates
-         v = c * mat2(cos(.5*log(a=dot(c,c)) + iTime*i + vec4(0,33,11,0)))/i,
-         //Waves cumulative total for coloring
-         w = vec2(0.);
+      void mainImage(out vec4 O, vec2 F)
+      {
+      //Iterator and attenuation (distance-squared)
+      float i = .2, a;
+      //Resolution for scaling and centering
+      vec2 r = iResolution.xy,
+           //Centered ratio-corrected coordinates
+           p = ( F+F - r ) / r.y / .7,
+           //Diagonal vector for skewing
+           d = vec2(-1,1),
+           //Blackhole center
+           b = p - i*d,
+           //Rotate and apply perspective
+           c = p * mat2(1, 1, d/(.1 + i/dot(b,b))),
+           //Rotate into spiraling coordinates
+           v = c * mat2(cos(.5*log(a=dot(c,c)) + iTime*i + vec4(0,33,11,0)))/i,
+           //Waves cumulative total for coloring
+           w = vec2(0.);
 
-    //Loop through waves
-    for(; i++<9.; w += 1.+sin(v) )
-        //Distort coordinates
-        v += .7* sin(v.yx*i+iTime) / i + .5;
-    //Acretion disk radius
-    i = length( sin(v/.3)*.4 + c*(3.+d) );
-    //Red/blue gradient
-    O = 1. - exp( -exp( c.x * vec4(.6,-.4,-1,0) )
-                   //Wave coloring
-                   /  w.xyyx
-                   //Acretion disk brightness
-                   / ( 2. + i*i/4. - i )
-                   //Center darkness
-                   / ( .5 + 1. / a )
-                   //Rim highlight
-             / ( .03 + abs( length(p)-.7 ) )
-             );
+      //Loop through waves
+      for(; i++<9.; w += 1.+sin(v) )
+          //Distort coordinates
+          v += .7* sin(v.yx*i+iTime) / i + .5;
+      //Acretion disk radius
+      i = length( sin(v/.3)*.4 + c*(3.+d) );
+      //Red/blue gradient
+      O = 1. - exp( -exp( c.x * vec4(.6,-.4,-1,0) )
+                     //Wave coloring
+                     /  w.xyyx
+                     //Acretion disk brightness
+                     / ( 2. + i*i/4. - i )
+                     //Center darkness
+                     / ( .5 + 1. / a )
+                     //Rim highlight
+               / ( .03 + abs( length(p)-.7 ) )
+               );
 
-    // Preserve the terminal and screen-blend the effect over it.
-    vec4 terminal = texture(iChannel0, F / r);
-    vec3 effect = 1. - (1. - terminal.rgb) * (1. - O.rgb);
-    O = vec4(mix(terminal.rgb, effect, EFFECT_BRIGHTNESS), terminal.a);
-    }
+      // Preserve the terminal and screen-blend the effect over it.
+      vec4 terminal = texture(iChannel0, F / r);
+      vec3 effect = 1. - (1. - terminal.rgb) * (1. - O.rgb);
+      O = vec4(mix(terminal.rgb, effect, EFFECT_BRIGHTNESS), terminal.a);
+      }
     '';
     executable = true;
   };
