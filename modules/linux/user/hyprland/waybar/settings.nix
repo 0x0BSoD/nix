@@ -4,7 +4,7 @@
     position = "top";
     exclusive = true;
     passthrough = false;
-    spacing = 3;
+    spacing = 0;
     fixed-center = true;
     ipc = true;
 
@@ -14,28 +14,21 @@
 
     modules-left = [
       "hyprland/workspaces"
-    ];
-
-    modules-center = [
       "hyprland/window"
     ];
 
+    modules-center = [
+      "clock"
+    ];
+
     modules-right = [
-      # "network#spd"
       "cpu"
       "memory"
-      # custom/audio-sink"
-      "pulseaudio"
       "network"
-      "custom/separator"
-      "tray"
-      "custom/separator"
       "battery"
-      "custom/separator"
-      "clock"
-      "custom/separator"
+      "pulseaudio"
+      "tray"
       "custom/notification"
-      "custom/separator"
     ];
 
     #================================
@@ -93,17 +86,9 @@
     };
 
     "hyprland/window" = {
-      format = "{}";
-      max-length = 25;
-      separate-outputs = true;
-      offscreen-css = true;
-      offscreen-css-text = "(inactive)";
-      rewrite = {
-        "(.*) — Mozilla Firefox" = " $1";
-        "(.*) - ghostty" = "> [$1]";
-        "(.*) - zsh" = "> [$1]";
-        "(.*) - $term" = "> [$1]";
-      };
+       format = "{title}";
+       max-length = 45;
+       separate-outputs = true;
     };
 
     "hyprland/workspaces" = {
@@ -125,14 +110,13 @@
     };
 
     tray = {
-      icon-size = 15;
-      spacing = 7;
+      icon-size = 14;
+      spacing = 8;
     };
 
     clock = {
       interval = 1;
-      format = "{:%H:%M}";
-      format-alt = " {:%H:%M   %Y, %d %B, %A}";
+      format = "{0:%H:%M:%S} <span color='#7a6f73'>──</span> {0:%d.%m.%Y}";
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
         mode = "year";

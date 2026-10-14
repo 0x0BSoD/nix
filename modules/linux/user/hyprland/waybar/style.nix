@@ -148,6 +148,11 @@ in {
        background-color: @red;
      }
 
+    #tray {
+      padding: 0 8px;
+      margin: 3px 2px 3px 6px;
+    }
+
      #tray > .passive {
        -gtk-icon-effect: dim;
      }
