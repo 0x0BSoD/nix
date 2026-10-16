@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    aider-chat-full
+    awww
     cmake
     conda
     direnv
@@ -12,12 +12,13 @@
     pigz
     rpi-imager
     socat
-    awww
+    transmission_4-qt
     unzip
     xdg-utils
 
     # claude-code
     # codex
+    # aider-chat-full
 
     # Nord theme packages
     nordic

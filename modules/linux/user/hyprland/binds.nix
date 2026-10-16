@@ -35,6 +35,11 @@
       ",Print, exec, screenshot --copy"
       "$mainMod, Print, exec, screenshot --save"
       "$mainMod SHIFT, Print, exec, screenshot --swappy"
+      "$mainMod CTRL, Print, exec, screenshot --ocr"
+
+      # Screen recording: press again to stop. Shift selects the focused monitor.
+      "$mainMod ALT, R, exec, screen-record toggle area"
+      "$mainMod ALT SHIFT, R, exec, screen-record toggle screen"
 
       # switch focus
       "$mainMod, left,  movefocus, l"

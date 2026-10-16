@@ -1,4 +1,10 @@
-{...}: {
+{pkgs, ...}: let
+  languageIndicator = pkgs.writeShellApplication {
+    name = "waybar-language";
+    runtimeInputs = [pkgs.hyprland pkgs.jq pkgs.socat];
+    text = builtins.readFile ./language.sh;
+  };
+in {
   programs.waybar.settings.mainBar = {
     layer = "top";
     position = "top";
@@ -22,9 +28,11 @@
     ];
 
     modules-right = [
+      "custom/recording"
       "cpu"
       "memory"
       "network"
+      "custom/language"
       "battery"
       "pulseaudio"
       "tray"
@@ -86,8 +94,8 @@
     };
 
     "hyprland/window" = {
-       format = "{title}";
-       max-length = 45;
+       format = " {title}";
+       max-length = 25;
        separate-outputs = true;
     };
 
@@ -110,13 +118,31 @@
     };
 
     tray = {
-      icon-size = 14;
+      icon-size = 16;
       spacing = 8;
+    };
+
+    "custom/recording" = {
+      exec = "screen-record bar";
+      return-type = "json";
+      interval = 1;
+      on-click = "screen-record stop";
+      escape = true;
+      tooltip = true;
+    };
+
+    "custom/language" = {
+      exec = "${languageIndicator}/bin/waybar-language";
+      return-type = "json";
+      restart-interval = 1;
+      exec-on-event = false;
+      on-click = "${pkgs.hyprland}/bin/hyprctl switchxkblayout all next";
+      tooltip = true;
     };
 
     clock = {
       interval = 1;
-      format = "{0:%H:%M:%S} <span color='#7a6f73'>──</span> {0:%d.%m.%Y}";
+      format = "{:%H:%M:%S  //  %Y.%m.%d}";
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
         mode = "year";
@@ -183,6 +209,7 @@
 
     network = {
       tooltip = true;
+      on-click = "nm-connection-editor";
       format-wifi = "  ";
       format-ethernet = "󰈀 ";
       tooltip-format = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
@@ -202,19 +229,20 @@
 
     battery = {
       bat = "BAT0";
-      interval = 60;
-      states = {
-        warning = 30;
-        critical = 15;
-      };
       events = {
         on-discharging-warning = "notify-send -u normal 'Low Battery'";
         on-discharging-critical = "notify-send -u critical 'Very Low Battery'";
         on-charging-100 = "notify-send -u normal 'Battery Full!'";
       };
-      format = "{capacity}% {icon} ";
+      interval = 10;
+      states = {
+        warning = 25;
+         critical = 12;
+      };
+      format =  "{icon} {capacity}%";
+      format-charging = " {capacity}%";
+      format-plugged = " {capacity}%";
       format-icons = ["" "" "" "" ""];
-      max-length = 25;
     };
 
     "custom/notification" = {

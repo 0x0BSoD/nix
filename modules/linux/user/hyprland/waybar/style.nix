@@ -56,6 +56,8 @@ in {
      #mode,
      #mpris,
      #network,
+     #custom-language,
+     #custom-recording,
      #pulseaudio,
      #pulseaudio-slider,
      #taskbar button,
@@ -95,6 +97,10 @@ in {
 
      #idle_inhibitor {
        color: @blue;
+     }
+
+     #custom-recording.recording {
+       color: @red;
      }
 
      #bluetooth,

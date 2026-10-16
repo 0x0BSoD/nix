@@ -1,7 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland.settings.exec-once = [
     "hypridle &"
-    "nm-applet &"
     "poweralertd &"
     "swaync &"
     "waybar &"

@@ -13,7 +13,8 @@
     devmon.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
-    blueman.enable = true;
+    # Use Overskride for Bluetooth management without a tray applet.
+    blueman.enable = false;
     tumbler.enable = true;
     # hypridle.enable = true;
     # tlp.enable = true;
