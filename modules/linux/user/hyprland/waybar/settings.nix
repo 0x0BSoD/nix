@@ -4,8 +4,38 @@
     runtimeInputs = [pkgs.hyprland pkgs.jq pkgs.socat];
     text = builtins.readFile ./language.sh;
   };
-in {
-  programs.waybar.settings.mainBar = {
+  spotifyIndicator = pkgs.writeShellApplication {
+    name = "waybar-spotify";
+    runtimeInputs = [pkgs.playerctl pkgs.jq];
+    text = ''
+      if ! status=$(playerctl --player=spotify status 2>/dev/null); then
+        printf '{"text":"","tooltip":"","class":"stopped"}\n'
+        exit 0
+      fi
+
+      artist=$(playerctl --player=spotify metadata artist 2>/dev/null || true)
+      title=$(playerctl --player=spotify metadata title 2>/dev/null || true)
+      icon=""
+      if [ "$status" = "Playing" ]; then
+        icon=""
+      fi
+
+      jq -cn --arg artist "$artist" --arg title "$title" \
+        --arg status "$status" --arg icon "$icon" '{
+          text: (" " + $icon + " " + ([$artist, $title] | map(select(length > 0)) | join(" — "))),
+          tooltip: ([$artist, $title, $status, "Click: play/pause · Middle: previous · Right: next"] | join("\n")),
+          class: ($status | ascii_downcase)
+        }'
+    '';
+  };
+
+  telemetry = pkgs.writeText "waybar-telemetry.py" (builtins.readFile ./telemetry.py);
+  runcatFont = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/bzglve/runcat-text/30ed3dbbe331418d7cd8d79ad7d8eec06aeab17e/runcat.ttf";
+    hash = "sha256-cHlDvqee3emwBrJcHqqec8lZ4dWSa25/ITw4P3UwqQA=";
+  };
+
+  commonBar = {
     layer = "top";
     position = "top";
     exclusive = true;
@@ -29,8 +59,6 @@ in {
 
     modules-right = [
       "custom/recording"
-      "cpu"
-      "memory"
       "network"
       "custom/language"
       "battery"
@@ -54,17 +82,30 @@ in {
     #================================
 
     "custom/playerctl" = {
-      format = "<span>{}</span>";
+      format = "{}";
       return-type = "json";
-      max-length = 25;
-      exec = "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
-      on-click-middle = "playerctl play-pause";
-      on-click = "playerctl previous";
-      on-click-right = "playerctl next";
-      scroll-step = 5.0;
-      on-scroll-up = "$HOME/.config/hypr/scripts/Volume.sh --inc";
-      on-scroll-down = "$HOME/.config/hypr/scripts/Volume.sh --dec";
-      smooth-scrolling-threshold = 1;
+      max-length = 60;
+      escape = true;
+      exec = "${spotifyIndicator}/bin/waybar-spotify";
+      interval = 2;
+      on-click = "${pkgs.playerctl}/bin/playerctl --player=spotify play-pause";
+      on-click-middle = "${pkgs.playerctl}/bin/playerctl --player=spotify previous";
+      on-click-right = "${pkgs.playerctl}/bin/playerctl --player=spotify next";
+    };
+
+    "custom/runcat" = {
+      exec = "${pkgs.python3}/bin/python3 ${telemetry} runcat";
+      return-type = "json";
+      restart-interval = 2;
+      exec-on-event = false;
+      on-click = "ghostty -e btop";
+    };
+
+    "custom/sensors" = {
+      exec = "${pkgs.python3}/bin/python3 ${telemetry} sensors";
+      return-type = "json";
+      interval = 5;
+      tooltip = true;
     };
 
     wireplumber = {
@@ -94,9 +135,9 @@ in {
     };
 
     "hyprland/window" = {
-       format = " {title}";
-       max-length = 25;
-       separate-outputs = true;
+      format = " {title}";
+      max-length = 25;
+      separate-outputs = true;
     };
 
     "hyprland/workspaces" = {
@@ -107,7 +148,8 @@ in {
       on-scroll-down = "hyprctl dispatch workspace e-1";
       show-special = false;
       persistent-workspaces = {
-        "*" = 5;
+        # Explicit IDs keep one shared set instead of five per output.
+        "*" = [1 2 3 4 5];
       };
       format = "{icon}";
       format-icons = {
@@ -225,6 +267,9 @@ in {
       format = "{ifname}";
       format-wifi = " {bandwidthDownBytes}  {bandwidthUpBytes}";
       format-ethernet = " {bandwidthDownBytes}  {bandwidthUpBytes}";
+      format-linked = "{ifname}: No IP";
+      format-disconnected = "󰖪 Offline";
+      tooltip-format = "{ifname}\n↓ Download: {bandwidthDownBytes}\n↑ Upload: {bandwidthUpBytes}";
     };
 
     battery = {
@@ -237,9 +282,9 @@ in {
       interval = 10;
       states = {
         warning = 25;
-         critical = 12;
+        critical = 12;
       };
-      format =  "{icon} {capacity}%";
+      format = "{icon} {capacity}%";
       format-charging = " {capacity}%";
       format-plugged = " {capacity}%";
       format-icons = ["" "" "" "" ""];
@@ -275,5 +320,23 @@ in {
       tooltip = true;
       signal = 8; # SIGRTMIN+8 — waybar uses 34+N, so signal 8 = SIGRTMIN+8
     };
+  };
+in {
+  fonts.fontconfig.enable = true;
+  xdg.dataFile."fonts/runcat.ttf".source = runcatFont;
+
+  programs.waybar.settings = {
+    mainBar =
+      commonBar
+      // {
+        output = "eDP-1";
+      };
+    secondaryBar =
+      commonBar
+      // {
+        output = "DP-1";
+        modules-center = ["custom/playerctl"];
+        modules-right = ["network#spd" "custom/runcat" "cpu" "memory" "custom/sensors"];
+      };
   };
 }

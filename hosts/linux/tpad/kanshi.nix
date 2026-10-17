@@ -21,12 +21,13 @@
         profile.outputs = [
           {
             criteria = "eDP-1";
-            status = "disable";
+            status = "enable";
+            position = "2560,0";
           }
           {
-            criteria = "HDMI-A-1";
+            criteria = "DP-1";
             status = "enable";
-            mode = "2560x1080@180.00Hz";
+            mode = "2560x1440@60.00Hz";
             position = "0,0";
           }
         ];

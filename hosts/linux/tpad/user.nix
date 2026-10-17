@@ -29,6 +29,8 @@ in {
 
       "${appsPath}/git/git.home.nix"
 
+      ./kanshi.nix
+
       "${appsPath}/develop"
       "${appsPath}/kubernetes"
 

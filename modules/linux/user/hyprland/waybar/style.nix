@@ -57,6 +57,9 @@ in {
      #mpris,
      #network,
      #custom-language,
+     #custom-playerctl,
+     #custom-runcat,
+     #custom-sensors,
      #custom-recording,
      #pulseaudio,
      #pulseaudio-slider,
@@ -101,6 +104,38 @@ in {
 
      #custom-recording.recording {
        color: @red;
+     }
+
+     #custom-playerctl {
+       color: @green;
+     }
+
+     #custom-playerctl.paused {
+       color: @overlay1;
+     }
+
+     /* The global * font rule also matches the inner label directly. */
+     #custom-runcat,
+     #custom-runcat label {
+       font-family: "runcat";
+       font-weight: normal;
+       font-feature-settings: "normal";
+       font-size: 24px;
+       min-width: 32px;
+       color: @green;
+     }
+
+     #custom-runcat.medium {
+       color: @yellow;
+     }
+
+     #custom-runcat.high,
+     #custom-sensors.critical {
+       color: @red;
+     }
+
+     #custom-sensors {
+       color: @teal;
      }
 
      #bluetooth,
