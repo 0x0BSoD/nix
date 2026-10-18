@@ -36,6 +36,7 @@ in {
 
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
+      "${appsPath}/chatgpt.nix"
       "${appsPath}/delta.nix"
       "${appsPath}/neovim.nix"
       "${appsPath}/obsidian.nix"
@@ -48,7 +49,6 @@ in {
       "${appsPath}/spicetify.nix"
 
       "${linuxPath}/appearance.nix"
-      "${linuxPath}/codex.nix"
       "${linuxPath}/hyprland"
       "${linuxPath}/nemo.nix"
       "${linuxPath}/other.nix"

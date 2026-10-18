@@ -32,16 +32,7 @@
       url = "github:SergioBenitez/homebrew-osxct";
       flake = false;
     };
-    janosmiko-tap = {
-      url = "github:janosmiko/homebrew-tap";
-      flake = false;
-    };
-
     # Other
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
       # Do not override nixvim's pinned nixpkgs; it warns when forced via `follows`.

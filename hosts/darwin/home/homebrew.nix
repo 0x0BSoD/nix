@@ -33,16 +33,6 @@
 
     taps = builtins.attrNames config.nix-homebrew.taps;
 
-    casks = [
-      "chatgpt"
-      "claude-code"
-      "docker-desktop"
-      "ghostty"
-      "telegram-desktop"
-    ];
-
-    brews = [
-      "coreutils"
-    ];
+    casks = [];
   };
 }

@@ -1,6 +1,7 @@
 {
   self,
   inputs,
+  pkgs,
   primaryUser,
   ...
 }: let
@@ -16,6 +17,13 @@ in {
 
     home = {
       stateVersion = "25.11";
+      packages = with pkgs; [
+        asciiquarium
+        claude-code
+        docker-compose
+        lfk
+        pinentry_mac
+      ];
       sessionPath = [
         "$HOME/go/bin"
         "$HOME/.krew/bin"
@@ -40,10 +48,12 @@ in {
 
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
+      "${appsPath}/chatgpt.nix"
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
       "${appsPath}/goland.nix"
       "${appsPath}/neovim.nix"
+      "${appsPath}/obsidian.nix"
       "${appsPath}/redis.nix"
       "${appsPath}/shell"
       "${appsPath}/terraform.nix"

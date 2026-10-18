@@ -1,5 +1,11 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.ghostty.enable = pkgs.stdenv.isLinux;
+
+  home.packages = lib.optionals pkgs.stdenv.isDarwin [pkgs.ghostty-bin];
 
   xdg.configFile."ghostty/config".source = ./config;
 

@@ -11,6 +11,7 @@
     kubectl-tree
     kubecm
     kubectx
+    kubernetes-helm
     stern
   ];
 }

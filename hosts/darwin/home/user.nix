@@ -32,12 +32,14 @@ in {
       "${appsPath}/kubernetes"
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
+      "${appsPath}/chatgpt.nix"
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
       "${appsPath}/neovim.nix"
       "${appsPath}/shell"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"
+      "${appsPath}/telegram.nix"
       "${appsPath}/session-vars.nix"
     ];
   };
