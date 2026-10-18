@@ -36,7 +36,6 @@ in {
       "${appsPath}/ghostty"
       "${appsPath}/neovim.nix"
       "${appsPath}/shell"
-      "${appsPath}/zed.nix"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"
       "${appsPath}/session-vars.nix"
