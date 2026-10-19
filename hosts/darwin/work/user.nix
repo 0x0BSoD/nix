@@ -15,6 +15,9 @@ in {
   home-manager.users."${primaryUser}" = {
     programs.home-manager.enable = false;
 
+    # Avoid the bundle-touch permission probe and its global TCC reset (home-manager#8336).
+    targets.darwin.copyApps.enableChecks = false;
+
     home = {
       stateVersion = "25.11";
       packages = with pkgs; [
