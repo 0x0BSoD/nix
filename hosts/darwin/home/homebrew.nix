@@ -33,6 +33,8 @@
 
     taps = builtins.attrNames config.nix-homebrew.taps;
 
-    casks = [];
+    casks = [
+      "docker-desktop"
+    ];
   };
 }
