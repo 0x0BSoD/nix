@@ -6,10 +6,11 @@
   ];
 
   home.packages = with pkgs; [
-    kubectl
-    kubecolor
-    kubectl-tree
+    kubebuilder
     kubecm
+    kubecolor
+    kubectl
+    kubectl-tree
     kubectx
     kubernetes-helm
     stern

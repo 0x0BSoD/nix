@@ -37,7 +37,7 @@ if (( ${+_comps[kubectl]} )); then
 fi
 
 function kgn() {
-  k get nodes --no-headers -owide | awk '{if ($2 =="Ready") {print "✅ " $1 " " $3 " " $8"_"$9} else {print "❌ w" $1 " " $2 " " $3 " " $8"_"$9}}'
+  k get nodes --no-headers -owide | awk '{if ($2 =="Ready") {print "✅ " $1 " " $3 " " $8"_"$9} else {print "❌ " $1 " " $2 " " $3 " " $8"_"$9}}'
 }
 
 function kp() {

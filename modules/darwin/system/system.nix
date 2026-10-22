@@ -58,6 +58,7 @@ in {
       };
 
       finder = {
+        CreateDesktop = false;
         AppleShowAllExtensions = true;
         FXEnableExtensionChangeWarning = false;
         QuitMenuItem = true;
