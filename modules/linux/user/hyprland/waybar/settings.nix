@@ -59,7 +59,6 @@
 
     modules-right = [
       "custom/recording"
-      "network"
       "custom/language"
       "battery"
       "pulseaudio"

@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   system.stateVersion = "26.05";
 
+  environment.systemPackages = [pkgs.bubblewrap];
+
   virtualisation.docker.enable = true;
 
   programs = {

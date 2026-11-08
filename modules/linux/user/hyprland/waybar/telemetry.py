@@ -60,6 +60,7 @@ def read_text(path):
 def sensors(root=Path("/sys/class/hwmon")):
     temperatures = []
     fans = []
+    fan_notes = []
     for device in sorted(root.glob("hwmon*")):
         name = read_text(device / "name") or device.name
         for kind, readings in (("temp", temperatures), ("fan", fans)):
@@ -71,6 +72,15 @@ def sensors(root=Path("/sys/class/hwmon")):
                 invalid_temp = kind == "temp" and not -20000 <= value <= 150000
                 invalid_fan = kind == "fan" and value < 0
                 if invalid_temp or invalid_fan:
+                    continue
+                # The E14 Gen 7's ACPI interface reports zero even while its
+                # fan is spinning. Do not present that as a measured stop.
+                # Keep zero readings from native tachometers (e.g. thinkpad).
+                if kind == "fan" and name == "acpi_fan" and value == 0:
+                    fan_notes.append(
+                        "acpi_fan: firmware reports 0 RPM; fan may be stopped "
+                        "or RPM reporting unsupported"
+                    )
                     continue
                 label = read_text(path.with_name(path.name.replace("_input", "_label")))
                 readings.append((name, label or path.name.removesuffix("_input"), value))
@@ -87,9 +97,12 @@ def sensors(root=Path("/sys/class/hwmon")):
         parts.append(f"{max(v for _, _, v in temperatures) / 1000:.0f}°C")
     if fans:
         parts.append(f"󰈐 {max(v for _, _, v in fans)} RPM")
+    elif fan_notes:
+        parts.append("󰈐 RPM N/A")
 
     tooltip = [f"{n} / {label}: {v / 1000:.1f}°C" for n, label, v in temperatures]
     tooltip += [f"{n} / {label}: {v} RPM" for n, label, v in fans]
+    tooltip += fan_notes
     return {
         "text": "  ".join(parts),
         "tooltip": html.escape("\n".join(tooltip)),

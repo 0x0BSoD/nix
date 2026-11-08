@@ -1,12 +1,26 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland = {
-    settings.monitor = [",preferred,auto,1,bitdepth,8"];
+    settings.monitor = {
+      output = "";
+      mode = "preferred";
+      position = "auto";
+      scale = 1;
+      bitdepth = 8;
+    };
 
     extraConfig = ''
-      # hyprlang noerror true
-        source = ~/.config/hypr/monitors.conf
-        source = ~/.config/hypr/workspaces.conf
-      # hyprlang noerror false
+      -- nwg-displays writes Lua overrides. require() tracks them for reloads.
+      do
+        local directory = (os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.config")) .. "/hypr"
+        package.path = directory .. "/?.lua;" .. package.path
+        for _, name in ipairs({ "monitors", "workspaces" }) do
+          local file = io.open(directory .. "/" .. name .. ".lua", "r")
+          if file then
+            file:close()
+            require(name)
+          end
+        end
+      end
     '';
   };
 

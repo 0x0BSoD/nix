@@ -1,4 +1,8 @@
-{lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   services.hyprpolkitagent.enable = true;
 
   # The default graphical-session target also runs in Plasma.
@@ -10,7 +14,6 @@
 
   home.packages = with pkgs; [
     hypridle
-    networkmanagerapplet
     poweralertd
     udiskie
     swappy
@@ -19,8 +22,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # Keep legacy default; new default ("lua") arrives with stateVersion >= 26.05
-    configType = "hyprlang";
+    # Generate hyprland.lua regardless of the Home Manager state version.
+    configType = "lua";
 
     package = null;
     portalPackage = null;
