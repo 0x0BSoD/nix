@@ -36,6 +36,7 @@ in {
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
       "${appsPath}/neovim.nix"
+      "${appsPath}/rex"
       "${appsPath}/shell"
       "${appsPath}/zen-browser.nix"
       "${appsPath}/spicetify.nix"

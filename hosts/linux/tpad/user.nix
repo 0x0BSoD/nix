@@ -39,6 +39,7 @@ in {
       "${appsPath}/chatgpt.nix"
       "${appsPath}/delta.nix"
       "${appsPath}/neovim.nix"
+      "${appsPath}/rex"
       "${appsPath}/obsidian.nix"
       "${appsPath}/telegram.nix"
       "${appsPath}/ghostty"

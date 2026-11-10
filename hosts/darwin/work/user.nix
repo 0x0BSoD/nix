@@ -58,6 +58,7 @@ in {
       "${appsPath}/neovim.nix"
       "${appsPath}/obsidian.nix"
       "${appsPath}/redis.nix"
+      "${appsPath}/rex"
       "${appsPath}/shell"
       "${appsPath}/terraform.nix"
       "${appsPath}/vault.nix"
