@@ -51,6 +51,7 @@ in {
       "${appsPath}/bat.nix"
       "${appsPath}/btop.nix"
       "${appsPath}/chatgpt.nix"
+      "${appsPath}/claude-code"
       "${appsPath}/delta.nix"
       "${appsPath}/ghostty"
       "${appsPath}/goland.nix"

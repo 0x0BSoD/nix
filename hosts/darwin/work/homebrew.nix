@@ -34,7 +34,6 @@
     taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
-      "claude-code"
       "docker-desktop"
     ];
   };
