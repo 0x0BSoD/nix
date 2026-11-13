@@ -8,6 +8,8 @@
 in {
   imports = [
     ./hindsight.nix
+    ./kubernetes-mcp.nix
+    ./plugins.nix
   ];
 
   programs.claude-code = {
