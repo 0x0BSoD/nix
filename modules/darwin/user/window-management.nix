@@ -20,7 +20,15 @@
         "${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
       ];
 
+      on-window-detected = [
+        {
+          "if".app-id = "io.github.0x0bsod.launcher";
+          run = "layout floating";
+        }
+      ];
+
       mode.main.binding = {
+        alt-space = "exec-and-forget /usr/bin/open /Applications/Launcher.app";
         alt-h = "focus left";
         alt-j = "focus down";
         alt-k = "focus up";

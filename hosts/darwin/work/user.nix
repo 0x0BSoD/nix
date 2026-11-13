@@ -22,7 +22,6 @@ in {
       stateVersion = "25.11";
       packages = with pkgs; [
         asciiquarium
-        claude-code
         docker-compose
         lfk
         pinentry_mac

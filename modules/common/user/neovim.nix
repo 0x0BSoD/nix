@@ -30,7 +30,8 @@
             enable = true;
             settings.Lua.diagnostics.globals = ["vim"];
           };
-          marksman.enable = true;
+          # F#/dotnet build; no Darwin binary cache, so it compiles from source there.
+          marksman.enable = !pkgs.stdenv.isDarwin;
           nil_ls.enable = true;
           pyright.enable = true;
           ruff.enable = true;
