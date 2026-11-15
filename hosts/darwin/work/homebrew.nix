@@ -33,8 +33,16 @@
 
     taps = builtins.attrNames config.nix-homebrew.taps;
 
+    brews = [
+      "clusterctl"
+      "gh"
+      "glab"
+    ];
+
     casks = [
+      "caffeine"
       "docker-desktop"
+      "ollama"
     ];
   };
 }

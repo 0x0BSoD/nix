@@ -21,6 +21,7 @@ cursor-style = block
 cursor-style-blink = true
 mouse-hide-while-typing = true
 
+window-decoration = none
 window-colorspace = display-p3
 window-padding-balance = true
 window-padding-x = 0
