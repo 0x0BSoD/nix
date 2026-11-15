@@ -10,15 +10,13 @@ in {
     ./hindsight.nix
     ./kubernetes-mcp.nix
     ./plugins.nix
+    ./theme.nix
+    ./tmux.nix
   ];
 
   programs.claude-code = {
     enable = true;
     package = claude.claude-code;
-
-    settings = {
-      theme = "auto";
-    };
   };
 
   home.packages = lib.optional pkgs.stdenv.hostPlatform.isDarwin claude.claude-desktop;

@@ -1,59 +1,60 @@
 {...}: {
   programs.zsh.shellAliases = {
     # === Core Shortcuts ===
-    mkdir = "mkdir -p";
     c = "clear";
+    mkdir = "mkdir -p";
     rd = "rmdir";
 
     # === Utils and Apps ===
     cat = "bat -p";
     cd = "z";
+    claude = "claude --model sonnet --advisor opus";
     curl = "curlie";
-    grep = "rg";
+    df = "duf -hide special";
     diff = "delta";
     du = "dust";
-    df = "duf -hide special";
     find = "fd";
-    top = "btm";
+    grep = "rg";
     ps = "procs";
-    watch = "viddy";
     tmp = "cd $(mktemp -d)";
+    top = "btm";
+    watch = "viddy";
 
     vim = "nvim";
     v = "nvim $(fzf -e)";
 
     # === ls ===
-    ls = "lsd -Fh --color=auto --group-directories-first";
-    ll = "lsd -Fhl --color=auto --group-directories-first";
     la = "lsd -Fhlal --color=auto --group-directories-first";
     li = "lsd -Fhial --color=auto --group-directories-first";
+    ll = "lsd -Fhl --color=auto --group-directories-first";
+    ls = "lsd -Fh --color=auto --group-directories-first";
     lsa = "lsd -Fhld --color=auto .* --group-directories-first";
 
     # === Git ===
     ga = "git add -A";
-    gp = "git push";
-    gl = "git log";
-    gs = "git status";
+    gb = "git branch";
+    gc = "git checkout";
+    gcb = "git branch | fzf --preview \"git show --color=always {-1}\" --bind \"enter:become(git checkout {-1})\" --height 40% --tmux --layout reverse";
+    gcl = "git clone";
     gd = "git diff";
+    gf = "git reflog";
+    gl = "git log";
     gm = "git commit -m";
     gma = "git commit -am";
-    gb = "git branch";
-    gcb = "git branch | fzf --preview \"git show --color=always {-1}\" --bind \"enter:become(git checkout {-1})\" --height 40% --tmux --layout reverse";
-    gc = "git checkout";
-    gra = "git remote add";
-    grr = "git remote rm";
+    gp = "git push";
     gpu = "git pull";
-    gcl = "git clone";
-    gta = "git tag -a -m";
-    gf = "git reflog";
+    gra = "git remote add";
     gri = "git rebase -i";
+    grr = "git remote rm";
+    gs = "git status";
+    gta = "git tag -a -m";
 
     # === Nix ===
-    dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
     dflrebuild = "sudo darwin-rebuild switch --local --verbose --flake";
-    osrebuild = "nh os switch";
+    dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
+    nixarch = "sudo nix flake archive";
     nixgc = "sudo nix-collect-garbage";
     nixup = "sudo nix flake update --flake";
-    nixarch = "sudo nix flake archive";
+    osrebuild = "nh os switch";
   };
 }
