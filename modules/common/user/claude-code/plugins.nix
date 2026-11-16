@@ -1,6 +1,12 @@
 # Third-party Claude Code plugins, pinned and loaded via `--plugin-dir` (no `/plugin install` needed).
 # Their hooks call `node` from PATH (provided by the develop module).
 {pkgs, ...}: {
+  # Private marketplace over SSH; bump `rev` to update.
+  programs.claude-code.marketplaces.agents-marketplace = builtins.fetchGit {
+    url = "git@git.exness.io:platform-private/agents-marketplace.git";
+    rev = "2c64f12eefd9e8cd4a259b19a64c0f6c20c1f8dc";
+  };
+
   programs.claude-code.plugins = [
     # Ponytail: "lazy senior dev" mode — minimal code, YAGNI, stdlib first.
     (pkgs.fetchFromGitHub {

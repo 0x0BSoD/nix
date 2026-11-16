@@ -42,7 +42,7 @@
     casks = [
       "caffeine"
       "docker-desktop"
-      "ollama"
+      "ollama-app"
     ];
   };
 }
