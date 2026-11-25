@@ -7,7 +7,6 @@
 }: let
   appsPath = "${self}/modules/common/user";
   linuxPath = "${self}/modules/linux/user";
-  hostPath = "${self}/hosts/linux/tpad";
 in {
   home-manager.users."${primaryUser}" = {
     programs.home-manager.enable = true;
