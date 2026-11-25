@@ -3,7 +3,11 @@
 
   environment.systemPackages = [pkgs.bubblewrap];
 
-  virtualisation.docker.enable = true;
+  # Rootless: daemon runs as the user, no root-equivalent docker group.
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   programs = {
     nh.enable = true;

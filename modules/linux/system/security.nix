@@ -23,6 +23,7 @@
     };
     sudo = {
       enable = true;
+      execWheelOnly = true;
     };
     rtkit.enable = true;
     apparmor = {

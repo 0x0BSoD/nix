@@ -56,6 +56,11 @@
         all = true;
       };
 
+      # Reject corrupt objects instead of silently accepting them.
+      transfer.fsckObjects = true;
+      fetch.fsckObjects = true;
+      receive.fsckObjects = true;
+
       commit = {
         gpgsign = signingKey != null;
         verbose = true;

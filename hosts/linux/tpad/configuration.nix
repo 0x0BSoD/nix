@@ -57,7 +57,6 @@ in {
     "${linuxPath}/nix.nix"
     "${linuxPath}/security.nix"
     "${linuxPath}/services.nix"
-    "${linuxPath}/steam.nix"
     "${linuxPath}/wayland.nix"
   ];
 }

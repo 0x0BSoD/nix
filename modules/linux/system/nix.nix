@@ -8,6 +8,8 @@
     };
     settings = {
       auto-optimise-store = true;
+      # Only wheel users may talk to the daemon.
+      allowed-users = ["@wheel"];
       experimental-features = [
         "nix-command"
         "flakes"

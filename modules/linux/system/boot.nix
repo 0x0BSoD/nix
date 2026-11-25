@@ -37,6 +37,13 @@
       # Disable it, since we don't need it, and is a potential security concern.
       "kernel.sysrq" = 0;
 
+      # Hide kernel pointers/dmesg from unprivileged users; block unprivileged
+      # eBPF and harden the JIT.
+      "kernel.kptr_restrict" = 2;
+      "kernel.dmesg_restrict" = 1;
+      "kernel.unprivileged_bpf_disabled" = 1;
+      "net.core.bpf_jit_harden" = 2;
+
       ## TCP hardening
       # Prevent bogus ICMP errors from filling up logs.
       "net.ipv4.icmp_ignore_bogus_error_responses" = 1;

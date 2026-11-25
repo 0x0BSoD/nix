@@ -68,7 +68,6 @@ in {
       "adbusers"
       "audio"
       "disk"
-      "docker"
       "input"
       "kvm"
       "libvirtd"
