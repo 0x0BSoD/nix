@@ -15,7 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ## Homebrew
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+      # The pinned core tap uses manifest_sha256, which brew 7.0.11 lacks.
+      inputs.brew-src.url = "git+https://github.com/Homebrew/brew?ref=refs/heads/main&rev=cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6&shallow=1";
+    };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
