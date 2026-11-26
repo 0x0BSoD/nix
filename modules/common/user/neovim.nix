@@ -95,6 +95,10 @@
           };
         };
       };
+      aerial = {
+        enable = true;
+        settings.layout.default_direction = "right";
+      };
       nvim-tree = {
         enable = true;
         settings = {
@@ -139,6 +143,7 @@
           nix
           python
           regex
+          rust
           toml
           vim
           vimdoc
@@ -177,6 +182,7 @@
       };
     in [
       (map "<leader>e" "<cmd>NvimTreeToggle<CR>" "File explorer")
+      (map "<leader>o" "<cmd>AerialToggle<CR>" "Symbols outline")
       (map "<leader>ff" "<cmd>Telescope find_files<CR>" "Find files")
       (map "<leader>fg" "<cmd>Telescope live_grep<CR>" "Search project")
       (map "<leader>fb" "<cmd>Telescope buffers<CR>" "Find buffers")
