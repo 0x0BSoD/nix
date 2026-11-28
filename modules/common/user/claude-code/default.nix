@@ -10,6 +10,7 @@ in {
     ./hindsight.nix
     ./kubernetes-mcp.nix
     ./plugins.nix
+    ./statusline.nix
     ./theme.nix
     ./tmux.nix
   ];
