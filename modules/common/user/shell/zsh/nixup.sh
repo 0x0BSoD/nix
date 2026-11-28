@@ -29,7 +29,11 @@ flake.lock was updated. Changed inputs (name, old rev, new rev, compare link):
 $changes
 
 Then run exactly "git add flake.lock", then "git commit -m '<message>' -- flake.lock".
-The message is one compact line summarizing what was bumped. Recent style:
+The message is one compact line summarizing what was bumped. You must check what changed in revisions by fetching them.
+Bad example: nixpkgs, nix-homebrew, homebrew core/cask bump
+Good example: zhaofengli-wip/nix-homebrew - nix(deps): bump brew-src from 7.0.11 to 7.0.15, homebrew/homebrew-core - agent-deck 1.16.41, NixOS/nixpkgs - linuxPackages.bcachefs: apply patches for compatibility with latest kernel batch (#592440)
+As a rule, use the commit title or body, whichever is shorter.
+Recent style:
 $(git log -5 --format=%s -- flake.lock)
 Finally print the commit message you used.
 EOF
