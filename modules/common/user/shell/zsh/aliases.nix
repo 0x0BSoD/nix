@@ -54,7 +54,7 @@
     dfrebuild = "sudo darwin-rebuild switch --verbose --flake";
     nixarch = "sudo nix flake archive";
     nixgc = "sudo nix-collect-garbage";
-    nixup = "sudo nix flake update --flake";
+    nixup = "bash ${./nixup.sh}";
     osrebuild = "nh os switch";
   };
 }
